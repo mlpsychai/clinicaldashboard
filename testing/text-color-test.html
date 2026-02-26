@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Color Test — Supervisee Clinical Progression</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #FFF8DC;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            line-height: 1.6;
+            color: #6E3A20;
+            padding: 48px;
+        }
+
+        .page-title {
+            font-family: 'Permanent Marker';
+            font-size: 40px;
+            color: #6E3A20;
+            margin-bottom: 8px;
+        }
+
+        .page-sub {
+            font-size: 20px;
+            color: #C28A52;
+            margin-bottom: 56px;
+        }
+
+        .pairing-section {
+            max-width: 720px;
+            margin: 0 auto 72px;
+            padding-bottom: 72px;
+            border-bottom: 1px dashed #FDDCAD;
+        }
+
+        .pairing-section:last-child {
+            border-bottom: none;
+        }
+
+        .pairing-label {
+            font-family: 'Permanent Marker';
+            font-size: 18px;
+            color: #FFF8DC;
+            background: #6E3A20;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 6px;
+            margin-bottom: 32px;
+        }
+
+        .pairing-section h2 {
+            font-family: 'Permanent Marker';
+            font-size: 36px;
+            margin-bottom: 6px;
+        }
+
+        .pairing-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .pairing-section p {
+            font-size: 22px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .comp-item {
+            margin-bottom: 16px;
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 22px;
+        }
+
+        .comp-bar {
+            height: 14px;
+            background: #FDDCAD;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .comp-fill {
+            height: 100%;
+            border-radius: 7px;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 48px;
+            margin: 24px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Permanent Marker';
+            font-size: 48px;
+        }
+
+        .stat-label {
+            font-size: 20px;
+        }
+
+        .milestone-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #FDDCAD;
+            font-size: 22px;
+        }
+
+        .milestone-row:last-child { border-bottom: none; }
+
+        .m-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .m-date {
+            margin-left: auto;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-title">Text Color Pairings</div>
+    <p class="page-sub">Primary (headings + body) / Secondary (subtitles + dates) — on Cornsilk background</p>
+
+    <!-- 1: Cadmium Red / Cadmium Red -->
+    <div class="pairing-section">
+        <div class="pairing-label">Cadmium Red / Cadmium Red — #EF4E4A / #EF4E4A</div>
+        <h2 style="color:#EF4E4A">Competency Ratings</h2>
+        <h3 style="color:#EF4E4A">Assessment — Year 2 Progress</h3>
+        <p style="color:#EF4E4A">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row" style="color:#EF4E4A"><span>Diagnostic Interviewing</span><span>85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row" style="color:#EF4E4A"><span>Report Writing</span><span>82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#EF4E4A">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#EF4E4A">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#EF4E4A">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#EF4E4A"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#EF4E4A">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#EF4E4A"><div class="m-dot" style="background:#EF4E4A"></div>First independent therapy session<span class="m-date" style="color:#EF4E4A">Feb 2026</span></div>
+    </div>
+
+    <!-- 2: Cadmium Red / Sepia -->
+    <div class="pairing-section">
+        <div class="pairing-label">Cadmium Red / Sepia — #EF4E4A / #C28A52</div>
+        <h2 style="color:#EF4E4A">Competency Ratings</h2>
+        <h3 style="color:#C28A52">Assessment — Year 2 Progress</h3>
+        <p style="color:#EF4E4A">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#EF4E4A">Diagnostic Interviewing</span><span style="color:#C28A52">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#EF4E4A">Report Writing</span><span style="color:#C28A52">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#C28A52">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#C28A52">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#C28A52">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#EF4E4A"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#C28A52">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#EF4E4A"><div class="m-dot" style="background:#C28A52"></div>First independent therapy session<span class="m-date" style="color:#C28A52">Feb 2026</span></div>
+    </div>
+
+    <!-- 3: Cadmium Red / Burnt Umber -->
+    <div class="pairing-section">
+        <div class="pairing-label">Cadmium Red / Burnt Umber — #EF4E4A / #6E3A20</div>
+        <h2 style="color:#EF4E4A">Competency Ratings</h2>
+        <h3 style="color:#6E3A20">Assessment — Year 2 Progress</h3>
+        <p style="color:#EF4E4A">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#EF4E4A">Diagnostic Interviewing</span><span style="color:#6E3A20">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#EF4E4A">Report Writing</span><span style="color:#6E3A20">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#6E3A20">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#6E3A20">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#6E3A20">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#EF4E4A"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#6E3A20">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#EF4E4A"><div class="m-dot" style="background:#6E3A20"></div>First independent therapy session<span class="m-date" style="color:#6E3A20">Feb 2026</span></div>
+    </div>
+
+    <!-- 4: Burnt Umber / Cadmium Red -->
+    <div class="pairing-section">
+        <div class="pairing-label">Burnt Umber / Cadmium Red — #6E3A20 / #EF4E4A</div>
+        <h2 style="color:#6E3A20">Competency Ratings</h2>
+        <h3 style="color:#EF4E4A">Assessment — Year 2 Progress</h3>
+        <p style="color:#6E3A20">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Diagnostic Interviewing</span><span style="color:#EF4E4A">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Report Writing</span><span style="color:#EF4E4A">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#6E3A20">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#6E3A20">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#6E3A20">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#EF4E4A">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#EF4E4A"></div>First independent therapy session<span class="m-date" style="color:#EF4E4A">Feb 2026</span></div>
+    </div>
+
+    <!-- 5: Burnt Umber / Sepia -->
+    <div class="pairing-section">
+        <div class="pairing-label">Burnt Umber / Sepia (current) — #6E3A20 / #C28A52</div>
+        <h2 style="color:#6E3A20">Competency Ratings</h2>
+        <h3 style="color:#C28A52">Assessment — Year 2 Progress</h3>
+        <p style="color:#6E3A20">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Diagnostic Interviewing</span><span style="color:#C28A52">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Report Writing</span><span style="color:#C28A52">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#6E3A20">247</div><div class="stat-label" style="color:#C28A52">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#6E3A20">183</div><div class="stat-label" style="color:#C28A52">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#6E3A20">96</div><div class="stat-label" style="color:#C28A52">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#C28A52">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#C28A52"></div>First independent therapy session<span class="m-date" style="color:#C28A52">Feb 2026</span></div>
+    </div>
+
+    <!-- 6: Burnt Umber / Cadmium Orange -->
+    <div class="pairing-section">
+        <div class="pairing-label">Burnt Umber / Cadmium Orange — #6E3A20 / #F28C37</div>
+        <h2 style="color:#6E3A20">Competency Ratings</h2>
+        <h3 style="color:#F28C37">Assessment — Year 2 Progress</h3>
+        <p style="color:#6E3A20">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Diagnostic Interviewing</span><span style="color:#F28C37">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Report Writing</span><span style="color:#F28C37">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#F28C37">247</div><div class="stat-label" style="color:#6E3A20">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#F28C37">183</div><div class="stat-label" style="color:#6E3A20">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#F28C37">96</div><div class="stat-label" style="color:#6E3A20">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#F28C37"></div>Completed intake assessment training<span class="m-date" style="color:#F28C37">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#F28C37"></div>First independent therapy session<span class="m-date" style="color:#F28C37">Feb 2026</span></div>
+    </div>
+
+    <!-- 7: Sepia / Cadmium Red -->
+    <div class="pairing-section">
+        <div class="pairing-label">Sepia / Cadmium Red — #C28A52 / #EF4E4A</div>
+        <h2 style="color:#C28A52">Competency Ratings</h2>
+        <h3 style="color:#EF4E4A">Assessment — Year 2 Progress</h3>
+        <p style="color:#C28A52">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#C28A52">Diagnostic Interviewing</span><span style="color:#EF4E4A">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#C28A52">Report Writing</span><span style="color:#EF4E4A">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#C28A52">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#C28A52">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#C28A52">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#C28A52"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#EF4E4A">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#C28A52"><div class="m-dot" style="background:#EF4E4A"></div>First independent therapy session<span class="m-date" style="color:#EF4E4A">Feb 2026</span></div>
+    </div>
+
+    <!-- 8: Dark Chocolate / Cadmium Red -->
+    <div class="pairing-section">
+        <div class="pairing-label">Dark Chocolate / Cadmium Red — #3E2216 / #EF4E4A</div>
+        <h2 style="color:#3E2216">Competency Ratings</h2>
+        <h3 style="color:#EF4E4A">Assessment — Year 2 Progress</h3>
+        <p style="color:#3E2216">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#3E2216">Diagnostic Interviewing</span><span style="color:#EF4E4A">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#3E2216">Report Writing</span><span style="color:#EF4E4A">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#3E2216">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#3E2216">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#3E2216">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#3E2216"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#EF4E4A">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#3E2216"><div class="m-dot" style="background:#EF4E4A"></div>First independent therapy session<span class="m-date" style="color:#EF4E4A">Feb 2026</span></div>
+    </div>
+
+    <!-- 9: Dark Chocolate / Sepia -->
+    <div class="pairing-section">
+        <div class="pairing-label">Dark Chocolate / Sepia — #3E2216 / #C28A52</div>
+        <h2 style="color:#3E2216">Competency Ratings</h2>
+        <h3 style="color:#C28A52">Assessment — Year 2 Progress</h3>
+        <p style="color:#3E2216">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#3E2216">Diagnostic Interviewing</span><span style="color:#C28A52">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#3E2216">Report Writing</span><span style="color:#C28A52">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#3E2216">247</div><div class="stat-label" style="color:#C28A52">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#3E2216">183</div><div class="stat-label" style="color:#C28A52">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#3E2216">96</div><div class="stat-label" style="color:#C28A52">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#3E2216"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#C28A52">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#3E2216"><div class="m-dot" style="background:#C28A52"></div>First independent therapy session<span class="m-date" style="color:#C28A52">Feb 2026</span></div>
+    </div>
+
+    <!-- 10: Wine / Cadmium Red -->
+    <div class="pairing-section">
+        <div class="pairing-label">Wine / Cadmium Red — #722F37 / #EF4E4A</div>
+        <h2 style="color:#722F37">Competency Ratings</h2>
+        <h3 style="color:#EF4E4A">Assessment — Year 2 Progress</h3>
+        <p style="color:#722F37">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#722F37">Diagnostic Interviewing</span><span style="color:#EF4E4A">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#722F37">Report Writing</span><span style="color:#EF4E4A">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">247</div><div class="stat-label" style="color:#722F37">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">183</div><div class="stat-label" style="color:#722F37">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#EF4E4A">96</div><div class="stat-label" style="color:#722F37">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#722F37"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#EF4E4A">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#722F37"><div class="m-dot" style="background:#EF4E4A"></div>First independent therapy session<span class="m-date" style="color:#EF4E4A">Feb 2026</span></div>
+    </div>
+
+    <!-- 11: Wine / Sepia -->
+    <div class="pairing-section">
+        <div class="pairing-label">Wine / Sepia — #722F37 / #C28A52</div>
+        <h2 style="color:#722F37">Competency Ratings</h2>
+        <h3 style="color:#C28A52">Assessment — Year 2 Progress</h3>
+        <p style="color:#722F37">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#722F37">Diagnostic Interviewing</span><span style="color:#C28A52">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#722F37">Report Writing</span><span style="color:#C28A52">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#722F37">247</div><div class="stat-label" style="color:#C28A52">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#722F37">183</div><div class="stat-label" style="color:#C28A52">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#722F37">96</div><div class="stat-label" style="color:#C28A52">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#722F37"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date" style="color:#C28A52">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#722F37"><div class="m-dot" style="background:#C28A52"></div>First independent therapy session<span class="m-date" style="color:#C28A52">Feb 2026</span></div>
+    </div>
+
+    <!-- 12: Burnt Umber / Dark Prune -->
+    <div class="pairing-section">
+        <div class="pairing-label">Burnt Umber / Dark Prune — #6E3A20 / #8B7198</div>
+        <h2 style="color:#6E3A20">Competency Ratings</h2>
+        <h3 style="color:#8B7198">Assessment — Year 2 Progress</h3>
+        <p style="color:#6E3A20">Supervisee demonstrates strong growth in clinical assessment skills. Therapeutic rapport building continues to improve across diverse client populations.</p>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Diagnostic Interviewing</span><span style="color:#8B7198">85%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+        </div>
+        <div class="comp-item">
+            <div class="comp-row"><span style="color:#6E3A20">Report Writing</span><span style="color:#8B7198">82%</span></div>
+            <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#6E3A20">247</div><div class="stat-label" style="color:#8B7198">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#6E3A20">183</div><div class="stat-label" style="color:#8B7198">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#6E3A20">96</div><div class="stat-label" style="color:#8B7198">Supervision</div></div>
+        </div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#8B7198"></div>Completed intake assessment training<span class="m-date" style="color:#8B7198">Jan 2026</span></div>
+        <div class="milestone-row" style="color:#6E3A20"><div class="m-dot" style="background:#8B7198"></div>First independent therapy session<span class="m-date" style="color:#8B7198">Feb 2026</span></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+
+PEDIATRIC REGISTRATION
+Patient’s Name:______________Birthdate:______________________________
+Street Address:_________________________________________________________
+City:______________________________State:_____________Zip:__________Sex: M/F Parent’s
+Names/Ages:______________________________________________________
+Other Caregiver’s Name and relationship to patient:
+___________________________________________________ Contact Email
+___________________________________________________________ Home
+Phone:______________________________ Mobile Phone:____
+Emergency Contacts:______
+Insurance Company:__United Health Care_ Plan Name_Choice Plus_
+Member ID #:_Group#____________ Employer/School Name: ASU _ Valid From :____/____/____
+Until: ___/____/____ is this primary insurance: Y/N
+
+Insured Person’s Relation to Patient:_____________Name:____________________________DOB:____________
+Insured Person’s Address (if different fromabove):____________________________________________________
+City_____________________________________State:_______________Zip:______________________________
+How did you hear about us?
+______________________________________________________________________
+Reason for Office Visit
+
+Child Information:
+Tell me about your child’s strengths:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Diagnosis or explanations given to you about your child:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Please describe your child to me: (attach more information if necessary):
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+When did you first notice your child’s problems:
+_____________________________________________________________________________________________
+What things did you first notice:
+_____________________________________________________________________________________________
+Did this happen suddenly or
+gradually:______________________________________________________________ Was there anything that
+may have contributed to this problem:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+
+Current Living Situation
+Who is the child presently living with (biomother, stepfather, etc.):
+_____________________________________________________________________________________________
+How many people are in the current household, please list ages, names, relationships:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Are there any current stressors in the home (Marital, violence, drug abuse)
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Is the child adopted? If so, describe age of adoption and circumstances:
+_____________________________________________________________________________________________
+Parents
+How long have the parents been: Married__ Separated___ Divorced___ Widowed___ Living together____
+If parents are separated or divorced, please describe custody (physical or legal) and visitation rights: Also bring in
+documents supporting this:______________________________________________________________________
+If married, please describe current relationship:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Please list any previous marriages:
+_____________________________________________________________________________________________
+Biological Mother
+Name____________________________________________________________Age:________________________
+Education level_________________Occupation______________________________________________________
+Do any medical illnesses run in her family:
+_____________________________________________________________________________________________
+Has the biological mother or any of her relatives ever had any of the following illnesses (list self or relation):
+Depression___________________________________Autism___________________________________
+Suicide attempts______________________________ Mental Retardation_________________________
+Anxiety disorders______________________________Attention Problems_________________________
+Psychosis or thought problems___________________Learning Disabilities________________________
+Aggression___________________________________Physical or Sexual Abuse_____________________
+Alcohol Abuse________________________________Substance Abuse___________________________
+Bipolar Disorder_______________________________Legal Trouble______________________________
+Biological Father
+Name____________________________________________________________Age:________________
+Education level_________________Occupation______________________________________________
+Do any medical illnesses run in his family:
+_____________________________________________________________________________________________
+Has the biological father or any of his relatives ever had any of the following illnesses (list self or relation):
+Depression___________________________________Autism___________________________________
+Suicide attempts______________________________Mental Retardation_________________________
+Anxiety disorders______________________________Attention Problems_________________________
+Psychosis or thought problems___________________Learning Disabilities________________________
+Aggression___________________________________Physical or Sexual Abuse____________________
+Alcohol Abuse________________________________Substance Abuse__________________________
+Bipolar Disorder_______________________________Legal Trouble______________________________
+He is a donated frozen embryo child. We have an open relationship with the bio parents and will tell him when he starts asking more
+
+BROTHERS and SISTERS: (indicate if step-brother or step-sisters)
+Name Age Sex School or
+Occupation
+Present
+Grade
+Living
+At home
+(yes or no)
+Use Drugs
+Or alcohol
+(yes or no)
+Treated for
+Drug abuse
+(yes or no)
+Have there been any significant conflicts between this child and his/her siblings, if so please describe:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Birth History
+Mother’s age at time of birth:_____ Father’s age at time of birth:____
+Did the mother ever smoke during pregnancy: ______Cigarettes per Day________
+Was alcohol ever consumed during alcohol:_____If yes, how many drinks per day______
+Were any drugs used during pregnancy: ______if so please list, type and amount consumed:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Were there any complications during the pregnancy:__________________________________________________
+Was the child premature or late:_________________________________________________ _________________
+Were there any exposures of mother to stress, physical trauma, or abuse:
+_____________________________________________________________________________________________
+Was birth a cesarean section:_______________________Was the child normally active:_____________________
+Baby’s birth weight________Apgar Scores:__________ Were there any defects noted at birth:
+_____________________________________________________________________________________________
+Did either parent have any problems adjusting to the birth of your child: Y/N
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Where there any physical or emotional separations from the caregivers in the first years of life:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________I
+Infancy Period
+Circle all that apply (Infancy, toddler, preschool period)
+Jaundice Y/N
+Diarrhea Y/N
+Constipation Y/N
+Eating Problems Y/N
+Hyperactive Y/N
+Growing Pains Y/N
+Anemia Y/N
+Asthma Y/N
+Bed Wetting Y/N
+Tantrums Y/N
+Defiance Y/N
+Fears Y/N
+Early Puberty Y/ N
+Warts Y/N
+Nightmares Y/N
+Stomach Aches Y/N
+Child Breastfeed: Y/N and for how long:_________When was child put on formula:_________________________
+Did mother have problems with depression after birth: Y/N, if yes, please explain:
+_____________________________________________________________________________________________
+
+Developmental History
+Speech Development: (ages) First words______ First Sentences_______ Phrases ___________
+Motor Development: (ages) Sitting up_____ Crawling_______ Pulling/Standing _______Walking______
+Self Help Skills: Average Early Late
+Bowel Trained(age)_________Bladder Trained______Started to read______
+Does this child have more accidents than other children:
+_____________________________________________________________________________________________
+Athletic abilities: ______________________ Handedness: Left/Right/Both
+Did your child have any problems with the following (if yes please explain):
+Not enjoy cuddling: _____________________________________________________________________________
+Was difficult to comfort: _________________________________________________________________________
+Was colicky: ___________________________________________________________________________________
+Was excessively restless: _________________________________________________________________________
+Was excessively irritable: _________________________________________________________________________
+Had sleep difficulties: ____________________________________________________________________________
+Difficulty feeding or nursing: ______________________________________________________________________
+Environmental Exposures
+Has this child or mother while pregnant ever lived near a refinery, polluted area or in a home with lead paint?
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Has this child ever lived in a house that had new carpeting, paint, or other items that seem to affect the child’s
+health: _______________________________________________________________________________________
+Does the child seem sensitive to perfumes or dyes: ___________________________________________________
+Are pesticides, herbicides, or other chemicals used around your home:
+_____________________________________________________________________________________________
+What year was your apt/house built: _____________
+Do you live near a (please circle): Swamp/River/High voltage power lines/Industrial area/ Large city
+Type of flooring child spends most time around:______________________________________________________
+Behaviors
+(Infancy, toddler, preschool)
+Adaptable
+Rocking
+Able to play alone
+Difficulty with attention
+Easy to manage
+Underactive/passive
+Deals with frustration
+Stubborn
+Hyperactive
+Eating difficulties
+Cautious
+Shy or timid
+Sleeping difficulties
+Responds well to challenges
+Moody
+Easily frustrated
+Aggressive
+Wants to be left alone
+Sensitive
+Playful
+Severe tantrums
+Slow to warm up
+Fearful
+Curious
+Staring spells
+Breath holding spells
+Happy
+Head banging
+Stuttering
+Sad
+Irritable
+Current Behaviors
+Do you have any concerns about your child’s self esteem:______________________________________________
+Sexual knowledge or awareness:__________________________________________________________________
+Gender Identity:_______________________________________________________________________________
+Sexual Orientation:_____________________________________________________________________________
+
+
+Please circle any of the following that this child currently demonstrates:
+Bedwetting
+Immaturity
+Involuntary vocalizations
+Depression
+Behaviors
+Obsessions
+Compulsions
+Soiling
+Weight change
+Shyness
+Sleep problems
+Oppositional
+Defiance
+Arguing
+Fearful
+Eating problems
+Sexual problems
+Anxiety
+Panic
+Moodiness
+Tantrums
+Aggression
+Violence
+Lying
+Stealing
+Setting fires
+Cruelty to animals/people
+Substance abuse
+Alcohol abuse
+Impulsiveness
+Inattention
+Self injury
+Running away
+Suicidal talk
+Poor motivation
+Irritability
+Strange ideas of behaviors
+Crying episodes
+Problems with the law
+
+Please list types of discipline you have tried to use with this child and its effectiveness:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Have you moved recently (if so, please describe circumstances)?
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Any significant loses or other trauma in the family?
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+
+How would you rate this child’s intelligence as compared to others his age? _______________________________
+Free Time
+Please describe how this child spends his free time (plays alone, friends, games, etc?)
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Please list the number of hours the child spends watching TV daily:_______ Are the programs age appropriate or
+violent:_______________________________________________________________________________________
+Please list the number of hours the child spends playing video games daily____, please list types of games and
+examples:_____________________________________________________________________________________
+Please list the number of hours the child spends online/social media daily___, please list types:
+_____________________________________________________________________________________________
+School History
+Did this child attend daycare or preschool: ______ How many hours per week:_____________
+What are your current arrangements before and after school:
+_____________________________________________________________________________________________
+Beginning with kindergarten, list school name and indicate performance both academically and behaviorally:
+KG___________________________________________________________________________________________
+_____________________________________________________________________________________________
+Elementary____________________________________________________________________________________
+_____________________________________________________________________________________________
+Middle School__________________________________________________________________________________
+_____________________________________________________________________________________________
+High School____________________________________________________________________________________
+__________________________
+
+Are there any known learning disabilities? If so please list
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Is your child on an IEP or 504 plan?_________________________________________________________________
+Has this child ever repeated a grade or skipped a grade (if so, please list grade and circumstances)?
+_____________________________________________________________________________________________
+Does this child enjoy school: Y/N
+School subjects strengths:________________________________________________________________________
+School subject weaknesses:_______________________________________________________________________
+Circle any of the following problems this child has with school
+Problems with poor handwriting
+Losing homework
+Forgetting homework
+Doesn’t remain seated
+Impulsive
+Forgets instructions
+Doesn’t make friends
+Difficulty being quiet
+Difficulty with bullying
+Bulling others
+Poor attention
+Disorganized
+Skips school
+Fights with peers
+Daydreams
+Requires aide
+Interferes with others
+Test anxiety
+Excessive time to complete
+tasks
+Makes careless mistakes
+Frequently punished
+Is your child involved in extra-curricular activities (if so, please list):
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Any additional school comments:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Social Development
+As a child, did s/he socialize with peers?
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Does your child have age appropriate friends?
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Circle any of the following that apply with your child regarding interactions with peers:
+Plays well with others
+Is often teased by others
+Cooperative
+Empathetic
+Shares well
+Primarily plays with older children
+Primarily plays with younger children
+Afraid to socialize
+Afraid to speak in front of peers
+Is a leader
+Is led by others
+Aggressive or mean
+Frequent fights
+Jealous
+Bossy or controlling
+Uncooperative
+Feelings get hurt easily
+Rejected by others
+Few friends
+No friends
+Bragging/boastful
+
+Medical History
+If this child has experienced any of the following please list the age and other pertinent information:
+Seizures___________
+Surgeries___________
+Deformities___________
+Failure to grow___________
+Pneumonia___________
+Asthma___________
+Allergies___________
+Diabetes___________
+Skin problems___________
+Obesity___________
+Ear infections___________
+Hearing problems___________
+Movement problems___________
+Head injuries___________
+Other physical problems___________
+Eye problems___________
+Stomach problems___________
+Poisoning___________
+Constipation___________
+Rubella___________
+Chickenpox___________
+Mumps___________
+Mono___________
+Thrush___________
+Sinus infections___________
+Frequent colds___________
+other___________
+Has this child ever had a neurologic evaluation (exam, MRI, CT, EEG) if yes please describe:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Has this child’s vision been tested: age__6____ results___normal_______
+Has this child’s hearing been tested: age __0____results___normal______
+Please describe the child’s vaccination history: Caught up_____________________________________________
+Nutrition Status
+Current Height_49 inches Current Weight___52 pounds_______
+Describe the child’s appetite and diet: ____He eats widely and well.
+_________________________________________________________________________________________
+_____________________________________________________________________________________________
+Please indicate which is most accurate regarding your child’s diet: Mostly Baby Foods__Mostly meat__Mostly
+vegetarian__Mostly Carbohydrates__Mostly Organic__Mostly Processed__Mostly microwaved__Mostly dairy__
+Other______________________________________________________
+Have any dietary modifications been tried with your child:
+_____________________________________________________________________________________________
+Any known allergies to food: if yes was it tested:
+_____________________________________________________________________________________________
+Please describe your child’s stool pattern, frequency and consistency (loose, large, brown, daily, foul smelling):
+_____________________________________________________________________________________________
+How much water does your child drink during the day:_________________________________________________
+Child’s Present Medical Status
+Primary Care Doctor: _________________Phone number:_________________ Last seen:____________________
+List any present illness this child is being treated for:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+When was child’s last physical exam:____________________________ Was blood work done : Y/N___________
+
+
+
+List all prescribed and over the counter medications that this child is currently taking: (please include doses)
+1)____________________________________________________________________________________________
+2)____________________________________________________________________________________________
+3)____________________________________________________________________________________________
+4)____________________________________________________________________________________________
+5)____________________________________________________________________________________________
+List all supplements that this child is also prescribed or taking:
+1)____________________________________________________________________________________________
+2)____________________________________________________________________________________________
+3)____________________________________________________________________________________________
+4)____________________________________________________________________________________________
+5)____________________________________________________________________________________________
+Any known allergies to medications, environmental allergens, or allergies to animals:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Does this child frequently complain of (please circle):
+Headaches
+Dizziness
+Sleep problems
+Nightmares
+Stomach aches
+Staring into space
+Losing track of time
+Difficulty breathing
+Painful urination
+Chest pain
+Trouble with vision
+Trouble hearing
+Menstrual problems
+Skin problems
+Palpitations
+Please describe when this child falls asleep and describe his/her sleep:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Past Psychiatric/Psychological Treatment
+Please list if this child has ever been seen by any psychiatrist or psychologist, or academic evaluation in the past:
+Person or Institution Dates Address Telephone/Fax
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Please list dosages/medications/effects/side effects of any medications used in this child’s past:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+What was most helpful in his past treatment:
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+Spiritual Orientation
+Please describe your family’s religious or spiritual affiliation/belief:
+_____________________________________________________________________________________________
+How active in these beliefs is the child and family:____________________________________________________
+Other concerns or questions (Please describe on back if necessary)

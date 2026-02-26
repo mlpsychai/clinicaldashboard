@@ -1,0 +1,673 @@
+{
+  "formTitle": "Pediatric Registration",
+  "formVersion": "1.0",
+  "sections": [
+    {
+      "id": "patient_info",
+      "title": "Patient Information",
+      "fields": [
+        { "id": "patient_name", "label": "Patient's Name", "type": "text", "required": true },
+        { "id": "birthdate", "label": "Birthdate", "type": "date", "required": true },
+        { "id": "street_address", "label": "Street Address", "type": "text", "required": true },
+        { "id": "city", "label": "City", "type": "text", "required": true },
+        { "id": "state", "label": "State", "type": "text", "required": true },
+        { "id": "zip", "label": "Zip", "type": "text", "required": true },
+        { "id": "sex", "label": "Sex", "type": "select", "options": ["M", "F"], "required": true },
+        { "id": "parent_names_ages", "label": "Parent's Names/Ages", "type": "text", "required": true },
+        { "id": "other_caregiver", "label": "Other Caregiver's Name and Relationship to Patient", "type": "text" },
+        { "id": "contact_email", "label": "Contact Email", "type": "email", "required": true },
+        { "id": "home_phone", "label": "Home Phone", "type": "tel" },
+        { "id": "mobile_phone", "label": "Mobile Phone", "type": "tel", "required": true },
+        { "id": "emergency_contacts", "label": "Emergency Contacts", "type": "textarea", "required": true }
+      ]
+    },
+    {
+      "id": "insurance",
+      "title": "Insurance Information",
+      "fields": [
+        { "id": "insurance_company", "label": "Insurance Company", "type": "text" },
+        { "id": "plan_name", "label": "Plan Name", "type": "text" },
+        { "id": "member_id", "label": "Member ID #", "type": "text" },
+        { "id": "group_number", "label": "Group #", "type": "text" },
+        { "id": "employer_school", "label": "Employer/School Name", "type": "text" },
+        { "id": "valid_from", "label": "Valid From", "type": "date" },
+        { "id": "valid_until", "label": "Valid Until", "type": "date" },
+        { "id": "is_primary", "label": "Is this primary insurance?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "insured_relation", "label": "Insured Person's Relation to Patient", "type": "text" },
+        { "id": "insured_name", "label": "Insured Person's Name", "type": "text" },
+        { "id": "insured_dob", "label": "Insured Person's DOB", "type": "date" },
+        { "id": "insured_address", "label": "Insured Person's Address (if different)", "type": "text" },
+        { "id": "insured_city", "label": "City", "type": "text" },
+        { "id": "insured_state", "label": "State", "type": "text" },
+        { "id": "insured_zip", "label": "Zip", "type": "text" }
+      ]
+    },
+    {
+      "id": "referral",
+      "title": "Referral",
+      "fields": [
+        { "id": "how_heard", "label": "How did you hear about us?", "type": "text" },
+        { "id": "reason_for_visit", "label": "Reason for Office Visit", "type": "textarea", "required": true }
+      ]
+    },
+    {
+      "id": "child_info",
+      "title": "Child Information",
+      "fields": [
+        { "id": "child_strengths", "label": "Tell me about your child's strengths", "type": "textarea" },
+        { "id": "diagnosis_explanations", "label": "Diagnosis or explanations given to you about your child", "type": "textarea" },
+        { "id": "describe_child", "label": "Please describe your child (attach more information if necessary)", "type": "textarea" },
+        { "id": "first_noticed_problems", "label": "When did you first notice your child's problems?", "type": "textarea" },
+        { "id": "what_first_noticed", "label": "What things did you first notice?", "type": "textarea" },
+        { "id": "sudden_or_gradual", "label": "Did this happen suddenly or gradually?", "type": "select", "options": ["Suddenly", "Gradually"] },
+        { "id": "contributing_factors", "label": "Was there anything that may have contributed to this problem?", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "living_situation",
+      "title": "Current Living Situation",
+      "fields": [
+        { "id": "living_with", "label": "Who is the child presently living with (biomother, stepfather, etc.)?", "type": "textarea" },
+        { "id": "household_members", "label": "How many people are in the current household? Please list ages, names, relationships", "type": "textarea" },
+        { "id": "home_stressors", "label": "Are there any current stressors in the home (marital, violence, drug abuse)?", "type": "textarea" },
+        { "id": "is_adopted", "label": "Is the child adopted? If so, describe age of adoption and circumstances", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "parents",
+      "title": "Parents",
+      "fields": [
+        {
+          "id": "marital_status",
+          "label": "How long have the parents been:",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "married", "label": "Married", "hasDetail": true, "detailLabel": "Duration" },
+            { "id": "separated", "label": "Separated", "hasDetail": true, "detailLabel": "Duration" },
+            { "id": "divorced", "label": "Divorced", "hasDetail": true, "detailLabel": "Duration" },
+            { "id": "widowed", "label": "Widowed", "hasDetail": true, "detailLabel": "Duration" },
+            { "id": "living_together", "label": "Living Together", "hasDetail": true, "detailLabel": "Duration" }
+          ]
+        },
+        { "id": "custody_details", "label": "If separated or divorced, describe custody (physical or legal) and visitation rights", "type": "textarea" },
+        { "id": "current_relationship", "label": "If married, please describe current relationship", "type": "textarea" },
+        { "id": "previous_marriages", "label": "Please list any previous marriages", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "biological_mother",
+      "title": "Biological Mother",
+      "fields": [
+        { "id": "mother_name", "label": "Name", "type": "text" },
+        { "id": "mother_age", "label": "Age", "type": "number" },
+        { "id": "mother_education", "label": "Education Level", "type": "text" },
+        { "id": "mother_occupation", "label": "Occupation", "type": "text" },
+        { "id": "mother_family_medical", "label": "Do any medical illnesses run in her family?", "type": "textarea" },
+        {
+          "id": "mother_family_history",
+          "label": "Has the biological mother or any of her relatives ever had any of the following illnesses? (list self or relation)",
+          "type": "fieldGroup",
+          "fields": [
+            { "id": "mother_depression", "label": "Depression", "type": "text" },
+            { "id": "mother_autism", "label": "Autism", "type": "text" },
+            { "id": "mother_suicide_attempts", "label": "Suicide Attempts", "type": "text" },
+            { "id": "mother_intellectual_disability", "label": "Intellectual Disability", "type": "text" },
+            { "id": "mother_anxiety", "label": "Anxiety Disorders", "type": "text" },
+            { "id": "mother_attention", "label": "Attention Problems", "type": "text" },
+            { "id": "mother_psychosis", "label": "Psychosis or Thought Problems", "type": "text" },
+            { "id": "mother_learning_disabilities", "label": "Learning Disabilities", "type": "text" },
+            { "id": "mother_aggression", "label": "Aggression", "type": "text" },
+            { "id": "mother_abuse", "label": "Physical or Sexual Abuse", "type": "text" },
+            { "id": "mother_alcohol", "label": "Alcohol Abuse", "type": "text" },
+            { "id": "mother_substance", "label": "Substance Abuse", "type": "text" },
+            { "id": "mother_bipolar", "label": "Bipolar Disorder", "type": "text" },
+            { "id": "mother_legal", "label": "Legal Trouble", "type": "text" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "biological_father",
+      "title": "Biological Father",
+      "fields": [
+        { "id": "father_name", "label": "Name", "type": "text" },
+        { "id": "father_age", "label": "Age", "type": "number" },
+        { "id": "father_education", "label": "Education Level", "type": "text" },
+        { "id": "father_occupation", "label": "Occupation", "type": "text" },
+        { "id": "father_family_medical", "label": "Do any medical illnesses run in his family?", "type": "textarea" },
+        {
+          "id": "father_family_history",
+          "label": "Has the biological father or any of his relatives ever had any of the following illnesses? (list self or relation)",
+          "type": "fieldGroup",
+          "fields": [
+            { "id": "father_depression", "label": "Depression", "type": "text" },
+            { "id": "father_autism", "label": "Autism", "type": "text" },
+            { "id": "father_suicide_attempts", "label": "Suicide Attempts", "type": "text" },
+            { "id": "father_intellectual_disability", "label": "Intellectual Disability", "type": "text" },
+            { "id": "father_anxiety", "label": "Anxiety Disorders", "type": "text" },
+            { "id": "father_attention", "label": "Attention Problems", "type": "text" },
+            { "id": "father_psychosis", "label": "Psychosis or Thought Problems", "type": "text" },
+            { "id": "father_learning_disabilities", "label": "Learning Disabilities", "type": "text" },
+            { "id": "father_aggression", "label": "Aggression", "type": "text" },
+            { "id": "father_abuse", "label": "Physical or Sexual Abuse", "type": "text" },
+            { "id": "father_alcohol", "label": "Alcohol Abuse", "type": "text" },
+            { "id": "father_substance", "label": "Substance Abuse", "type": "text" },
+            { "id": "father_bipolar", "label": "Bipolar Disorder", "type": "text" },
+            { "id": "father_legal", "label": "Legal Trouble", "type": "text" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "siblings",
+      "title": "Brothers and Sisters",
+      "description": "Indicate if step-brother or step-sister",
+      "fields": [
+        {
+          "id": "siblings_table",
+          "label": "Siblings",
+          "type": "repeatingGroup",
+          "maxEntries": 10,
+          "fields": [
+            { "id": "sibling_name", "label": "Name", "type": "text" },
+            { "id": "sibling_age", "label": "Age", "type": "number" },
+            { "id": "sibling_sex", "label": "Sex", "type": "select", "options": ["M", "F"] },
+            { "id": "sibling_school_occupation", "label": "School or Occupation", "type": "text" },
+            { "id": "sibling_grade", "label": "Present Grade", "type": "text" },
+            { "id": "sibling_at_home", "label": "Living at Home", "type": "select", "options": ["Yes", "No"] },
+            { "id": "sibling_drug_use", "label": "Uses Drugs or Alcohol", "type": "select", "options": ["Yes", "No"] },
+            { "id": "sibling_drug_treatment", "label": "Treated for Drug Abuse", "type": "select", "options": ["Yes", "No"] }
+          ]
+        },
+        { "id": "sibling_conflicts", "label": "Have there been any significant conflicts between this child and his/her siblings? If so, please describe", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "birth_history",
+      "title": "Birth History",
+      "fields": [
+        { "id": "mother_age_at_birth", "label": "Mother's age at time of birth", "type": "number" },
+        { "id": "father_age_at_birth", "label": "Father's age at time of birth", "type": "number" },
+        { "id": "smoked_during_pregnancy", "label": "Did the mother ever smoke during pregnancy?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "cigarettes_per_day", "label": "Cigarettes per day", "type": "text", "visibleWhen": { "field": "smoked_during_pregnancy", "equals": "Yes" } },
+        { "id": "alcohol_during_pregnancy", "label": "Was alcohol ever consumed during pregnancy?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "drinks_per_day", "label": "If yes, how many drinks per day?", "type": "text", "visibleWhen": { "field": "alcohol_during_pregnancy", "equals": "Yes" } },
+        { "id": "drugs_during_pregnancy", "label": "Were any drugs used during pregnancy?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "drugs_details", "label": "If so, please list type and amount consumed", "type": "textarea", "visibleWhen": { "field": "drugs_during_pregnancy", "equals": "Yes" } },
+        { "id": "pregnancy_complications", "label": "Were there any complications during the pregnancy?", "type": "textarea" },
+        { "id": "premature_or_late", "label": "Was the child premature or late?", "type": "text" },
+        { "id": "stress_trauma_exposure", "label": "Were there any exposures of mother to stress, physical trauma, or abuse?", "type": "textarea" },
+        { "id": "cesarean", "label": "Was birth a cesarean section?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "normally_active", "label": "Was the child normally active?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "birth_weight", "label": "Baby's birth weight", "type": "text" },
+        { "id": "apgar_scores", "label": "Apgar Scores", "type": "text" },
+        { "id": "defects_at_birth", "label": "Were there any defects noted at birth?", "type": "textarea" },
+        { "id": "parent_adjustment_problems", "label": "Did either parent have any problems adjusting to the birth of your child?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "parent_adjustment_details", "label": "If yes, please describe", "type": "textarea", "visibleWhen": { "field": "parent_adjustment_problems", "equals": "Yes" } },
+        { "id": "early_separations", "label": "Were there any physical or emotional separations from the caregivers in the first years of life?", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "infancy_period",
+      "title": "Infancy Period",
+      "description": "Infancy, toddler, preschool period",
+      "fields": [
+        {
+          "id": "infancy_conditions",
+          "label": "Circle all that apply",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "jaundice", "label": "Jaundice" },
+            { "id": "diarrhea", "label": "Diarrhea" },
+            { "id": "constipation", "label": "Constipation" },
+            { "id": "eating_problems", "label": "Eating Problems" },
+            { "id": "hyperactive", "label": "Hyperactive" },
+            { "id": "growing_pains", "label": "Growing Pains" },
+            { "id": "anemia", "label": "Anemia" },
+            { "id": "asthma", "label": "Asthma" },
+            { "id": "bed_wetting", "label": "Bed Wetting" },
+            { "id": "tantrums", "label": "Tantrums" },
+            { "id": "defiance", "label": "Defiance" },
+            { "id": "fears", "label": "Fears" },
+            { "id": "early_puberty", "label": "Early Puberty" },
+            { "id": "warts", "label": "Warts" },
+            { "id": "nightmares", "label": "Nightmares" },
+            { "id": "stomach_aches", "label": "Stomach Aches" }
+          ]
+        },
+        { "id": "breastfeed", "label": "Did the child breastfeed?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "breastfeed_duration", "label": "For how long?", "type": "text", "visibleWhen": { "field": "breastfeed", "equals": "Yes" } },
+        { "id": "formula_start", "label": "When was child put on formula?", "type": "text" },
+        { "id": "postpartum_depression", "label": "Did mother have problems with depression after birth?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "postpartum_details", "label": "If yes, please explain", "type": "textarea", "visibleWhen": { "field": "postpartum_depression", "equals": "Yes" } }
+      ]
+    },
+    {
+      "id": "developmental_history",
+      "title": "Developmental History",
+      "fields": [
+        { "id": "first_words_age", "label": "Speech: First words (age)", "type": "text" },
+        { "id": "first_sentences_age", "label": "Speech: First sentences (age)", "type": "text" },
+        { "id": "phrases_age", "label": "Speech: Phrases (age)", "type": "text" },
+        { "id": "sitting_age", "label": "Motor: Sitting up (age)", "type": "text" },
+        { "id": "crawling_age", "label": "Motor: Crawling (age)", "type": "text" },
+        { "id": "standing_age", "label": "Motor: Pulling/Standing (age)", "type": "text" },
+        { "id": "walking_age", "label": "Motor: Walking (age)", "type": "text" },
+        { "id": "self_help_skills", "label": "Self Help Skills", "type": "select", "options": ["Average", "Early", "Late"] },
+        { "id": "bowel_trained_age", "label": "Bowel trained (age)", "type": "text" },
+        { "id": "bladder_trained_age", "label": "Bladder trained (age)", "type": "text" },
+        { "id": "started_reading_age", "label": "Started to read (age)", "type": "text" },
+        { "id": "more_accidents", "label": "Does this child have more accidents than other children?", "type": "textarea" },
+        { "id": "athletic_abilities", "label": "Athletic abilities", "type": "text" },
+        { "id": "handedness", "label": "Handedness", "type": "select", "options": ["Left", "Right", "Both"] },
+        { "id": "not_enjoy_cuddling", "label": "Not enjoy cuddling", "type": "text" },
+        { "id": "difficult_to_comfort", "label": "Was difficult to comfort", "type": "text" },
+        { "id": "was_colicky", "label": "Was colicky", "type": "text" },
+        { "id": "excessively_restless", "label": "Was excessively restless", "type": "text" },
+        { "id": "excessively_irritable", "label": "Was excessively irritable", "type": "text" },
+        { "id": "sleep_difficulties", "label": "Had sleep difficulties", "type": "text" },
+        { "id": "feeding_difficulties", "label": "Difficulty feeding or nursing", "type": "text" }
+      ]
+    },
+    {
+      "id": "environmental_exposures",
+      "title": "Environmental Exposures",
+      "fields": [
+        { "id": "polluted_area", "label": "Has this child or mother while pregnant ever lived near a refinery, polluted area, or in a home with lead paint?", "type": "textarea" },
+        { "id": "new_carpeting_paint", "label": "Has this child ever lived in a house that had new carpeting, paint, or other items that seem to affect the child's health?", "type": "textarea" },
+        { "id": "sensitive_perfumes_dyes", "label": "Does the child seem sensitive to perfumes or dyes?", "type": "text" },
+        { "id": "pesticides_chemicals", "label": "Are pesticides, herbicides, or other chemicals used around your home?", "type": "textarea" },
+        { "id": "house_year_built", "label": "What year was your apt/house built?", "type": "text" },
+        {
+          "id": "live_near",
+          "label": "Do you live near any of the following?",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "swamp", "label": "Swamp" },
+            { "id": "river", "label": "River" },
+            { "id": "power_lines", "label": "High Voltage Power Lines" },
+            { "id": "industrial_area", "label": "Industrial Area" },
+            { "id": "large_city", "label": "Large City" }
+          ]
+        },
+        { "id": "flooring_type", "label": "Type of flooring child spends most time around", "type": "text" }
+      ]
+    },
+    {
+      "id": "early_behaviors",
+      "title": "Behaviors (Infancy, Toddler, Preschool)",
+      "fields": [
+        {
+          "id": "early_behaviors_checklist",
+          "label": "Select all that apply",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "adaptable", "label": "Adaptable" },
+            { "id": "rocking", "label": "Rocking" },
+            { "id": "plays_alone", "label": "Able to Play Alone" },
+            { "id": "attention_difficulty", "label": "Difficulty with Attention" },
+            { "id": "easy_to_manage", "label": "Easy to Manage" },
+            { "id": "underactive", "label": "Underactive/Passive" },
+            { "id": "deals_frustration", "label": "Deals with Frustration" },
+            { "id": "stubborn", "label": "Stubborn" },
+            { "id": "hyperactive", "label": "Hyperactive" },
+            { "id": "eating_difficulties", "label": "Eating Difficulties" },
+            { "id": "cautious", "label": "Cautious" },
+            { "id": "shy_timid", "label": "Shy or Timid" },
+            { "id": "sleeping_difficulties", "label": "Sleeping Difficulties" },
+            { "id": "responds_challenges", "label": "Responds Well to Challenges" },
+            { "id": "moody", "label": "Moody" },
+            { "id": "easily_frustrated", "label": "Easily Frustrated" },
+            { "id": "aggressive", "label": "Aggressive" },
+            { "id": "wants_alone", "label": "Wants to Be Left Alone" },
+            { "id": "sensitive", "label": "Sensitive" },
+            { "id": "playful", "label": "Playful" },
+            { "id": "severe_tantrums", "label": "Severe Tantrums" },
+            { "id": "slow_warm_up", "label": "Slow to Warm Up" },
+            { "id": "fearful", "label": "Fearful" },
+            { "id": "curious", "label": "Curious" },
+            { "id": "staring_spells", "label": "Staring Spells" },
+            { "id": "breath_holding", "label": "Breath Holding Spells" },
+            { "id": "happy", "label": "Happy" },
+            { "id": "head_banging", "label": "Head Banging" },
+            { "id": "stuttering", "label": "Stuttering" },
+            { "id": "sad", "label": "Sad" },
+            { "id": "irritable", "label": "Irritable" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "current_behaviors",
+      "title": "Current Behaviors",
+      "fields": [
+        { "id": "self_esteem_concerns", "label": "Do you have any concerns about your child's self-esteem?", "type": "textarea" },
+        { "id": "sexual_knowledge", "label": "Sexual knowledge or awareness", "type": "textarea" },
+        { "id": "gender_identity", "label": "Gender Identity", "type": "text" },
+        { "id": "sexual_orientation", "label": "Sexual Orientation", "type": "text" },
+        {
+          "id": "current_behaviors_checklist",
+          "label": "Please select any of the following that this child currently demonstrates",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "bedwetting", "label": "Bedwetting" },
+            { "id": "immaturity", "label": "Immaturity" },
+            { "id": "involuntary_vocalizations", "label": "Involuntary Vocalizations" },
+            { "id": "depression", "label": "Depression" },
+            { "id": "obsessions", "label": "Obsessions" },
+            { "id": "compulsions", "label": "Compulsions" },
+            { "id": "soiling", "label": "Soiling" },
+            { "id": "weight_change", "label": "Weight Change" },
+            { "id": "shyness", "label": "Shyness" },
+            { "id": "sleep_problems", "label": "Sleep Problems" },
+            { "id": "oppositional", "label": "Oppositional" },
+            { "id": "defiance", "label": "Defiance" },
+            { "id": "arguing", "label": "Arguing" },
+            { "id": "fearful", "label": "Fearful" },
+            { "id": "eating_problems", "label": "Eating Problems" },
+            { "id": "sexual_problems", "label": "Sexual Problems" },
+            { "id": "anxiety", "label": "Anxiety" },
+            { "id": "panic", "label": "Panic" },
+            { "id": "moodiness", "label": "Moodiness" },
+            { "id": "tantrums", "label": "Tantrums" },
+            { "id": "aggression", "label": "Aggression" },
+            { "id": "violence", "label": "Violence" },
+            { "id": "lying", "label": "Lying" },
+            { "id": "stealing", "label": "Stealing" },
+            { "id": "setting_fires", "label": "Setting Fires" },
+            { "id": "cruelty", "label": "Cruelty to Animals/People" },
+            { "id": "substance_abuse", "label": "Substance Abuse" },
+            { "id": "alcohol_abuse", "label": "Alcohol Abuse" },
+            { "id": "impulsiveness", "label": "Impulsiveness" },
+            { "id": "inattention", "label": "Inattention" },
+            { "id": "self_injury", "label": "Self Injury" },
+            { "id": "running_away", "label": "Running Away" },
+            { "id": "suicidal_talk", "label": "Suicidal Talk" },
+            { "id": "poor_motivation", "label": "Poor Motivation" },
+            { "id": "irritability", "label": "Irritability" },
+            { "id": "strange_ideas", "label": "Strange Ideas or Behaviors" },
+            { "id": "crying_episodes", "label": "Crying Episodes" },
+            { "id": "legal_problems", "label": "Problems with the Law" }
+          ]
+        },
+        { "id": "discipline_methods", "label": "Please list types of discipline you have tried to use with this child and its effectiveness", "type": "textarea" },
+        { "id": "recent_move", "label": "Have you moved recently? If so, please describe circumstances", "type": "textarea" },
+        { "id": "significant_losses", "label": "Any significant losses or other trauma in the family?", "type": "textarea" },
+        { "id": "intelligence_rating", "label": "How would you rate this child's intelligence as compared to others his age?", "type": "text" }
+      ]
+    },
+    {
+      "id": "free_time",
+      "title": "Free Time",
+      "fields": [
+        { "id": "free_time_activities", "label": "Please describe how this child spends his free time (plays alone, friends, games, etc.)", "type": "textarea" },
+        { "id": "tv_hours_daily", "label": "Hours watching TV daily", "type": "number" },
+        { "id": "tv_age_appropriate", "label": "Are the programs age appropriate or violent?", "type": "text" },
+        { "id": "videogame_hours_daily", "label": "Hours playing video games daily", "type": "number" },
+        { "id": "videogame_types", "label": "Please list types of games and examples", "type": "textarea" },
+        { "id": "online_hours_daily", "label": "Hours online/social media daily", "type": "number" },
+        { "id": "online_types", "label": "Please list types", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "school_history",
+      "title": "School History",
+      "fields": [
+        { "id": "attended_daycare", "label": "Did this child attend daycare or preschool?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "daycare_hours_per_week", "label": "How many hours per week?", "type": "number" },
+        { "id": "before_after_school", "label": "What are your current arrangements before and after school?", "type": "textarea" },
+        {
+          "id": "school_performance",
+          "label": "Beginning with kindergarten, list school name and indicate performance both academically and behaviorally",
+          "type": "repeatingGroup",
+          "maxEntries": 6,
+          "fields": [
+            { "id": "school_level", "label": "Level", "type": "select", "options": ["Kindergarten", "Elementary", "Middle School", "High School"] },
+            { "id": "school_name", "label": "School Name", "type": "text" },
+            { "id": "school_performance_notes", "label": "Academic and Behavioral Performance", "type": "textarea" }
+          ]
+        },
+        { "id": "learning_disabilities", "label": "Are there any known learning disabilities? If so, please list", "type": "textarea" },
+        { "id": "iep_504", "label": "Is your child on an IEP or 504 plan?", "type": "text" },
+        { "id": "repeated_skipped_grade", "label": "Has this child ever repeated or skipped a grade? If so, list grade and circumstances", "type": "textarea" },
+        { "id": "enjoys_school", "label": "Does this child enjoy school?", "type": "select", "options": ["Yes", "No"] },
+        { "id": "subject_strengths", "label": "School subject strengths", "type": "text" },
+        { "id": "subject_weaknesses", "label": "School subject weaknesses", "type": "text" },
+        {
+          "id": "school_problems",
+          "label": "Select any of the following problems this child has with school",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "poor_handwriting", "label": "Poor Handwriting" },
+            { "id": "losing_homework", "label": "Losing Homework" },
+            { "id": "forgetting_homework", "label": "Forgetting Homework" },
+            { "id": "not_seated", "label": "Doesn't Remain Seated" },
+            { "id": "impulsive", "label": "Impulsive" },
+            { "id": "forgets_instructions", "label": "Forgets Instructions" },
+            { "id": "no_friends", "label": "Doesn't Make Friends" },
+            { "id": "difficulty_quiet", "label": "Difficulty Being Quiet" },
+            { "id": "bullied", "label": "Difficulty with Bullying" },
+            { "id": "bullying_others", "label": "Bullying Others" },
+            { "id": "poor_attention", "label": "Poor Attention" },
+            { "id": "disorganized", "label": "Disorganized" },
+            { "id": "skips_school", "label": "Skips School" },
+            { "id": "fights_peers", "label": "Fights with Peers" },
+            { "id": "daydreams", "label": "Daydreams" },
+            { "id": "requires_aide", "label": "Requires Aide" },
+            { "id": "interferes", "label": "Interferes with Others" },
+            { "id": "test_anxiety", "label": "Test Anxiety" },
+            { "id": "excessive_time", "label": "Excessive Time to Complete Tasks" },
+            { "id": "careless_mistakes", "label": "Makes Careless Mistakes" },
+            { "id": "frequently_punished", "label": "Frequently Punished" }
+          ]
+        },
+        { "id": "extracurricular", "label": "Is your child involved in extra-curricular activities? If so, please list", "type": "textarea" },
+        { "id": "additional_school_comments", "label": "Any additional school comments", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "social_development",
+      "title": "Social Development",
+      "fields": [
+        { "id": "socialized_as_child", "label": "As a child, did s/he socialize with peers?", "type": "textarea" },
+        { "id": "age_appropriate_friends", "label": "Does your child have age appropriate friends?", "type": "textarea" },
+        {
+          "id": "peer_interactions",
+          "label": "Select any of the following that apply with your child regarding interactions with peers",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "plays_well", "label": "Plays Well with Others" },
+            { "id": "teased", "label": "Is Often Teased by Others" },
+            { "id": "cooperative", "label": "Cooperative" },
+            { "id": "empathetic", "label": "Empathetic" },
+            { "id": "shares_well", "label": "Shares Well" },
+            { "id": "plays_older", "label": "Primarily Plays with Older Children" },
+            { "id": "plays_younger", "label": "Primarily Plays with Younger Children" },
+            { "id": "afraid_socialize", "label": "Afraid to Socialize" },
+            { "id": "afraid_speak", "label": "Afraid to Speak in Front of Peers" },
+            { "id": "leader", "label": "Is a Leader" },
+            { "id": "led_by_others", "label": "Is Led by Others" },
+            { "id": "aggressive_mean", "label": "Aggressive or Mean" },
+            { "id": "frequent_fights", "label": "Frequent Fights" },
+            { "id": "jealous", "label": "Jealous" },
+            { "id": "bossy", "label": "Bossy or Controlling" },
+            { "id": "uncooperative", "label": "Uncooperative" },
+            { "id": "hurt_easily", "label": "Feelings Get Hurt Easily" },
+            { "id": "rejected", "label": "Rejected by Others" },
+            { "id": "few_friends", "label": "Few Friends" },
+            { "id": "no_friends", "label": "No Friends" },
+            { "id": "bragging", "label": "Bragging/Boastful" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medical_history",
+      "title": "Medical History",
+      "description": "If this child has experienced any of the following, please list the age and other pertinent information",
+      "fields": [
+        {
+          "id": "medical_conditions",
+          "label": "Medical conditions (list age and details if applicable)",
+          "type": "fieldGroup",
+          "fields": [
+            { "id": "seizures", "label": "Seizures", "type": "text" },
+            { "id": "surgeries", "label": "Surgeries", "type": "text" },
+            { "id": "deformities", "label": "Deformities", "type": "text" },
+            { "id": "failure_to_grow", "label": "Failure to Grow", "type": "text" },
+            { "id": "pneumonia", "label": "Pneumonia", "type": "text" },
+            { "id": "asthma", "label": "Asthma", "type": "text" },
+            { "id": "allergies", "label": "Allergies", "type": "text" },
+            { "id": "diabetes", "label": "Diabetes", "type": "text" },
+            { "id": "skin_problems", "label": "Skin Problems", "type": "text" },
+            { "id": "obesity", "label": "Obesity", "type": "text" },
+            { "id": "ear_infections", "label": "Ear Infections", "type": "text" },
+            { "id": "hearing_problems", "label": "Hearing Problems", "type": "text" },
+            { "id": "movement_problems", "label": "Movement Problems", "type": "text" },
+            { "id": "head_injuries", "label": "Head Injuries", "type": "text" },
+            { "id": "other_physical", "label": "Other Physical Problems", "type": "text" },
+            { "id": "eye_problems", "label": "Eye Problems", "type": "text" },
+            { "id": "stomach_problems", "label": "Stomach Problems", "type": "text" },
+            { "id": "poisoning", "label": "Poisoning", "type": "text" },
+            { "id": "constipation", "label": "Constipation", "type": "text" },
+            { "id": "rubella", "label": "Rubella", "type": "text" },
+            { "id": "chickenpox", "label": "Chickenpox", "type": "text" },
+            { "id": "mumps", "label": "Mumps", "type": "text" },
+            { "id": "mono", "label": "Mono", "type": "text" },
+            { "id": "thrush", "label": "Thrush", "type": "text" },
+            { "id": "sinus_infections", "label": "Sinus Infections", "type": "text" },
+            { "id": "frequent_colds", "label": "Frequent Colds", "type": "text" },
+            { "id": "other", "label": "Other", "type": "text" }
+          ]
+        },
+        { "id": "neurologic_evaluation", "label": "Has this child ever had a neurologic evaluation (exam, MRI, CT, EEG)? If yes, please describe", "type": "textarea" },
+        { "id": "vision_tested_age", "label": "Has this child's vision been tested? Age", "type": "text" },
+        { "id": "vision_results", "label": "Vision test results", "type": "text" },
+        { "id": "hearing_tested_age", "label": "Has this child's hearing been tested? Age", "type": "text" },
+        { "id": "hearing_results", "label": "Hearing test results", "type": "text" },
+        { "id": "vaccination_history", "label": "Please describe the child's vaccination history", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "nutrition",
+      "title": "Nutrition Status",
+      "fields": [
+        { "id": "current_height", "label": "Current Height", "type": "text" },
+        { "id": "current_weight", "label": "Current Weight", "type": "text" },
+        { "id": "appetite_diet", "label": "Describe the child's appetite and diet", "type": "textarea" },
+        {
+          "id": "diet_type",
+          "label": "Please indicate which is most accurate regarding your child's diet",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "baby_foods", "label": "Mostly Baby Foods" },
+            { "id": "meat", "label": "Mostly Meat" },
+            { "id": "vegetarian", "label": "Mostly Vegetarian" },
+            { "id": "carbohydrates", "label": "Mostly Carbohydrates" },
+            { "id": "organic", "label": "Mostly Organic" },
+            { "id": "processed", "label": "Mostly Processed" },
+            { "id": "microwaved", "label": "Mostly Microwaved" },
+            { "id": "dairy", "label": "Mostly Dairy" },
+            { "id": "other", "label": "Other" }
+          ]
+        },
+        { "id": "diet_type_other", "label": "If other, describe", "type": "text", "visibleWhen": { "field": "diet_type", "includes": "other" } },
+        { "id": "dietary_modifications", "label": "Have any dietary modifications been tried with your child?", "type": "textarea" },
+        { "id": "food_allergies", "label": "Any known allergies to food? If yes, was it tested?", "type": "textarea" },
+        { "id": "stool_pattern", "label": "Please describe your child's stool pattern, frequency and consistency (loose, large, brown, daily, foul smelling)", "type": "textarea" },
+        { "id": "water_intake", "label": "How much water does your child drink during the day?", "type": "text" }
+      ]
+    },
+    {
+      "id": "present_medical",
+      "title": "Child's Present Medical Status",
+      "fields": [
+        { "id": "primary_care_doctor", "label": "Primary Care Doctor", "type": "text" },
+        { "id": "doctor_phone", "label": "Doctor's Phone Number", "type": "tel" },
+        { "id": "doctor_last_seen", "label": "Last Seen", "type": "date" },
+        { "id": "present_illness", "label": "List any present illness this child is being treated for", "type": "textarea" },
+        { "id": "last_physical_exam", "label": "When was child's last physical exam?", "type": "date" },
+        { "id": "blood_work_done", "label": "Was blood work done?", "type": "select", "options": ["Yes", "No"] },
+        {
+          "id": "medications",
+          "label": "List all prescribed and over the counter medications that this child is currently taking (include doses)",
+          "type": "repeatingGroup",
+          "maxEntries": 10,
+          "fields": [
+            { "id": "medication_name", "label": "Medication", "type": "text" },
+            { "id": "medication_dose", "label": "Dose", "type": "text" }
+          ]
+        },
+        {
+          "id": "supplements",
+          "label": "List all supplements that this child is also prescribed or taking",
+          "type": "repeatingGroup",
+          "maxEntries": 10,
+          "fields": [
+            { "id": "supplement_name", "label": "Supplement", "type": "text" },
+            { "id": "supplement_dose", "label": "Dose", "type": "text" }
+          ]
+        },
+        { "id": "medication_allergies", "label": "Any known allergies to medications, environmental allergens, or allergies to animals?", "type": "textarea" },
+        {
+          "id": "frequent_complaints",
+          "label": "Does this child frequently complain of:",
+          "type": "checkboxGroup",
+          "options": [
+            { "id": "headaches", "label": "Headaches" },
+            { "id": "dizziness", "label": "Dizziness" },
+            { "id": "sleep_problems", "label": "Sleep Problems" },
+            { "id": "nightmares", "label": "Nightmares" },
+            { "id": "stomach_aches", "label": "Stomach Aches" },
+            { "id": "staring_space", "label": "Staring into Space" },
+            { "id": "losing_time", "label": "Losing Track of Time" },
+            { "id": "difficulty_breathing", "label": "Difficulty Breathing" },
+            { "id": "painful_urination", "label": "Painful Urination" },
+            { "id": "chest_pain", "label": "Chest Pain" },
+            { "id": "vision_trouble", "label": "Trouble with Vision" },
+            { "id": "hearing_trouble", "label": "Trouble Hearing" },
+            { "id": "menstrual_problems", "label": "Menstrual Problems" },
+            { "id": "skin_problems", "label": "Skin Problems" },
+            { "id": "palpitations", "label": "Palpitations" }
+          ]
+        },
+        { "id": "sleep_description", "label": "Please describe when this child falls asleep and describe his/her sleep", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "past_psychiatric",
+      "title": "Past Psychiatric/Psychological Treatment",
+      "fields": [
+        {
+          "id": "past_providers",
+          "label": "Please list if this child has ever been seen by any psychiatrist, psychologist, or academic evaluation in the past",
+          "type": "repeatingGroup",
+          "maxEntries": 10,
+          "fields": [
+            { "id": "provider_name", "label": "Person or Institution", "type": "text" },
+            { "id": "provider_dates", "label": "Dates", "type": "text" },
+            { "id": "provider_address", "label": "Address", "type": "text" },
+            { "id": "provider_phone", "label": "Telephone/Fax", "type": "text" }
+          ]
+        },
+        { "id": "past_medications", "label": "Please list dosages/medications/effects/side effects of any medications used in this child's past", "type": "textarea" },
+        { "id": "most_helpful_treatment", "label": "What was most helpful in past treatment?", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "title": "Spiritual Orientation",
+      "fields": [
+        { "id": "religious_affiliation", "label": "Please describe your family's religious or spiritual affiliation/belief", "type": "textarea" },
+        { "id": "spiritual_activity", "label": "How active in these beliefs is the child and family?", "type": "text" }
+      ]
+    },
+    {
+      "id": "other_concerns",
+      "title": "Other Concerns",
+      "fields": [
+        { "id": "other_concerns_questions", "label": "Other concerns or questions", "type": "textarea" }
+      ]
+    }
+  ]
+}

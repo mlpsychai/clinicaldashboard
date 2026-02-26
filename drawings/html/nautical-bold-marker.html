@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nautical Drawing — Bold Marker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    font-family: 'Caveat Brush', cursive;
+  }
+
+  .title {
+    font-size: 28px;
+    color: #f5f0e8;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  .paper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 3px dashed #C28A52;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .paper::before {
+    display: none;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="title" style="display:none">Nautical Sketchbook</div>
+<div class="paper">
+  <canvas id="canvas" width="700" height="700"></canvas>
+</div>
+
+<script>
+const ctx = document.getElementById('canvas').getContext('2d');
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+
+const RED = '#c0392b';
+const BLUE = '#2e4a8a';
+const DBLUE = '#1a2d5a';
+
+function setRed(w) { ctx.strokeStyle = RED; ctx.lineWidth = w || 4; ctx.fillStyle = RED; }
+function setBlue(w) { ctx.strokeStyle = BLUE; ctx.lineWidth = w || 4; ctx.fillStyle = BLUE; }
+
+// Scale up from 500 to 700
+ctx.scale(1.4, 1.4);
+
+// ===== "Gio" text =====
+setRed(4);
+ctx.beginPath(); ctx.arc(107, 70, 22, -2.8, 1.8); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(130, 65); ctx.lineTo(130, 92); ctx.stroke();
+ctx.beginPath(); ctx.arc(130, 58, 3.5, 0, Math.PI * 2); ctx.fill();
+ctx.beginPath(); ctx.arc(152, 80, 12, 0, Math.PI * 2); ctx.stroke();
+
+// ===== Large Anchor =====
+setRed(4);
+ctx.beginPath(); ctx.arc(100, 150, 24, 0, Math.PI * 2); ctx.stroke();
+ctx.lineWidth = 4.5;
+ctx.beginPath(); ctx.moveTo(100, 174); ctx.lineTo(100, 295); ctx.stroke();
+setRed(4);
+ctx.beginPath(); ctx.moveTo(60, 225); ctx.lineTo(140, 225); ctx.stroke();
+// Left fluke
+ctx.beginPath(); ctx.moveTo(68, 288); ctx.quadraticCurveTo(55, 315, 85, 320); ctx.lineTo(100, 295); ctx.closePath(); ctx.fill();
+// Right fluke
+ctx.beginPath(); ctx.moveTo(132, 288); ctx.quadraticCurveTo(145, 315, 115, 320); ctx.lineTo(100, 295); ctx.closePath(); ctx.fill();
+// Arrows on ring
+setRed(3);
+ctx.beginPath(); ctx.moveTo(78, 143); ctx.lineTo(65, 136); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(78, 143); ctx.lineTo(68, 152); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(122, 157); ctx.lineTo(135, 164); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(122, 157); ctx.lineTo(132, 148); ctx.stroke();
+
+// ===== Chain + Small Anchor =====
+setRed(3);
+ctx.beginPath(); ctx.arc(55, 380, 15, 0, Math.PI * 2); ctx.stroke();
+ctx.lineWidth = 2.5;
+for (let i = 0; i < 8; i++) {
+  ctx.beginPath(); ctx.ellipse(90 + i * 20, 380, 8, 5, 0, 0, Math.PI * 2); ctx.stroke();
+}
+setRed(3);
+ctx.beginPath(); ctx.moveTo(55, 395); ctx.lineTo(55, 435); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(38, 412); ctx.lineTo(72, 412); ctx.stroke();
+// Small flukes
+ctx.beginPath(); ctx.moveTo(42, 428); ctx.quadraticCurveTo(35, 445, 52, 448); ctx.lineTo(55, 433); ctx.closePath(); ctx.fill();
+ctx.beginPath(); ctx.moveTo(68, 428); ctx.quadraticCurveTo(75, 445, 58, 448); ctx.lineTo(55, 433); ctx.closePath(); ctx.fill();
+
+// ===== Ship =====
+setRed(4);
+// Hull
+ctx.beginPath(); ctx.moveTo(260, 395); ctx.quadraticCurveTo(270, 438, 355, 442);
+ctx.quadraticCurveTo(445, 438, 455, 395); ctx.closePath(); ctx.stroke();
+// Deck line
+ctx.beginPath(); ctx.moveTo(268, 395); ctx.lineTo(448, 395); ctx.stroke();
+// Left cabin
+ctx.lineWidth = 3;
+ctx.strokeRect(295, 350, 42, 45);
+ctx.lineWidth = 2.5;
+ctx.strokeRect(306, 361, 18, 13);
+// Right cabin
+ctx.lineWidth = 3;
+ctx.strokeRect(385, 350, 42, 45);
+ctx.lineWidth = 2.5;
+ctx.strokeRect(396, 361, 18, 13);
+// Mast
+setRed(4);
+ctx.beginPath(); ctx.moveTo(355, 350); ctx.lineTo(355, 225); ctx.stroke();
+// Sail
+ctx.lineWidth = 3;
+ctx.beginPath(); ctx.moveTo(355, 240); ctx.lineTo(355, 345); ctx.lineTo(300, 345); ctx.closePath(); ctx.stroke();
+// Crow's nest
+ctx.beginPath(); ctx.arc(355, 225, 8, 0, Math.PI * 2); ctx.stroke();
+// Flag
+ctx.beginPath(); ctx.moveTo(355, 218); ctx.lineTo(382, 225); ctx.lineTo(355, 232); ctx.closePath(); ctx.fill();
+// X mark
+setRed(3);
+ctx.beginPath(); ctx.moveTo(415, 355); ctx.lineTo(438, 383); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(438, 355); ctx.lineTo(415, 383); ctx.stroke();
+
+// ===== Waves =====
+setBlue(3);
+// Vertical wavy line
+ctx.beginPath();
+ctx.moveTo(270, 225);
+ctx.quadraticCurveTo(276, 260, 268, 300);
+ctx.quadraticCurveTo(276, 340, 270, 380);
+ctx.quadraticCurveTo(264, 410, 272, 445);
+ctx.stroke();
+// Wave row 1
+ctx.lineWidth = 3;
+ctx.beginPath();
+ctx.moveTo(250, 455);
+for (let i = 0; i < 5; i++) {
+  ctx.quadraticCurveTo(270 + i * 40, 443, 290 + i * 40, 457);
+}
+ctx.stroke();
+// Wave row 2
+ctx.lineWidth = 2.5;
+ctx.beginPath();
+ctx.moveTo(260, 475);
+for (let i = 0; i < 4; i++) {
+  ctx.quadraticCurveTo(280 + i * 40, 463, 300 + i * 40, 477);
+}
+ctx.stroke();
+
+// ===== Small Sailboat =====
+ctx.strokeStyle = DBLUE; ctx.fillStyle = DBLUE;
+ctx.lineWidth = 3;
+// Hull
+ctx.beginPath(); ctx.moveTo(380, 475); ctx.quadraticCurveTo(395, 498, 440, 498);
+ctx.quadraticCurveTo(458, 492, 465, 475); ctx.closePath(); ctx.stroke();
+// Mast
+ctx.beginPath(); ctx.moveTo(420, 475); ctx.lineTo(420, 430); ctx.stroke();
+// Sail
+ctx.beginPath(); ctx.moveTo(420, 433); ctx.quadraticCurveTo(450, 448, 442, 475);
+ctx.lineTo(420, 475); ctx.closePath(); ctx.stroke();
+</script>
+</body>
+</html>

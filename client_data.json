@@ -1,0 +1,210 @@
+{
+    "page_title": "HiTOP-String Theory Integrated Framework",
+    "page_subtitle": "Dimensional Mental Health Assessment Through Text Analysis",
+
+    "client": {
+        "subreddit": "r/anxiety",
+        "history_months": 3,
+        "posts": 47,
+        "guid": "7f3a9..."
+    },
+
+    "sliding_window": {
+        "words": 150,
+        "overlap": 50
+    },
+
+    "nlp_pipeline": ["Tokenize", "Lemmatize", "Embed", "Classify"],
+
+    "pattern_matching": {
+        "exact": "anxious",
+        "fuzzy": { "term": "anxius", "score": 85 },
+        "context": "validated"
+    },
+
+    "spectra": [
+        { "name": "Internalizing",           "short": "INT", "key": "internalizing",     "pct": 58.3 },
+        { "name": "Thought Disorder",        "short": "THT", "key": "thought-disorder",  "pct": 23.7 },
+        { "name": "Detachment",              "short": "DET", "key": "detachment",        "pct": 19.2 },
+        { "name": "Somatoform",              "short": "SOM", "key": "somatoform",        "pct": 19.2 },
+        { "name": "Antagonistic External.",   "short": "ANT", "key": "antagonistic",      "pct": 19.2 },
+        { "name": "Disinhibited External.",   "short": "DIS", "key": "disinhibited",      "pct": 19.2 }
+    ],
+
+    "multi_spectrum_pct": 41.2,
+
+    "consistency": {
+        "confirmed": 6,
+        "total": 8,
+        "score": 0.75
+    },
+
+    "string_metrics": {
+        "coherence": 0.41,
+        "amplitude_sigma": 2.3,
+        "decompactification": 0.68
+    },
+
+    "dimensions": [
+        { "id": "D₀", "label": "Temporal Patterns",       "group": "observable" },
+        { "id": "D₁", "label": "Behavioral Indicators",   "group": "observable" },
+        { "id": "D₂", "label": "Cognitive Processing",    "group": "observable" },
+        { "id": "D₃", "label": "Relational Language",     "group": "observable" },
+        { "id": "D₄", "label": "Unconscious Patterns",    "group": "compactified" },
+        { "id": "D₅", "label": "Attachment Style",         "group": "compactified" },
+        { "id": "D₆", "label": "Trauma Markers",           "group": "compactified" },
+        { "id": "D₇", "label": "Somatic Language",         "group": "compactified" },
+        { "id": "D₈", "label": "Cultural Markers",         "group": "compactified" },
+        { "id": "D₉", "label": "Existential Themes",      "group": "compactified" }
+    ],
+
+    "dimension_cards": [
+        {
+            "dimension": "D₆",
+            "spectrum": "Internalizing",
+            "spectrum_key": "internalizing",
+            "pct": 58.3,
+            "description": "Maps trauma-related depression, anxiety, and fear responses. Highest prevalence indicates trauma's central role in psychopathology.",
+            "badge": "Primary Mapping",
+            "target_dimension_index": 6
+        },
+        {
+            "dimension": "D₄",
+            "spectrum": "Thought Disorder",
+            "spectrum_key": "thought-disorder",
+            "pct": 23.7,
+            "description": "Captures dissociative experiences, reality testing disruptions, and perceptual anomalies in the unconscious dimension.",
+            "badge": "Secondary Mapping",
+            "target_dimension_index": 4
+        },
+        {
+            "dimension": "D₅",
+            "spectrum": "Detachment",
+            "spectrum_key": "detachment",
+            "pct": 19.2,
+            "description": "Social withdrawal, intimacy avoidance, and emotional numbing directly inform attachment dimension scoring.",
+            "badge": "Direct Correspondence",
+            "target_dimension_index": 5
+        },
+        {
+            "dimension": "D₇",
+            "spectrum": "Somatoform",
+            "spectrum_key": "somatoform",
+            "pct": 19.2,
+            "description": "Physical complaints, health anxiety, and somatic distress provide direct somatic dimension indicators.",
+            "badge": "1:1 Mapping",
+            "target_dimension_index": 7
+        },
+        {
+            "dimension": "D₈",
+            "spectrum": "Antagonistic",
+            "spectrum_key": "antagonistic",
+            "pct": 19.2,
+            "description": "Manipulation, callousness, and antisocial patterns reflect cultural norm violations and social disruption.",
+            "badge": "Cultural Violation",
+            "target_dimension_index": 8
+        },
+        {
+            "dimension": "D₉",
+            "spectrum": "Disinhibited",
+            "spectrum_key": "disinhibited",
+            "pct": 19.2,
+            "description": "Impulsivity and risk-taking behaviors as existential crisis responses and meaning-seeking activities.",
+            "badge": "Existential Response",
+            "target_dimension_index": 9
+        }
+    ],
+
+    "profiles": [
+        {
+            "name": "Healthy Profile",
+            "label": "Healthy Profile",
+            "color": "#2ecc71",
+            "consistency": 0.92,
+            "multi_spectrum_pct": 0,
+            "tension": "Optimal",
+            "oscillation_type": "tight_regular",
+            "oscillation_dur": "4s"
+        },
+        {
+            "name": "Anxious",
+            "label": "Anxious (58.3% Int.)",
+            "color": "#ff6b6b",
+            "consistency": 0.41,
+            "multi_spectrum_pct": 41.2,
+            "tension": "Dysregulated",
+            "oscillation_type": "high_frequency",
+            "oscillation_dur": "1.5s"
+        },
+        {
+            "name": "Psychotic",
+            "label": "Psychotic (23.7% TD)",
+            "color": "#4ecdc4",
+            "consistency": 0.28,
+            "multi_spectrum_pct": 68.5,
+            "tension": "Fragmented",
+            "oscillation_type": "discontinuous",
+            "oscillation_dur": "2s"
+        },
+        {
+            "name": "C-PTSD",
+            "label": "C-PTSD (Multi)",
+            "color": "#aa96da",
+            "consistency": 0.35,
+            "multi_spectrum_pct": 85.3,
+            "tension": "Shattered",
+            "oscillation_type": "overlapping",
+            "oscillation_dur": "3s"
+        },
+        {
+            "name": "Depression",
+            "label": "Depression (Collapsed)",
+            "color": "#34495e",
+            "consistency": 0.78,
+            "multi_spectrum_pct": 15.2,
+            "tension": "Collapsed",
+            "oscillation_type": "minimal",
+            "oscillation_dur": "6s"
+        }
+    ],
+
+    "interventions": [
+        { "name": "CBT for Depression (Priority)", "spectrum_key": "internalizing" },
+        { "name": "Reality Testing Exercises",      "spectrum_key": "thought-disorder" },
+        { "name": "Attachment-Based Therapy",       "spectrum_key": "detachment" },
+        { "name": "Somatic Experiencing",           "spectrum_key": "somatoform" }
+    ],
+    "intervention_confidence_pct": 73,
+
+    "response_text": [
+        "\"I hear that you're",
+        "experiencing anxiety.",
+        "Let's work on some",
+        "grounding techniques...\""
+    ],
+
+    "sample_text": [
+        "I've been feeling",
+        "anxious lately...",
+        "can't shake it"
+    ],
+
+    "legend": {
+        "string_label": "Core Identity String (Fundamental Frequency)",
+        "compactified_label": "Compactified Dimensions (Hidden Symptoms)",
+        "interpretations": [
+            "Tight compactification = Healthy regulation",
+            "Partial decompactification = Symptom emergence",
+            "Full decompactification = Clinical presentation",
+            "Hypercompactification = Emotional shutdown"
+        ]
+    },
+
+    "integration_note": {
+        "title": "HiTOP-String Integration Principle:",
+        "lines": [
+            "Consistency scores from Reddit data (your metric) directly map to string tension.",
+            "Multi-spectrum presentations (41.2% baseline) indicate dimensional decompactification."
+        ]
+    }
+}

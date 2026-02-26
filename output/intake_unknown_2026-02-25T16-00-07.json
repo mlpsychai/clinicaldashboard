@@ -1,0 +1,181 @@
+{
+  "patient_info": {},
+  "insurance": {},
+  "referral": {
+    "how_heard": "Paper Flower Psychiatry",
+    "reason_for_visit": "CT seems very anxious. He's talking about different ways to die. He says that no one wants him around. He seems afraid to try hard things (i.e., starts a sport and love it until it gets hard). Says kids are laughing at him. I think he is missing his grandpa (he called him poppa) who died in 2024."
+  },
+  "child_info": {
+    "child_strengths": "CT  is fun, social, energetic and whip smart. He is very capable in many ways and is very kind hearted",
+    "diagnosis_explanations": "Bre thinks he is dealing with loss of grandfather and also possibly starting to wonder about his dad."
+  },
+  "living_situation": {
+    "living_with": "Mother and little brother",
+    "household_members": "3 people. Mom, Samantha 58. Charlie, 6. Sammy, 2",
+    "home_stressors": "I am going through menopause and was super grumpy for the month of January. I started HRT and feel SO much better.",
+    "is_adopted": "He is a donated frozen embryo child. We have an open relationship with the bio parents and will tell him when he starts asking more."
+  },
+  "parents": {
+    "marital_status": [],
+    "previous_marriages": "None"
+  },
+  "biological_mother": {
+    "mother_name": "CT's Mother",
+    "mother_age": "58",
+    "mother_education": "PhD",
+    "mother_occupation": "Senior Instructor of English"
+  },
+  "biological_father": {},
+  "siblings": {
+    "siblings_table": []
+  },
+  "birth_history": {
+    "mother_age_at_birth": "52",
+    "smoked_during_pregnancy": "No",
+    "alcohol_during_pregnancy": "No",
+    "drugs_during_pregnancy": "No",
+    "pregnancy_complications": "No",
+    "premature_or_late": "38 weeks",
+    "stress_trauma_exposure": "No",
+    "cesarean": "Yes",
+    "normally_active": "Yes",
+    "defects_at_birth": "No",
+    "parent_adjustment_problems": "No",
+    "early_separations": "No"
+  },
+  "infancy_period": {
+    "infancy_conditions": []
+  },
+  "developmental_history": {
+    "first_words_age": "12mo",
+    "first_sentences_age": "18mo",
+    "phrases_age": "18mo",
+    "sitting_age": "6mo",
+    "crawling_age": "9mo",
+    "standing_age": "12mo",
+    "walking_age": "14mo",
+    "self_help_skills": "Average",
+    "bowel_trained_age": "2",
+    "bladder_trained_age": "2",
+    "started_reading_age": "5",
+    "more_accidents": "no",
+    "athletic_abilities": "climbing, swinging",
+    "handedness": "Left"
+  },
+  "environmental_exposures": {
+    "polluted_area": "No",
+    "new_carpeting_paint": "No",
+    "sensitive_perfumes_dyes": "No",
+    "pesticides_chemicals": "No",
+    "house_year_built": "1974",
+    "live_near": [],
+    "flooring_type": "Area rugs"
+  },
+  "early_behaviors": {
+    "early_behaviors_checklist": [
+      "adaptable",
+      "plays_alone",
+      "easy_to_manage",
+      "sensitive",
+      "playful",
+      "happy"
+    ]
+  },
+  "current_behaviors": {
+    "self_esteem_concerns": "a little. He's comparing himself to all of the other kids.",
+    "sexual_knowledge": "limited. i've taught him his body parts but nothing more yet.",
+    "gender_identity": "male",
+    "sexual_orientation": "?Straight?",
+    "current_behaviors_checklist": [
+      "anxiety",
+      "moodiness",
+      "lying",
+      "crying_episodes"
+    ],
+    "discipline_methods": "I'm trying to be authoritative with him. I talk to him in adult language, and I allow all of his expressions of emotion. Lately, he seems a little defiant, or just moody. It feels like something he's learned at school. Normally, we get along pretty well, and he seems able to tell me hard things and to be himself, good, bad, or neutral.",
+    "recent_move": "No",
+    "significant_losses": "My father died of Parkinson's in 2024. It was a big loss for all of us.",
+    "intelligence_rating": "He's super intelligent."
+  },
+  "free_time": {
+    "free_time_activities": "Reading, doing Lego, swinging on his swing, baking, drawing, board games.",
+    "tv_hours_daily": "1",
+    "tv_age_appropriate": "Appropriate for 2-6 year olds; no violence other than nature shows on PBS.",
+    "videogame_types": "None"
+  },
+  "school_history": {
+    "attended_daycare": "Yes",
+    "daycare_hours_per_week": "24",
+    "before_after_school": "He's home with me.",
+    "school_performance": [
+      {
+        "school_level": "Elementary",
+        "school_name": "NA",
+        "school_performance_notes": "He's in the top range of his class. Has already completed 95% of required work for the entire year. Struggling to make friends possibly"
+      }
+    ],
+    "subject_strengths": "math, reading, geography",
+    "subject_weaknesses": "words their way",
+    "school_problems": [
+      "poor_handwriting"
+    ],
+    "extracurricular": "PIckleball lessons In the past he has done mountain biking with FLYRS (gave up when it got harder) and he likes rock climbing, which we will do again once the weather changes and I can do things up in Flag with Sammy",
+    "additional_school_comments": "His two closest friends seem to have some psychological issues. They keep telling him different ways to die, among other things. One is\nenmeshed in an ugly divorce and the other kid's parents just had a baby after a divorce and nine year"
+  },
+  "social_development": {
+    "socialized_as_child": "Yes, mostly.",
+    "age_appropriate_friends": "He tends to like older kids or much younger kids.",
+    "peer_interactions": [
+      "plays_well",
+      "teased",
+      "shares_well",
+      "plays_older",
+      "plays_younger",
+      "leader",
+      "few_friends",
+      "bragging"
+    ]
+  },
+  "medical_history": {
+    "surgeries": "tonsillectomy/adenoidectomy (1/2026)",
+    "neurologic_evaluation": "No",
+    "vision_tested_age": "age 6",
+    "vision_results": "normal",
+    "hearing_tested_age": "0",
+    "hearing_results": "normal",
+    "vaccination_history": "caught up"
+  },
+  "nutrition": {
+    "current_height": "49 inches",
+    "current_weight": "52 lbs",
+    "appetite_diet": "He eats widely and well.",
+    "diet_type": [
+      "meat",
+      "organic"
+    ],
+    "diet_type_other": "on",
+    "food_allergies": "No",
+    "stool_pattern": "once or twice daily--normal",
+    "water_intake": "2-3 water bottles 12-16 oz each"
+  },
+  "present_medical": {
+    "medications": [
+      {
+        "medication_name": "flonase one spray daily; zyrtec 10 mg"
+      }
+    ],
+    "supplements": [
+      {
+        "supplement_name": "Olly multivitamin with probiotics"
+      }
+    ],
+    "medication_allergies": "juniper, various tree",
+    "frequent_complaints": [],
+    "sleep_description": "7:30-8:00 is bedtime. He sleeps well, but moves around a fair amount. Sleeps until around 7"
+  },
+  "past_psychiatric": {
+    "past_providers": []
+  },
+  "spiritual": {},
+  "other_concerns": {}
+}

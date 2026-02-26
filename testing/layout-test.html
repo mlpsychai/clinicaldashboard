@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Test — Supervisee Clinical Progression</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #FFF8DC;
+            color: #3E2216;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: #EF4E4A;
+            padding: 64px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Permanent Marker';
+            font-size: 60px;
+            color: #FFF8DC;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #FFF8DC;
+            font-size: 28px;
+            opacity: 0.85;
+        }
+
+        .section-block {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 48px 48px;
+        }
+
+        h2 {
+            font-family: 'Permanent Marker';
+            font-size: 40px;
+            color: #EF4E4A;
+            margin-bottom: 28px;
+        }
+
+        h3 {
+            font-family: 'Permanent Marker';
+            font-size: 28px;
+            color: #EF4E4A;
+            margin-bottom: 18px;
+        }
+
+        .comp-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            margin-bottom: 24px;
+        }
+
+        .comp-item {
+            margin-bottom: 18px;
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 22px;
+            color: #3E2216;
+        }
+
+        .comp-row span:last-child {
+            color: #C28A52;
+        }
+
+        .comp-bar {
+            height: 14px;
+            background: #FDDCAD;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .comp-fill {
+            height: 100%;
+            border-radius: 7px;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 64px;
+            margin-bottom: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Permanent Marker';
+            font-size: 56px;
+            color: #EF4E4A;
+        }
+
+        .stat-label {
+            font-size: 22px;
+            color: #C28A52;
+        }
+
+        .milestone-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px dashed #FDDCAD;
+            font-size: 22px;
+            color: #3E2216;
+        }
+
+        .milestone-row:last-child { border-bottom: none; }
+
+        .m-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .m-date {
+            margin-left: auto;
+            color: #C28A52;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        .notes-text {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #3E2216;
+        }
+
+        .version-label {
+            font-family: 'Permanent Marker';
+            font-size: 18px;
+            color: #FFF8DC;
+            padding: 12px 24px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .version-divider {
+            height: 6px;
+            background: #FDDCAD;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="version-label" style="background:#EF4E4A">Version A — Cadmium Red #EF4E4A</div>
+    <div class="hero">
+        <h1>Clinical Progression</h1>
+        <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+    </div>
+
+    <div class="section-block">
+        <h2>Competency Ratings</h2>
+        <div class="comp-group">
+            <div>
+                <h3>Assessment</h3>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Diagnostic Interviewing</span><span>85%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Test Administration</span><span>78%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:78%; background:#F28C37"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Report Writing</span><span>82%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+                </div>
+            </div>
+            <div>
+                <h3>Intervention</h3>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Individual Therapy</span><span>72%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:72%; background:#C28A52"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Treatment Planning</span><span>68%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Crisis Intervention</span><span>55%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:55%; background:#C28A52"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>Hours Summary</h2>
+        <div class="stat-row">
+            <div class="stat-item">
+                <div class="stat-num">247</div>
+                <div class="stat-label">Direct</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">183</div>
+                <div class="stat-label">Indirect</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">96</div>
+                <div class="stat-label">Supervision</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num" style="color:#3E2216">526</div>
+                <div class="stat-label">Total</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>Milestones</h2>
+        <div class="milestone-row"><div class="m-dot" style="background:#EF4E4A"></div>Completed intake assessment training<span class="m-date">Jan 15, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#F28C37"></div>First independent therapy session<span class="m-date">Feb 3, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#C3B0CF"></div>Ethics case presentation — passed<span class="m-date">Mar 12, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#C28A52"></div>Mid-year evaluation — meets expectations<span class="m-date">Apr 2026</span></div>
+    </div>
+
+    <div class="section-block">
+        <h2>Supervisor Notes</h2>
+        <p class="notes-text">Jane continues to show excellent growth in her clinical skills. Her assessment reports have become notably more thorough and her conceptualizations more nuanced. We are working on increasing her comfort with process-oriented interventions. Recommend focusing on group therapy experience next semester.</p>
+    </div>
+
+    <!-- ========== VERSION B — SLIGHTLY DARKER RED ========== -->
+    <div class="version-divider"></div>
+    <div class="version-label" style="background:#D93B38">Version B — Darker Red #D93B38</div>
+    <div class="hero" style="background:#D93B38">
+        <h1>Clinical Progression</h1>
+        <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#D93B38">Competency Ratings</h2>
+        <div class="comp-group">
+            <div>
+                <h3 style="color:#D93B38">Assessment</h3>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Diagnostic Interviewing</span><span>85%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Test Administration</span><span>78%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:78%; background:#F28C37"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Report Writing</span><span>82%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color:#D93B38">Intervention</h3>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Individual Therapy</span><span>72%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:72%; background:#C28A52"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Treatment Planning</span><span>68%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Crisis Intervention</span><span>55%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:55%; background:#C28A52"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#D93B38">Hours Summary</h2>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#D93B38">247</div><div class="stat-label">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#D93B38">183</div><div class="stat-label">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#D93B38">96</div><div class="stat-label">Supervision</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#3E2216">526</div><div class="stat-label">Total</div></div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#D93B38">Milestones</h2>
+        <div class="milestone-row"><div class="m-dot" style="background:#D93B38"></div>Completed intake assessment training<span class="m-date">Jan 15, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#F28C37"></div>First independent therapy session<span class="m-date">Feb 3, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#C3B0CF"></div>Ethics case presentation — passed<span class="m-date">Mar 12, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#C28A52"></div>Mid-year evaluation — meets expectations<span class="m-date">Apr 2026</span></div>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#D93B38">Supervisor Notes</h2>
+        <p class="notes-text">Jane continues to show excellent growth in her clinical skills. Her assessment reports have become notably more thorough and her conceptualizations more nuanced. We are working on increasing her comfort with process-oriented interventions. Recommend focusing on group therapy experience next semester.</p>
+    </div>
+
+    <!-- ========== VERSION C — DEEP RED ========== -->
+    <div class="version-divider"></div>
+    <div class="version-label" style="background:#B22828">Version C — Deep Red #B22828</div>
+    <div class="hero" style="background:#B22828">
+        <h1>Clinical Progression</h1>
+        <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#B22828">Competency Ratings</h2>
+        <div class="comp-group">
+            <div>
+                <h3 style="color:#B22828">Assessment</h3>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Diagnostic Interviewing</span><span>85%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:85%; background:#F28C37"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Test Administration</span><span>78%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:78%; background:#F28C37"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Report Writing</span><span>82%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color:#B22828">Intervention</h3>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Individual Therapy</span><span>72%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:72%; background:#C28A52"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Treatment Planning</span><span>68%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+                </div>
+                <div class="comp-item">
+                    <div class="comp-row"><span>Crisis Intervention</span><span>55%</span></div>
+                    <div class="comp-bar"><div class="comp-fill" style="width:55%; background:#C28A52"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#B22828">Hours Summary</h2>
+        <div class="stat-row">
+            <div class="stat-item"><div class="stat-num" style="color:#B22828">247</div><div class="stat-label">Direct</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#B22828">183</div><div class="stat-label">Indirect</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#B22828">96</div><div class="stat-label">Supervision</div></div>
+            <div class="stat-item"><div class="stat-num" style="color:#3E2216">526</div><div class="stat-label">Total</div></div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#B22828">Milestones</h2>
+        <div class="milestone-row"><div class="m-dot" style="background:#B22828"></div>Completed intake assessment training<span class="m-date">Jan 15, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#F28C37"></div>First independent therapy session<span class="m-date">Feb 3, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#C3B0CF"></div>Ethics case presentation — passed<span class="m-date">Mar 12, 2026</span></div>
+        <div class="milestone-row"><div class="m-dot" style="background:#C28A52"></div>Mid-year evaluation — meets expectations<span class="m-date">Apr 2026</span></div>
+    </div>
+
+    <div class="section-block">
+        <h2 style="color:#B22828">Supervisor Notes</h2>
+        <p class="notes-text">Jane continues to show excellent growth in her clinical skills. Her assessment reports have become notably more thorough and her conceptualizations more nuanced. We are working on increasing her comfort with process-oriented interventions. Recommend focusing on group therapy experience next semester.</p>
+    </div>
+
+</body>
+</html>

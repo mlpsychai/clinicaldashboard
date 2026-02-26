@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Font Pairing Test — Permanent Marker Headings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Short+Stack&family=Gaegu:wght@400;700&family=Patrick+Hand&family=Finger+Paint&family=Bubblegum+Sans&family=Just+Another+Hand&family=Caveat:wght@400;700&family=Fredoka:wght@400;500;600;700&family=Concert+One&family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #FFF8DC;
+            color: #6E3A20;
+            font-family: sans-serif;
+            padding: 48px;
+        }
+
+        .page-header {
+            font-family: 'Permanent Marker';
+            font-size: 32px;
+            color: #6E3A20;
+            margin-bottom: 4px;
+        }
+
+        .page-sub {
+            font-family: sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #C28A52;
+            margin-bottom: 48px;
+        }
+
+        .pairing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .pairing-card {
+            background: #FEF0E1;
+            border-radius: 10px;
+            padding: 28px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .pairing-label {
+            font-family: sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #E4363A;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #FDDCAD;
+        }
+
+        .pairing-heading {
+            font-family: 'Permanent Marker';
+            font-size: 26px;
+            color: #6E3A20;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .pairing-subheading {
+            font-size: 15px;
+            color: #C28A52;
+            margin-bottom: 16px;
+        }
+
+        .pairing-body {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #6E3A20;
+            margin-bottom: 16px;
+        }
+
+        .pairing-metrics {
+            margin-bottom: 16px;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 0;
+            border-bottom: 1px solid #FDDCAD;
+            font-size: 13px;
+        }
+
+        .metric-row:last-child { border-bottom: none; }
+
+        .metric-value {
+            font-family: 'Permanent Marker';
+            font-size: 18px;
+            color: #E4363A;
+        }
+
+        .progress-track {
+            height: 8px;
+            background: #FFF8DC;
+            border-radius: 4px;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .progress-label span:last-child {
+            font-weight: 700;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 0;
+            border-bottom: 1px solid #FDDCAD;
+            font-size: 13px;
+        }
+
+        .milestone-item:last-child { border-bottom: none; }
+
+        .milestone-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .milestone-date {
+            font-size: 11px;
+            color: #C28A52;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .section-divider {
+            font-family: sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #E4363A;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #FEF0E1;
+        }
+
+        /* Full-width comparison */
+        .full-card {
+            background: #FEF0E1;
+            border-radius: 10px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .full-card .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">Body Font Pairings</div>
+    <p class="page-sub">Heading: Permanent Marker — Testing body font candidates</p>
+
+    <!-- HANDWRITTEN PAIRINGS -->
+    <div class="section-divider">Handwritten Body Fonts</div>
+    <div class="pairing-grid">
+
+        <!-- Patrick Hand -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Patrick Hand</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Patrick Hand'">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Patrick Hand'">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Patrick Hand'">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Patrick Hand'">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+        <!-- Short Stack -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Short Stack</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Short Stack'">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Short Stack'">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Short Stack'">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Short Stack'">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+        <!-- Gaegu -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Gaegu</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Gaegu'; font-size:17px">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Gaegu'; font-size:16px">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Gaegu'; font-size:15px">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Gaegu'">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+        <!-- Caveat -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Caveat</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Caveat'; font-weight:700; font-size:18px">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Caveat'; font-size:17px">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Caveat'; font-size:16px">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Caveat'; font-size:15px">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+        <!-- Just Another Hand -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Just Another Hand</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Just Another Hand'; font-size:22px">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Just Another Hand'; font-size:20px">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Just Another Hand'; font-size:19px">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Just Another Hand'; font-size:18px">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+        <!-- Bubblegum Sans -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Bubblegum Sans</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Bubblegum Sans'">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Bubblegum Sans'">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Bubblegum Sans'">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Bubblegum Sans'">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ROUNDED / CLEAN PAIRINGS -->
+    <div class="section-divider">Rounded &amp; Clean Body Fonts</div>
+    <div class="pairing-grid">
+
+        <!-- Fredoka -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Fredoka</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Fredoka'; font-weight:500">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Fredoka'; font-weight:400">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Fredoka'; font-weight:400">
+                <div class="progress-label"><span>Assessment</span><span style="font-weight:600">82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span style="font-weight:600">68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Fredoka'; font-weight:500">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+        <!-- Finger Paint -->
+        <div class="pairing-card">
+            <div class="pairing-label">Body: Finger Paint</div>
+            <div class="pairing-heading">Clinical Progression</div>
+            <div class="pairing-subheading" style="font-family:'Finger Paint'">Psychology Doctoral Supervisee — Year 2</div>
+            <div class="pairing-body" style="font-family:'Finger Paint'">
+                Supervisee has demonstrated strong growth in assessment and intervention skills. Therapeutic rapport building continues to improve across diverse client populations.
+            </div>
+            <div class="pairing-metrics" style="font-family:'Finger Paint'">
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div style="font-family:'Finger Paint'">
+                <span class="tag" style="background:#FBD9DE; color:#6E3A20">Assessment</span>
+                <span class="tag" style="background:#FDDCAD; color:#6E3A20">Intervention</span>
+                <span class="tag" style="background:#C3B0CF; color:#6E3A20">Ethics</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FULL-WIDTH DETAILED COMPARISON -->
+    <div class="section-divider">Full Layout Preview — Top 3 Pairings</div>
+
+    <!-- Patrick Hand full -->
+    <div class="full-card">
+        <div class="pairing-label">Permanent Marker + Patrick Hand</div>
+        <div class="pairing-heading" style="font-size:30px">Clinical Progression Tracker</div>
+        <div style="font-family:'Patrick Hand'; font-size:16px; color:#C28A52; margin-bottom:16px">Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</div>
+        <div class="two-col">
+            <div style="font-family:'Patrick Hand'">
+                <div style="font-family:'Permanent Marker'; font-size:18px; margin-bottom:12px; color:#6E3A20">Competency Ratings</div>
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+                <div class="progress-label"><span>Ethics &amp; Legal</span><span>91%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:91%; background:#E4363A"></div></div>
+                <div class="progress-label"><span>Cultural Competence</span><span>75%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:75%; background:#C3B0CF"></div></div>
+            </div>
+            <div style="font-family:'Patrick Hand'">
+                <div style="font-family:'Permanent Marker'; font-size:18px; margin-bottom:12px; color:#6E3A20">Milestones</div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#E4363A"></div>Completed intake assessment training<span class="milestone-date">Jan 2026</span></div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#F28C37"></div>First independent therapy session<span class="milestone-date">Feb 2026</span></div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#C3B0CF"></div>Ethics case presentation<span class="milestone-date">Mar 2026</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Short Stack full -->
+    <div class="full-card">
+        <div class="pairing-label">Permanent Marker + Short Stack</div>
+        <div class="pairing-heading" style="font-size:30px">Clinical Progression Tracker</div>
+        <div style="font-family:'Short Stack'; font-size:15px; color:#C28A52; margin-bottom:16px">Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</div>
+        <div class="two-col">
+            <div style="font-family:'Short Stack'">
+                <div style="font-family:'Permanent Marker'; font-size:18px; margin-bottom:12px; color:#6E3A20">Competency Ratings</div>
+                <div class="progress-label"><span>Assessment</span><span>82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span>68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+                <div class="progress-label"><span>Ethics &amp; Legal</span><span>91%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:91%; background:#E4363A"></div></div>
+                <div class="progress-label"><span>Cultural Competence</span><span>75%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:75%; background:#C3B0CF"></div></div>
+            </div>
+            <div style="font-family:'Short Stack'">
+                <div style="font-family:'Permanent Marker'; font-size:18px; margin-bottom:12px; color:#6E3A20">Milestones</div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#E4363A"></div>Completed intake assessment training<span class="milestone-date">Jan 2026</span></div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#F28C37"></div>First independent therapy session<span class="milestone-date">Feb 2026</span></div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#C3B0CF"></div>Ethics case presentation<span class="milestone-date">Mar 2026</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fredoka full -->
+    <div class="full-card">
+        <div class="pairing-label">Permanent Marker + Fredoka</div>
+        <div class="pairing-heading" style="font-size:30px">Clinical Progression Tracker</div>
+        <div style="font-family:'Fredoka'; font-weight:500; font-size:15px; color:#C28A52; margin-bottom:16px">Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</div>
+        <div class="two-col">
+            <div style="font-family:'Fredoka'; font-weight:400">
+                <div style="font-family:'Permanent Marker'; font-size:18px; margin-bottom:12px; color:#6E3A20">Competency Ratings</div>
+                <div class="progress-label"><span>Assessment</span><span style="font-weight:600">82%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:82%; background:#F28C37"></div></div>
+                <div class="progress-label"><span>Intervention</span><span style="font-weight:600">68%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:68%; background:#C28A52"></div></div>
+                <div class="progress-label"><span>Ethics &amp; Legal</span><span style="font-weight:600">91%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:91%; background:#E4363A"></div></div>
+                <div class="progress-label"><span>Cultural Competence</span><span style="font-weight:600">75%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:75%; background:#C3B0CF"></div></div>
+            </div>
+            <div style="font-family:'Fredoka'; font-weight:400">
+                <div style="font-family:'Permanent Marker'; font-size:18px; margin-bottom:12px; color:#6E3A20">Milestones</div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#E4363A"></div>Completed intake assessment training<span class="milestone-date" style="font-family:'Fredoka'">Jan 2026</span></div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#F28C37"></div>First independent therapy session<span class="milestone-date" style="font-family:'Fredoka'">Feb 2026</span></div>
+                <div class="milestone-item"><div class="milestone-dot" style="background:#C3B0CF"></div>Ethics case presentation<span class="milestone-date" style="font-family:'Fredoka'">Mar 2026</span></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

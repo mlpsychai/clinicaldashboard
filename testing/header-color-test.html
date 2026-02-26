@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Color Test — Supervisee Clinical Progression</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #FFF8DC;
+            color: #6E3A20;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            line-height: 1.6;
+            padding: 48px;
+        }
+
+        .page-title {
+            font-family: 'Permanent Marker';
+            font-size: 40px;
+            color: #6E3A20;
+            margin-bottom: 8px;
+        }
+
+        .page-sub {
+            font-size: 20px;
+            color: #C28A52;
+            margin-bottom: 48px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        .hero-sample {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .hero-bar {
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .hero-bar h2 {
+            font-family: 'Permanent Marker';
+            font-size: 36px;
+            color: #FFF8DC;
+            margin-bottom: 6px;
+        }
+
+        .hero-bar p {
+            font-size: 20px;
+            color: #FFF8DC;
+            opacity: 0.85;
+        }
+
+        .hero-info {
+            background: #FEF0E1;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-info .color-name {
+            font-family: 'Permanent Marker';
+            font-size: 20px;
+            color: #6E3A20;
+        }
+
+        .hero-info .color-hex {
+            font-size: 18px;
+            color: #C28A52;
+        }
+
+        /* Also show with Burnt Umber text to test contrast */
+        .section-label {
+            font-family: 'Permanent Marker';
+            font-size: 28px;
+            color: #6E3A20;
+            margin-bottom: 20px;
+            margin-top: 16px;
+        }
+
+        .full-preview {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 32px;
+        }
+
+        .full-hero {
+            padding: 48px;
+            text-align: center;
+        }
+
+        .full-hero h1 {
+            font-family: 'Permanent Marker';
+            font-size: 52px;
+            color: #FFF8DC;
+            margin-bottom: 8px;
+        }
+
+        .full-hero p {
+            font-size: 24px;
+            color: #FFF8DC;
+            opacity: 0.85;
+        }
+
+        .full-body {
+            background: #FFF8DC;
+            padding: 36px 40px;
+        }
+
+        .full-body h3 {
+            font-family: 'Permanent Marker';
+            font-size: 32px;
+            color: #6E3A20;
+            margin-bottom: 16px;
+        }
+
+        .comp-item {
+            margin-bottom: 14px;
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 20px;
+        }
+
+        .comp-bar {
+            height: 12px;
+            background: #FEF0E1;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .comp-fill {
+            height: 100%;
+            border-radius: 6px;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .stat-chip {
+            border-radius: 10px;
+            padding: 16px 24px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-chip .num {
+            font-family: 'Permanent Marker';
+            font-size: 36px;
+        }
+
+        .stat-chip .lbl {
+            font-size: 18px;
+            color: #6E3A20;
+        }
+
+        .preview-label {
+            background: #6E3A20;
+            color: #FFF8DC;
+            font-family: 'Permanent Marker';
+            font-size: 16px;
+            padding: 8px 20px;
+            display: inline-block;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-title">Header Color Comparison</div>
+    <p class="page-sub">All candidates shown with Cornsilk (#FFF8DC) text</p>
+
+    <div class="hero-grid">
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#F4918A">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R14 — Light Rouge</span>
+                <span class="color-hex">#F4918A</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#F47063">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R17 — Lipstick Orange</span>
+                <span class="color-hex">#F47063</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#F6C1AA">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R21 — Sardonyx</span>
+                <span class="color-hex">#F6C1AA</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#F6A895">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R22 — Light Prawn</span>
+                <span class="color-hex">#F6A895</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#EE7E6D">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R24 — Prawn</span>
+                <span class="color-hex">#EE7E6D</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#EF4E4A">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R27 — Cadmium Red</span>
+                <span class="color-hex">#EF4E4A</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#F28574">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R35 — Coral</span>
+                <span class="color-hex">#F28574</span>
+            </div>
+        </div>
+
+        <div class="hero-sample">
+            <div class="hero-bar" style="background:#E4363A">
+                <h2>Clinical Progression</h2>
+                <p>Jane Doe — Practicum Year 2</p>
+            </div>
+            <div class="hero-info">
+                <span class="color-name">R29 — Lipstick Red (original)</span>
+                <span class="color-hex">#E4363A</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full layout previews for the top contenders -->
+    <div class="section-label">Full Layout Previews</div>
+
+    <div class="preview-label">R17 — Lipstick Orange #F47063</div>
+    <div class="full-preview">
+        <div class="full-hero" style="background:#F47063">
+            <h1>Clinical Progression</h1>
+            <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+        </div>
+        <div class="full-body">
+            <h3>Competency Ratings</h3>
+            <div class="comp-item">
+                <div class="comp-row"><span>Assessment</span><span>82%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+            </div>
+            <div class="comp-item">
+                <div class="comp-row"><span>Intervention</span><span>68%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-chip" style="background:#FBD9DE"><div class="num" style="color:#F47063">247</div><div class="lbl">Direct</div></div>
+                <div class="stat-chip" style="background:#FDDCAD"><div class="num" style="color:#F47063">183</div><div class="lbl">Indirect</div></div>
+                <div class="stat-chip" style="background:#C3B0CF"><div class="num" style="color:#F47063">96</div><div class="lbl">Supervision</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-label">R24 — Prawn #EE7E6D</div>
+    <div class="full-preview">
+        <div class="full-hero" style="background:#EE7E6D">
+            <h1>Clinical Progression</h1>
+            <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+        </div>
+        <div class="full-body">
+            <h3>Competency Ratings</h3>
+            <div class="comp-item">
+                <div class="comp-row"><span>Assessment</span><span>82%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+            </div>
+            <div class="comp-item">
+                <div class="comp-row"><span>Intervention</span><span>68%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-chip" style="background:#FBD9DE"><div class="num" style="color:#EE7E6D">247</div><div class="lbl">Direct</div></div>
+                <div class="stat-chip" style="background:#FDDCAD"><div class="num" style="color:#EE7E6D">183</div><div class="lbl">Indirect</div></div>
+                <div class="stat-chip" style="background:#C3B0CF"><div class="num" style="color:#EE7E6D">96</div><div class="lbl">Supervision</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-label">R35 — Coral #F28574</div>
+    <div class="full-preview">
+        <div class="full-hero" style="background:#F28574">
+            <h1>Clinical Progression</h1>
+            <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+        </div>
+        <div class="full-body">
+            <h3>Competency Ratings</h3>
+            <div class="comp-item">
+                <div class="comp-row"><span>Assessment</span><span>82%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+            </div>
+            <div class="comp-item">
+                <div class="comp-row"><span>Intervention</span><span>68%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-chip" style="background:#FBD9DE"><div class="num" style="color:#F28574">247</div><div class="lbl">Direct</div></div>
+                <div class="stat-chip" style="background:#FDDCAD"><div class="num" style="color:#F28574">183</div><div class="lbl">Indirect</div></div>
+                <div class="stat-chip" style="background:#C3B0CF"><div class="num" style="color:#F28574">96</div><div class="lbl">Supervision</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-label">R27 — Cadmium Red #EF4E4A</div>
+    <div class="full-preview">
+        <div class="full-hero" style="background:#EF4E4A">
+            <h1>Clinical Progression</h1>
+            <p>Jane Doe — Psychology Doctoral Supervisee — Practicum Year 2</p>
+        </div>
+        <div class="full-body">
+            <h3>Competency Ratings</h3>
+            <div class="comp-item">
+                <div class="comp-row"><span>Assessment</span><span>82%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:82%; background:#F28C37"></div></div>
+            </div>
+            <div class="comp-item">
+                <div class="comp-row"><span>Intervention</span><span>68%</span></div>
+                <div class="comp-bar"><div class="comp-fill" style="width:68%; background:#C28A52"></div></div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-chip" style="background:#FBD9DE"><div class="num" style="color:#EF4E4A">247</div><div class="lbl">Direct</div></div>
+                <div class="stat-chip" style="background:#FDDCAD"><div class="num" style="color:#EF4E4A">183</div><div class="lbl">Indirect</div></div>
+                <div class="stat-chip" style="background:#C3B0CF"><div class="num" style="color:#EF4E4A">96</div><div class="lbl">Supervision</div></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

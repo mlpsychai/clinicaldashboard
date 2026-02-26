@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisee Clinical Progression Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           DESIGN SYSTEM CONFIG
+           Supervisee Clinical Progression Tracker
+           ============================================ */
+
+        :root {
+            /* --- FONTS --- */
+            --font-heading:             'Permanent Marker', cursive;
+            --font-body:                'Patrick Hand', cursive;
+            --text-transform:           uppercase;
+
+            /* --- FONT SIZES --- */
+            --size-h1:                  60px;
+            --size-h2:                  40px;
+            --size-h3:                  28px;
+            --size-body:                22px;
+            --size-secondary:           20px;
+            --size-stat-number:         48px;
+
+            /* --- TEXT COLORS --- */
+            --color-h1:                 #3E2216;
+            --color-h2:                 #D93B38;
+            --color-h3:                 #D93B38;
+            --color-body:               #3E2216;
+            --color-secondary:          #C28A52;
+            --color-hero-text:          #FFF8DC;
+
+            /* --- BACKGROUNDS --- */
+            --bg-page:                  rgba(253, 220, 173, 0.25);
+            --bg-hero:                  #D93B38;
+
+            /* --- PROGRESS BARS --- */
+            --bar-track:                #FBD9DE;
+            --bar-height:               14px;
+            --bar-radius:               7px;
+            --bar-fill-1:               #3E2216;   /* Dark Chocolate */
+            --bar-fill-2:               #C28A52;   /* Sepia */
+            --bar-fill-3:               #F28C37;   /* Cadmium Orange */
+            --bar-fill-4:               #F5C9A1;   /* Soft Sun */
+
+            /* --- MILESTONE DOTS --- */
+            --dot-size:                 14px;
+            --dot-1:                    #3E2216;   /* Dark Chocolate */
+            --dot-2:                    #C28A52;   /* Sepia */
+            --dot-3:                    #F28C37;   /* Cadmium Orange */
+            --dot-4:                    #F5C9A1;   /* Soft Sun */
+
+            /* --- DIVIDERS --- */
+            --divider-color:            #FDDCAD;
+            --divider-style:            dashed;
+
+            /* --- LAYOUT --- */
+            --max-width:                960px;
+            --section-padding:          48px;
+
+            /* --- FULL PALETTE REFERENCE --- */
+            --palette-cornsilk:         #FFF8DC;
+            --palette-sugared-almond:   #FBD9DE;
+            --palette-darker-red:       #D93B38;
+            --palette-cadmium-red:      #EF4E4A;
+            --palette-light-orange:     #FDDCAD;
+            --palette-soft-sun:         #F5C9A1;
+            --palette-cadmium-orange:   #F28C37;
+            --palette-sepia:            #C28A52;
+            --palette-burnt-umber:      #6E3A20;
+            --palette-dark-chocolate:   #3E2216;
+            --palette-prune:            #C3B0CF;
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-page);
+            color: var(--color-body);
+            font-family: var(--font-body);
+            font-size: var(--size-body);
+            line-height: 1.6;
+            text-transform: var(--text-transform);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: var(--size-h1);
+            color: var(--color-h1);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: var(--size-h2);
+            color: var(--color-h2);
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-family: var(--font-heading);
+            font-size: var(--size-h3);
+            color: var(--color-h3);
+            margin-bottom: 16px;
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: var(--section-padding) 0;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: var(--bg-hero);
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(239, 78, 74, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(110, 58, 32, 0.2) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--color-hero-text);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            color: var(--color-hero-text);
+            font-size: var(--size-h2);
+            font-family: var(--font-body);
+            letter-spacing: 1px;
+        }
+
+        /* --- DEMOGRAPHICS --- */
+        .demographics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 48px;
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .demo-label {
+            font-size: 30px;
+            color: var(--color-secondary);
+            letter-spacing: 1.5px;
+        }
+
+        .demo-value {
+            font-size: var(--size-body);
+            color: var(--color-body);
+        }
+
+        /* --- DIVIDER --- */
+        .divider {
+            border: none;
+            border-top: 3px var(--divider-style) var(--divider-color);
+            margin: 0;
+        }
+
+        /* --- FREE TEXT SECTIONS --- */
+        .free-text {
+            font-size: var(--size-body);
+            line-height: 1.8;
+            max-width: 780px;
+        }
+
+        /* --- BULLET NARRATIVE --- */
+        .bullet-narrative {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bullet-narrative li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        .bullet-narrative li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: var(--dot-size);
+            height: var(--dot-size);
+            border-radius: 50%;
+            background: var(--palette-sepia);
+        }
+
+        /* --- PROGRESS BAR COMPONENT --- */
+        .progress-group {
+            margin-bottom: 24px;
+        }
+
+        .progress-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .progress-label {
+            font-size: var(--size-body);
+            color: var(--color-body);
+            letter-spacing: 1px;
+        }
+
+        .progress-value {
+            font-size: var(--size-secondary);
+            color: var(--color-secondary);
+            font-family: var(--font-heading);
+        }
+
+        .progress-track {
+            width: 100%;
+            height: var(--bar-height);
+            background: var(--bar-track);
+            border-radius: var(--bar-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: var(--bar-radius);
+            transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.15) 50%,
+                transparent 100%
+            );
+        }
+
+        /* Color rotation for progress bars */
+        .progress-list > .progress-group:nth-child(4n+1) .progress-fill { background: var(--bar-fill-1); }
+        .progress-list > .progress-group:nth-child(4n+2) .progress-fill { background: var(--bar-fill-2); }
+        .progress-list > .progress-group:nth-child(4n+3) .progress-fill { background: var(--bar-fill-3); }
+        .progress-list > .progress-group:nth-child(4n+4) .progress-fill { background: var(--bar-fill-4); }
+
+        /* --- STATUS INDICATORS --- */
+        .status-key {
+            display: flex;
+            gap: 28px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .status-key-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: var(--size-secondary);
+            color: var(--color-secondary);
+        }
+
+        .status-arrow {
+            font-family: var(--font-heading);
+            font-size: var(--size-body);
+            font-style: normal;
+            text-transform: none;
+        }
+
+        .status-progressing {
+            color: #2D6A9F;
+        }
+
+        .status-declining {
+            color: var(--palette-darker-red);
+        }
+
+        .status-hold {
+            color: var(--palette-sepia);
+        }
+
+        /* --- IMAGE PLACEHOLDERS --- */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .image-placeholder {
+            aspect-ratio: 4 / 3;
+            border: 3px dashed var(--divider-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-secondary);
+            font-size: var(--size-secondary);
+            letter-spacing: 1px;
+        }
+
+        /* --- ICEBERG --- */
+        .iceberg-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .iceberg-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .stage-label {
+            position: absolute;
+            text-transform: uppercase;
+        }
+
+        .stage-label .stage-name {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .stage-label .stage-detail {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.3;
+        }
+
+        .stage-1 {
+            top: 18%;
+            right: 6%;
+            text-align: right;
+        }
+        .stage-1 .stage-name { color: #3E2216; }
+        .stage-1 .stage-detail { color: #6E3A20; }
+
+        .stage-2 {
+            top: 52%;
+            right: 6%;
+            text-align: right;
+        }
+        .stage-2 .stage-name { color: #FFF8DC; }
+        .stage-2 .stage-detail { color: rgba(255, 248, 220, 0.8); }
+
+        .stage-3 {
+            top: 66%;
+            left: 6%;
+            text-align: left;
+        }
+        .stage-3 .stage-name { color: #FFF8DC; }
+        .stage-3 .stage-detail { color: rgba(255, 248, 220, 0.7); }
+
+        .stage-4 {
+            top: 82%;
+            left: 6%;
+            text-align: left;
+        }
+        .stage-4 .stage-name { color: #F5C9A1; }
+
+
+        /* --- SUMMARY SECTION --- */
+        .summary-section {
+            background: var(--palette-dark-chocolate);
+            padding: 56px 0;
+        }
+
+        .summary-section h2 {
+            color: var(--palette-soft-sun);
+        }
+
+        .summary-text {
+            color: var(--palette-cornsilk);
+            font-size: var(--size-body);
+            line-height: 1.9;
+            max-width: 780px;
+        }
+
+        .summary-signature {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 2px dashed var(--palette-burnt-umber);
+        }
+
+        .summary-signature .demo-label {
+            color: var(--palette-sepia);
+        }
+
+        .summary-signature .demo-value {
+            color: var(--palette-cornsilk);
+        }
+
+        /* --- STAGE LEGEND --- */
+        .stage-legend {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stage-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: var(--size-secondary);
+            color: var(--color-secondary);
+        }
+
+        .stage-dot {
+            width: var(--dot-size);
+            height: var(--dot-size);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-in:nth-child(1) { animation-delay: 0.05s; }
+        .animate-in:nth-child(2) { animation-delay: 0.1s; }
+        .animate-in:nth-child(3) { animation-delay: 0.15s; }
+        .animate-in:nth-child(4) { animation-delay: 0.2s; }
+        .animate-in:nth-child(5) { animation-delay: 0.25s; }
+        .animate-in:nth-child(6) { animation-delay: 0.3s; }
+        .animate-in:nth-child(7) { animation-delay: 0.35s; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 700px) {
+            :root {
+                --size-h1: 36px;
+                --size-h2: 28px;
+                --size-h3: 22px;
+                --size-body: 18px;
+            }
+
+            .demographics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stage-label .stage-name { font-size: 12px; }
+            .stage-label .stage-detail { font-size: 14px; }
+
+            .stage-legend {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         S1 — HERO / DEMOGRAPHICS
+         ============================================ -->
+    <header class="hero">
+        <div class="container">
+            <h1>Supervisee Clinical Progression Tracker</h1>
+        </div>
+    </header>
+
+    <section id="demographics">
+        <div class="container">
+            <h2>Supervisee Demographics</h2>
+            <div class="demographics-grid">
+                <div class="demo-item">
+                    <span class="demo-label">SOUPE</span>
+                    <span class="demo-value">CE</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Age</span>
+                    <span class="demo-value" style="text-transform: none;">20s</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">SOUP</span>
+                    <span class="demo-value">Sean</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Gender</span>
+                    <span class="demo-value">N.D.</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Sexuality</span>
+                    <span class="demo-value">N.D.</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Spirituality</span>
+                    <span class="demo-value">N.D.</span>
+                </div>
+                <div class="demo-item" style="grid-column: 1 / -1;">
+                    <span class="demo-label">Personality (Inferred)</span>
+                    <span class="demo-value">ISFJ — The Defender<br><span style="padding-left: 32px; display: inline-block; margin-top: 8px;">Quiet, responsible, and deeply attuned to the needs of others. Motivated by a sense of duty and care, with a preference for structure, consistency, and meaningful contribution behind the scenes.</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S2 — THEORETICAL ORIENTATION
+         ============================================ -->
+    <section id="theoretical-orientation">
+        <div class="container">
+            <h2>Theoretical Orientation</h2>
+            <p class="free-text" style="margin-bottom: 12px;">Exploring:</p>
+            <ul class="bullet-narrative">
+                <li>Acceptance Commitment Therapy</li>
+                <li>Mindfulness</li>
+                <li>Psychodynamic Approaches</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S3 — STYLE
+         ============================================ -->
+    <section id="style">
+        <div class="container">
+            <h2>Counseling Style</h2>
+            <ul class="bullet-narrative">
+                <li>Direct</li>
+                <li>Willing to elicit and approach emotion across valence and type</li>
+                <li>Empathic</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DIVIDER
+         ============================================ -->
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- ============================================
+         S4 — REASON FOR SELECTION
+         ============================================ -->
+    <section id="reason-for-selection">
+        <div class="container">
+            <h2>Reason for Selection</h2>
+            <p class="free-text">
+                Resistance/lack of resistance when working on anchoring self. This shows up in session as losing perspective, rescuing the client, or disconnecting from where the client is emotionally.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S5 — AREAS OF GROWTH
+         ============================================ -->
+    <section id="areas-of-growth">
+        <div class="container">
+            <h2>Areas of Growth</h2>
+                <ul class="bullet-narrative">
+                    <li>Self-criticism</li>
+                    <li>Allowing the client to do the work/contribute on their terms</li>
+                    <li>Slowing down (e.g., moving from react to respond)</li>
+                    <li>Proving self</li>
+                    <li>Working on self</li>
+                </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S6 — THE AWAKENED COUNSELOR
+         ============================================ -->
+    <section id="awakened-counselor">
+        <div class="container">
+            <h2>The Awakened Counselor</h2>
+            <div class="status-key">
+                <div class="status-key-item">
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                    <span>Progressing</span>
+                </div>
+                <div class="status-key-item">
+                    <span class="status-arrow status-declining">&#9660;</span>
+                    <span>Declining</span>
+                </div>
+                <div class="status-key-item">
+                    <span class="status-arrow status-hold">—</span>
+                    <span>On Hold</span>
+                </div>
+            </div>
+            <div class="progress-list">
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Non-Judgment</span>
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 72%;"></div>
+                </div>
+            </div>
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Patience</span>
+                    <span class="status-arrow status-hold">—</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 65%;"></div>
+                </div>
+            </div>
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Beginner's Mind</span>
+                    <span class="status-arrow status-declining">&#9660;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 58%;"></div>
+                </div>
+            </div>
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Trust</span>
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Non-Striving</span>
+                    <span class="status-arrow status-hold">—</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 48%;"></div>
+                </div>
+            </div>
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Acceptance</span>
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 63%;"></div>
+                </div>
+            </div>
+            <div class="progress-group animate-in">
+                <div class="progress-label-row">
+                    <span class="progress-label">Letting Go</span>
+                    <span class="status-arrow status-declining">&#9660;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 55%;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S7 — FOUR STAGES OF PROGRESS
+         ============================================ -->
+    <section id="four-stages">
+        <div class="container">
+            <h2>Four Stages of Progress</h2>
+            <div class="stage-legend">
+                <div class="stage-legend-item">
+                    <div class="stage-dot" style="background: var(--dot-1);"></div>
+                    <span>Stage 1: Awareness</span>
+                </div>
+                <div class="stage-legend-item">
+                    <div class="stage-dot" style="background: var(--dot-2);"></div>
+                    <span>Stage 2: Practice</span>
+                </div>
+                <div class="stage-legend-item">
+                    <div class="stage-dot" style="background: var(--dot-3);"></div>
+                    <span>Stage 3: Application</span>
+                </div>
+                <div class="stage-legend-item">
+                    <div class="stage-dot" style="background: var(--dot-4);"></div>
+                    <span>Stage 4: Integration</span>
+                </div>
+            </div>
+            <div class="status-key">
+                <div class="status-key-item">
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                    <span>Progressing</span>
+                </div>
+                <div class="status-key-item">
+                    <span class="status-arrow status-declining">&#9660;</span>
+                    <span>Declining</span>
+                </div>
+                <div class="status-key-item">
+                    <span class="status-arrow status-hold">—</span>
+                    <span>On Hold</span>
+                </div>
+            </div>
+
+            <div class="progress-list">
+            <div class="progress-group">
+                <div class="progress-label-row">
+                    <span class="progress-label">Awareness in the Room</span>
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                </div>
+            </div>
+            <div class="progress-group">
+                <div class="progress-label-row">
+                    <span class="progress-label">Mindfulness Techniques</span>
+                    <span class="status-arrow status-hold">—</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 62%;"></div>
+                </div>
+            </div>
+            <div class="progress-group">
+                <div class="progress-label-row">
+                    <span class="progress-label">Self Practice</span>
+                    <span class="status-arrow status-declining">&#9660;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="progress-group">
+                <div class="progress-label-row">
+                    <span class="progress-label">Integration</span>
+                    <span class="status-arrow status-progressing">&#9650;</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 45%;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S8 — IN SESSION
+         ============================================ -->
+    <section id="in-session">
+        <div class="container">
+            <h2>In Session</h2>
+                <ul class="bullet-narrative">
+                    <li>Losing broader perspective</li>
+                    <li>Defaulting to defender mode</li>
+                </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S9 — IN SOUP
+         ============================================ -->
+    <section id="in-soup">
+        <div class="container">
+            <h2>In Soup</h2>
+                <ul class="bullet-narrative">
+                    <li>Forgetting to complete anchoring homework (e.g., draw your anchor)</li>
+                    <li>Forgetting to engage personal mindfulness practice</li>
+                    <li>Assuming that she had the mindful pyramid</li>
+                    <li>Attempting to give me her calm/centering anchor (e.g., cat)</li>
+                </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S11 — SUPERVISOR NOTES FROM SUPERVISEE CLIENT VIDEO
+         ============================================ -->
+    <section id="supervisor-video-notes">
+        <div class="container">
+            <h2>Supervisor Notes from Supervisee Client Video</h2>
+                <ul class="bullet-narrative">
+                    <li>CT is testing through indirect emotional discussion. She is explaining a very similar situation where she grieved the death of a "friend" in middle/high school — the emotions are the same. SOUPE does a good job of coming back to G-PA, but the emotions disappear when G-PA comes into the room. Some focusing here by SOUPE.</li>
+                    <li>CT is intellectualizing. CT is projecting. CT is condemning her emotional self as not rational.</li>
+                    <li>She doesn't want to externalize, but she recognizes that it's needed. Could be perceived as unsafe, despite framing as lack of knowledge.</li>
+                    <li>@ 34–37: Doing the work for her.</li>
+                </ul>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         S12 — GRAPHICS
+         ============================================ -->
+    <section id="drawings-from-soupe">
+        <div class="container">
+            <h2>Drawings from Soup</h2>
+            <div class="image-placeholder" style="width: 700px; max-width: 100%; height: 700px; aspect-ratio: auto; margin: 0 auto;">[Upload Image]</div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         S13 — DRAWINGS FROM SOUP
+         ============================================ -->
+    <section id="drawings-from-soup">
+        <div class="container">
+            <h2>Drawings from Soup</h2>
+            <div class="image-placeholder" style="width: 700px; max-width: 100%; height: 700px; aspect-ratio: auto; margin: 0 auto;">[Upload Image]</div>
+        </div>
+    </section>
+
+</body>
+</html>

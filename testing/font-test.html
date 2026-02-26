@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Test — Supervisee Clinical Progression</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Bungee&family=Bebas+Neue&family=Bangers&family=Caveat:wght@400;700&family=Satisfy&family=Pacifico&family=Fredoka:wght@400;600;700&family=Righteous&family=Leckerli+One&family=Lobster+Two:wght@400;700&family=Rubik+Mono+One&family=Alfa+Slab+One&family=Lilita+One&family=Concert+One&family=Short+Stack&family=Gaegu:wght@400;700&family=Patrick+Hand&family=Finger+Paint&family=Bubblegum+Sans&family=Just+Another+Hand&family=Pirata+One&family=Trade+Winds&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #FFF8DC;
+            color: #6E3A20;
+            font-family: sans-serif;
+            padding: 48px;
+        }
+
+        .page-header {
+            font-family: sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #C28A52;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            margin-bottom: 48px;
+        }
+
+        .category-label {
+            font-family: sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #E4363A;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #FEF0E1;
+        }
+
+        .font-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+            align-items: start;
+            padding: 24px 0;
+            border-bottom: 1px solid #FEF0E1;
+        }
+
+        .font-row:last-child { border-bottom: none; }
+
+        .font-meta {
+            font-family: sans-serif;
+        }
+
+        .font-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #6E3A20;
+            margin-bottom: 2px;
+        }
+
+        .font-desc {
+            font-size: 11px;
+            color: #C28A52;
+            line-height: 1.4;
+        }
+
+        .font-samples {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sample-heading {
+            font-size: 36px;
+            line-height: 1.2;
+            color: #6E3A20;
+        }
+
+        .sample-subheading {
+            font-size: 22px;
+            line-height: 1.3;
+            color: #C28A52;
+        }
+
+        .sample-body {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #6E3A20;
+        }
+
+        .sample-tag {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        /* Combo section */
+        .combo-section {
+            margin-top: 56px;
+        }
+
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .combo-card {
+            background: #FEF0E1;
+            border-radius: 10px;
+            padding: 28px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .combo-card .combo-label {
+            font-family: sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #E4363A;
+            margin-bottom: 14px;
+        }
+
+        .combo-card .combo-heading {
+            font-size: 28px;
+            line-height: 1.2;
+            color: #6E3A20;
+            margin-bottom: 6px;
+        }
+
+        .combo-card .combo-sub {
+            font-size: 16px;
+            color: #C28A52;
+            margin-bottom: 14px;
+        }
+
+        .combo-card .combo-body {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #6E3A20;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .combo-card .combo-metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #FDDCAD;
+            font-size: 13px;
+            color: #6E3A20;
+        }
+
+        .combo-card .combo-metric:last-child { border-bottom: none; }
+
+        .combo-card .combo-metric-value {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .progress-mini {
+            height: 8px;
+            background: #FFF8DC;
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress-mini-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: #F28C37;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">Font Test — Supervisee Clinical Progression Tracker</div>
+
+    <!-- BLOCKY / ALL-CAPS -->
+    <div class="category">
+        <div class="category-label">Blocky &amp; Bold</div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Bungee</div>
+                <div class="font-desc">Heavy block letters, urban signage feel, all-caps by nature</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Bungee'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Bungee'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Bungee'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Bebas Neue</div>
+                <div class="font-desc">Tall, condensed, all-caps. Clean and modern with great flow</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Bebas Neue'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Bebas Neue'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Bebas Neue'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Alfa Slab One</div>
+                <div class="font-desc">Bold slab serif, heavy presence, blocky with subtle curves</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Alfa Slab One'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Alfa Slab One'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Alfa Slab One'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Lilita One</div>
+                <div class="font-desc">Rounded blocky, friendly and bold, great for headings</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Lilita One'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Lilita One'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Lilita One'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Concert One</div>
+                <div class="font-desc">Soft blocky rounded, approachable, slight retro feel</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Concert One'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Concert One'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Concert One'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Righteous</div>
+                <div class="font-desc">Geometric, slightly rounded, retro-modern with smooth flow</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Righteous'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Righteous'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Righteous'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Fredoka</div>
+                <div class="font-desc">Rounded, friendly, multiple weights. Blocky but warm</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Fredoka'; font-weight:700">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Fredoka'; font-weight:600">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Fredoka'; font-weight:400">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Rubik Mono One</div>
+                <div class="font-desc">Monospace block, ultra-bold, mechanical and punchy</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Rubik Mono One'; font-size:28px">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Rubik Mono One'; font-size:16px">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Rubik Mono One'; font-size:13px">247 Direct Hours</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MARKER / HANDWRITTEN -->
+    <div class="category">
+        <div class="category-label">Marker &amp; Handwritten</div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Permanent Marker</div>
+                <div class="font-desc">Classic thick marker, casual and expressive, great energy</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Permanent Marker'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Permanent Marker'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Permanent Marker'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Bangers</div>
+                <div class="font-desc">Comic book / marker, bold and playful, all-caps energy</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Bangers'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Bangers'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Bangers'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Caveat</div>
+                <div class="font-desc">Natural handwriting, loose and flowing, comes in regular + bold</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Caveat'; font-weight:700">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Caveat'; font-weight:700">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Caveat'; font-weight:400">247 Direct Hours Completed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALLIGRAPHY / SCRIPT -->
+    <div class="category">
+        <div class="category-label">Calligraphy &amp; Script</div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Satisfy</div>
+                <div class="font-desc">Brush calligraphy, elegant flow, vintage warmth</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Satisfy'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Satisfy'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Satisfy'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Pacifico</div>
+                <div class="font-desc">Retro surf script, thick brush, casual calligraphy with personality</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Pacifico'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Pacifico'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Pacifico'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Lobster Two</div>
+                <div class="font-desc">Bold script with high contrast, flowing and confident</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Lobster Two'; font-weight:700">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Lobster Two'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Lobster Two'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Leckerli One</div>
+                <div class="font-desc">Thick brush script, playful calligraphy, retro bakery vibe</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Leckerli One'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Leckerli One'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Leckerli One'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YOUR PICKS -->
+    <div class="category">
+        <div class="category-label">Your Picks — Handwritten &amp; Expressive</div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">KG Primary Penmanship</div>
+                <div class="font-desc" style="color:#E4363A">Not on Google Fonts — requires local install or download from dafont/TPT</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'KG Primary Penmanship', cursive">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'KG Primary Penmanship', cursive">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'KG Primary Penmanship', cursive; color:#C28A52">Will show if installed locally, otherwise falls back to cursive</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Kidprint</div>
+                <div class="font-desc" style="color:#E4363A">Not on Google Fonts — commercial font, requires local install</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Kidprint', 'Comic Sans MS', cursive">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Kidprint', 'Comic Sans MS', cursive">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Kidprint', 'Comic Sans MS', cursive; color:#C28A52">Will show if installed locally, otherwise falls back</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Short Stack</div>
+                <div class="font-desc">Casual handwriting, like notes on a whiteboard, friendly and open</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Short Stack'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Short Stack'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Short Stack'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Gaegu</div>
+                <div class="font-desc">Loose, childlike handwriting with charm, comes in regular + bold</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Gaegu'; font-weight:700">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Gaegu'; font-weight:700">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Gaegu'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Patrick Hand</div>
+                <div class="font-desc">Clean handwriting, slightly slanted, natural and readable</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Patrick Hand'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Patrick Hand'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Patrick Hand'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Permanent Marker</div>
+                <div class="font-desc">Classic thick marker, casual and expressive, great energy</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Permanent Marker'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Permanent Marker'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Permanent Marker'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Finger Paint</div>
+                <div class="font-desc">Thick, playful, looks like actual finger painting — bold and fun</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Finger Paint'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Finger Paint'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Finger Paint'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Bubblegum Sans</div>
+                <div class="font-desc">Rounded, bubbly, playful with a marker-like quality</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Bubblegum Sans'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Bubblegum Sans'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Bubblegum Sans'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Just Another Hand</div>
+                <div class="font-desc">Tall, narrow handwriting, like quick notes — vertical and breezy</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Just Another Hand'; font-size:44px">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Just Another Hand'; font-size:28px">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Just Another Hand'; font-size:22px">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Pirata One</div>
+                <div class="font-desc">Blackletter / gothic, ornamental, dramatic and decorative</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Pirata One'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Pirata One'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Pirata One'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-meta">
+                <div class="font-name">Trade Winds</div>
+                <div class="font-desc">Decorative serif, nautical/vintage feel, ornate with character</div>
+            </div>
+            <div class="font-samples">
+                <div class="sample-heading" style="font-family:'Trade Winds'">Clinical Progression</div>
+                <div class="sample-subheading" style="font-family:'Trade Winds'">Assessment Skills</div>
+                <div class="sample-body" style="font-family:'Trade Winds'">247 Direct Hours Completed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMBO PREVIEWS -->
+    <div class="combo-section">
+        <div class="category-label">Heading + Body Pairings (with your palette)</div>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-label">Permanent Marker + Fredoka</div>
+                <div class="combo-heading" style="font-family:'Permanent Marker'">Clinical Progression</div>
+                <div class="combo-sub" style="font-family:'Fredoka'; font-weight:600">Psychology Doctoral Supervisee</div>
+                <div class="combo-body">
+                    <div class="combo-metric">
+                        <span>Direct Clinical Hours</span>
+                        <span class="combo-metric-value" style="color:#E4363A; font-family:'Permanent Marker'">247</span>
+                    </div>
+                    <div class="progress-mini"><div class="progress-mini-fill" style="width:62%"></div></div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <div class="combo-label">Bebas Neue + Fredoka</div>
+                <div class="combo-heading" style="font-family:'Bebas Neue'">Clinical Progression</div>
+                <div class="combo-sub" style="font-family:'Fredoka'; font-weight:600">Psychology Doctoral Supervisee</div>
+                <div class="combo-body">
+                    <div class="combo-metric">
+                        <span>Direct Clinical Hours</span>
+                        <span class="combo-metric-value" style="color:#E4363A; font-family:'Bebas Neue'">247</span>
+                    </div>
+                    <div class="progress-mini"><div class="progress-mini-fill" style="width:62%"></div></div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <div class="combo-label">Lilita One + Caveat</div>
+                <div class="combo-heading" style="font-family:'Lilita One'">Clinical Progression</div>
+                <div class="combo-sub" style="font-family:'Caveat'; font-weight:700; font-size:20px">Psychology Doctoral Supervisee</div>
+                <div class="combo-body" style="font-family:'Caveat'; font-size:15px">
+                    <div class="combo-metric">
+                        <span>Direct Clinical Hours</span>
+                        <span class="combo-metric-value" style="color:#E4363A; font-family:'Lilita One'">247</span>
+                    </div>
+                    <div class="progress-mini"><div class="progress-mini-fill" style="width:62%"></div></div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <div class="combo-label">Bangers + Fredoka</div>
+                <div class="combo-heading" style="font-family:'Bangers'">Clinical Progression</div>
+                <div class="combo-sub" style="font-family:'Fredoka'; font-weight:600">Psychology Doctoral Supervisee</div>
+                <div class="combo-body">
+                    <div class="combo-metric">
+                        <span>Direct Clinical Hours</span>
+                        <span class="combo-metric-value" style="color:#E4363A; font-family:'Bangers'">247</span>
+                    </div>
+                    <div class="progress-mini"><div class="progress-mini-fill" style="width:62%"></div></div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <div class="combo-label">Concert One + Fredoka</div>
+                <div class="combo-heading" style="font-family:'Concert One'">Clinical Progression</div>
+                <div class="combo-sub" style="font-family:'Fredoka'; font-weight:600">Psychology Doctoral Supervisee</div>
+                <div class="combo-body">
+                    <div class="combo-metric">
+                        <span>Direct Clinical Hours</span>
+                        <span class="combo-metric-value" style="color:#E4363A; font-family:'Concert One'">247</span>
+                    </div>
+                    <div class="progress-mini"><div class="progress-mini-fill" style="width:62%"></div></div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <div class="combo-label">Righteous + Caveat</div>
+                <div class="combo-heading" style="font-family:'Righteous'">Clinical Progression</div>
+                <div class="combo-sub" style="font-family:'Caveat'; font-weight:700; font-size:20px">Psychology Doctoral Supervisee</div>
+                <div class="combo-body" style="font-family:'Caveat'; font-size:15px">
+                    <div class="combo-metric">
+                        <span>Direct Clinical Hours</span>
+                        <span class="combo-metric-value" style="color:#E4363A; font-family:'Righteous'">247</span>
+                    </div>
+                    <div class="progress-mini"><div class="progress-mini-fill" style="width:62%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

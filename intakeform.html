@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pediatric Registration - Intake Form</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f0f2f5; color: #1a1a1a; line-height: 1.5; }
+
+  /* Top bar */
+  .topbar { position: sticky; top: 0; z-index: 100; background: #1e3a5f; color: #fff; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .topbar h1 { font-size: 18px; font-weight: 600; }
+  .topbar-actions { display: flex; gap: 8px; align-items: center; }
+  .topbar-actions button, .topbar-actions select { font-size: 13px; padding: 6px 14px; border-radius: 4px; border: none; cursor: pointer; }
+  .btn-save { background: #4caf50; color: #fff; font-weight: 600; }
+  .btn-save:hover { background: #43a047; }
+  .btn-clear { background: #e0e0e0; color: #333; }
+  .btn-clear:hover { background: #ccc; }
+  .btn-load { background: #2196f3; color: #fff; }
+  .btn-load:hover { background: #1e88e5; }
+
+  /* Layout */
+  .container { display: flex; max-width: 1200px; margin: 0 auto; }
+
+  /* Sidebar nav */
+  .sidebar { position: sticky; top: 52px; width: 240px; min-width: 240px; height: calc(100vh - 52px); overflow-y: auto; background: #fff; border-right: 1px solid #ddd; padding: 12px 0; }
+  .sidebar a { display: block; padding: 7px 16px; font-size: 13px; color: #444; text-decoration: none; border-left: 3px solid transparent; }
+  .sidebar a:hover { background: #f5f5f5; color: #1e3a5f; }
+  .sidebar a.active { border-left-color: #1e3a5f; background: #e8eef5; color: #1e3a5f; font-weight: 600; }
+
+  /* Main form area */
+  .main { flex: 1; padding: 20px 28px 60px; min-width: 0; }
+
+  /* Section cards */
+  .section-card { background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 20px; padding: 20px 24px; }
+  .section-card h2 { font-size: 17px; color: #1e3a5f; margin-bottom: 4px; padding-bottom: 8px; border-bottom: 2px solid #e8eef5; }
+  .section-card .section-desc { font-size: 13px; color: #666; margin-bottom: 12px; font-style: italic; }
+
+  /* Fields */
+  .field { margin-top: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: 600; color: #333; margin-bottom: 3px; }
+  .field label .req { color: #e53935; margin-left: 2px; }
+  .field input[type="text"],
+  .field input[type="number"],
+  .field input[type="date"],
+  .field input[type="email"],
+  .field input[type="tel"],
+  .field select,
+  .field textarea { width: 100%; padding: 7px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; font-family: inherit; background: #fafafa; }
+  .field textarea { min-height: 60px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #1e3a5f; background: #fff; }
+
+  /* Checkbox groups */
+  .checkbox-group { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 4px; }
+  .checkbox-group label { font-weight: 400; font-size: 13px; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+  .checkbox-group input[type="checkbox"] { accent-color: #1e3a5f; }
+  .checkbox-detail { margin-left: 4px; width: 100px; padding: 2px 6px; font-size: 12px; border: 1px solid #ccc; border-radius: 3px; }
+
+  /* Field groups (two-column) */
+  .field-group-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-top: 6px; }
+  .field-group-grid .field { margin-top: 0; }
+
+  /* Repeating groups */
+  .repeating-group { margin-top: 8px; }
+  .repeating-row { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 6px; padding: 8px; background: #f9f9f9; border-radius: 4px; border: 1px solid #eee; }
+  .repeating-row .field { flex: 1; margin-top: 0; }
+  .repeating-row .field label { font-size: 11px; }
+  .repeating-row .field input, .repeating-row .field select, .repeating-row .field textarea { font-size: 13px; padding: 5px 8px; }
+  .repeating-row .field textarea { min-height: 36px; }
+  .btn-remove-row { background: #e53935; color: #fff; border: none; border-radius: 4px; padding: 5px 10px; cursor: pointer; font-size: 12px; align-self: flex-end; margin-bottom: 2px; flex-shrink: 0; }
+  .btn-add-row { background: #1e3a5f; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; cursor: pointer; font-size: 13px; margin-top: 4px; }
+  .btn-add-row:hover { background: #2a4f7a; }
+
+  /* Conditional visibility */
+  .field.hidden { display: none; }
+
+  /* Toast */
+  .toast { position: fixed; bottom: 24px; right: 24px; background: #333; color: #fff; padding: 12px 20px; border-radius: 6px; font-size: 14px; z-index: 200; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  .toast.error { background: #c62828; }
+  .toast.success { background: #2e7d32; }
+
+  /* Progress indicator */
+  .progress-bar { height: 3px; background: #e0e0e0; position: sticky; top: 52px; z-index: 99; }
+  .progress-bar .fill { height: 100%; background: #4caf50; transition: width 0.3s; }
+
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .container { display: block; }
+    .main { padding: 12px; }
+    .section-card { padding: 14px; }
+    .field-group-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Pediatric Registration</h1>
+  <div class="topbar-actions">
+    <select id="loadSelect" class="btn-load" title="Load a previous form">
+      <option value="">Load saved...</option>
+    </select>
+    <button class="btn-clear" onclick="clearForm()">Clear Form</button>
+    <button class="btn-save" onclick="saveForm()">Save</button>
+  </div>
+</div>
+<div class="progress-bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+
+<div class="container">
+  <nav class="sidebar" id="sidebar"></nav>
+  <div class="main" id="formContainer"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let TEMPLATE = null;
+
+async function init() {
+  const resp = await fetch('/intakeform_template.json');
+  TEMPLATE = await resp.json();
+  renderSidebar();
+  renderForm();
+  loadSavedList();
+  updateProgress();
+  setupScrollSpy();
+}
+
+/* ---- Sidebar ---- */
+function renderSidebar() {
+  const sb = document.getElementById('sidebar');
+  sb.innerHTML = TEMPLATE.sections.map(s =>
+    `<a href="#section_${s.id}" data-section="${s.id}">${s.title}</a>`
+  ).join('');
+}
+
+function setupScrollSpy() {
+  const links = document.querySelectorAll('.sidebar a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const id = e.target.id.replace('section_', '');
+        const link = document.querySelector(`.sidebar a[data-section="${id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+  TEMPLATE.sections.forEach(s => {
+    const el = document.getElementById('section_' + s.id);
+    if (el) observer.observe(el);
+  });
+}
+
+/* ---- Form Rendering ---- */
+function renderForm() {
+  const container = document.getElementById('formContainer');
+  container.innerHTML = TEMPLATE.sections.map(renderSection).join('');
+  applyVisibilityRules();
+}
+
+function renderSection(section) {
+  let html = `<div class="section-card" id="section_${section.id}">`;
+  html += `<h2>${esc(section.title)}</h2>`;
+  if (section.description) html += `<div class="section-desc">${esc(section.description)}</div>`;
+  html += section.fields.map(f => renderField(f, section.id)).join('');
+  html += '</div>';
+  return html;
+}
+
+function renderField(field, sectionId) {
+  const fid = sectionId + '__' + field.id;
+  const reqMark = field.required ? '<span class="req">*</span>' : '';
+
+  // visibleWhen
+  let visClass = '';
+  let visAttr = '';
+  if (field.visibleWhen) {
+    visClass = ' hidden';
+    visAttr = ` data-visible-field="${sectionId}__${field.visibleWhen.field}" data-visible-equals="${field.visibleWhen.equals || ''}" data-visible-includes="${field.visibleWhen.includes || ''}"`;
+  }
+
+  if (field.type === 'checkboxGroup') {
+    return renderCheckboxGroup(field, sectionId, fid, reqMark, visClass, visAttr);
+  }
+  if (field.type === 'fieldGroup') {
+    return renderFieldGroup(field, sectionId, fid, reqMark, visClass, visAttr);
+  }
+  if (field.type === 'repeatingGroup') {
+    return renderRepeatingGroup(field, sectionId, fid, reqMark, visClass, visAttr);
+  }
+
+  let inputHtml = '';
+  if (field.type === 'textarea') {
+    inputHtml = `<textarea id="${fid}" name="${fid}" data-section="${sectionId}" data-field="${field.id}" oninput="updateProgress()"></textarea>`;
+  } else if (field.type === 'select') {
+    inputHtml = `<select id="${fid}" name="${fid}" data-section="${sectionId}" data-field="${field.id}" onchange="onSelectChange('${fid}'); updateProgress()">`;
+    inputHtml += '<option value="">-- Select --</option>';
+    inputHtml += (field.options || []).map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join('');
+    inputHtml += '</select>';
+  } else {
+    const t = field.type || 'text';
+    inputHtml = `<input type="${t}" id="${fid}" name="${fid}" data-section="${sectionId}" data-field="${field.id}" oninput="updateProgress()">`;
+  }
+
+  return `<div class="field${visClass}" id="fieldwrap_${fid}"${visAttr}>
+    <label for="${fid}">${esc(field.label)}${reqMark}</label>
+    ${inputHtml}
+  </div>`;
+}
+
+function renderCheckboxGroup(field, sectionId, fid, reqMark, visClass, visAttr) {
+  let html = `<div class="field${visClass}" id="fieldwrap_${fid}"${visAttr}>`;
+  html += `<label>${esc(field.label)}${reqMark}</label>`;
+  html += '<div class="checkbox-group">';
+  for (const opt of field.options) {
+    const optId = opt.id || opt;
+    const optLabel = opt.label || opt;
+    const cbId = fid + '_' + optId;
+    html += `<label><input type="checkbox" id="${cbId}" data-section="${sectionId}" data-field="${field.id}" data-optid="${optId}" onchange="updateProgress()"> ${esc(optLabel)}`;
+    if (opt.hasDetail) {
+      html += ` <input type="text" class="checkbox-detail" id="${cbId}_detail" data-section="${sectionId}" data-detailfor="${field.id}_${optId}_detail" placeholder="${esc(opt.detailLabel || 'Details')}">`;
+    }
+    html += '</label>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
+function renderFieldGroup(field, sectionId, fid, reqMark, visClass, visAttr) {
+  let html = `<div class="field${visClass}" id="fieldwrap_${fid}"${visAttr}>`;
+  html += `<label>${esc(field.label)}${reqMark}</label>`;
+  html += '<div class="field-group-grid">';
+  for (const sub of field.fields) {
+    const sid = sectionId + '__' + sub.id;
+    html += `<div class="field">
+      <label for="${sid}">${esc(sub.label)}</label>
+      <input type="text" id="${sid}" name="${sid}" data-section="${sectionId}" data-field="${sub.id}" oninput="updateProgress()">
+    </div>`;
+  }
+  html += '</div></div>';
+  return html;
+}
+
+function renderRepeatingGroup(field, sectionId, fid, reqMark, visClass, visAttr) {
+  let html = `<div class="field${visClass}" id="fieldwrap_${fid}"${visAttr}>`;
+  html += `<label>${esc(field.label)}${reqMark}</label>`;
+  html += `<div class="repeating-group" id="rg_${fid}" data-section="${sectionId}" data-field="${field.id}" data-max="${field.maxEntries || 20}">`;
+  html += '</div>';
+  html += `<button type="button" class="btn-add-row" onclick="addRepeatingRow('${fid}', '${sectionId}', '${field.id}')">+ Add Entry</button>`;
+  html += '</div>';
+
+  // Store the sub-field definitions for later
+  setTimeout(() => {
+    const el = document.getElementById('rg_' + fid);
+    if (el) el._fieldDefs = field.fields;
+  }, 0);
+
+  return html;
+}
+
+function addRepeatingRow(fid, sectionId, fieldId, values) {
+  const container = document.getElementById('rg_' + fid);
+  if (!container || !container._fieldDefs) return;
+  const max = parseInt(container.dataset.max) || 20;
+  if (container.children.length >= max) return;
+
+  const idx = container.children.length;
+  const row = document.createElement('div');
+  row.className = 'repeating-row';
+
+  for (const col of container._fieldDefs) {
+    const inputId = `${fid}_${idx}_${col.id}`;
+    const val = values ? esc(values[col.id] || '') : '';
+    let inp = '';
+    if (col.type === 'select') {
+      inp = `<select id="${inputId}" data-col="${col.id}"><option value="">--</option>`;
+      inp += (col.options||[]).map(o => `<option value="${esc(o)}"${val===o?' selected':''}>${esc(o)}</option>`).join('');
+      inp += '</select>';
+    } else if (col.type === 'textarea') {
+      inp = `<textarea id="${inputId}" data-col="${col.id}">${val}</textarea>`;
+    } else {
+      inp = `<input type="${col.type||'text'}" id="${inputId}" data-col="${col.id}" value="${val}">`;
+    }
+    row.innerHTML += `<div class="field"><label for="${inputId}">${esc(col.label)}</label>${inp}</div>`;
+  }
+  row.innerHTML += `<button type="button" class="btn-remove-row" onclick="this.parentElement.remove(); updateProgress()">X</button>`;
+  container.appendChild(row);
+}
+
+/* ---- Visibility Rules ---- */
+function onSelectChange(fid) {
+  applyVisibilityRules();
+}
+
+function applyVisibilityRules() {
+  document.querySelectorAll('[data-visible-field]').forEach(el => {
+    const triggerFid = el.dataset.visibleField;
+    const triggerEl = document.getElementById(triggerFid);
+    const equals = el.dataset.visibleEquals;
+    if (triggerEl && equals) {
+      el.classList.toggle('hidden', triggerEl.value !== equals);
+    }
+  });
+}
+
+/* ---- Progress ---- */
+function updateProgress() {
+  let total = 0, filled = 0;
+  document.querySelectorAll('.field input, .field select, .field textarea').forEach(el => {
+    if (el.type === 'checkbox' || el.closest('.hidden') || el.classList.contains('checkbox-detail')) return;
+    total++;
+    if (el.value && el.value.trim()) filled++;
+  });
+  document.querySelectorAll('.field input[type="checkbox"]:checked').forEach(() => filled++);
+  const pct = total > 0 ? Math.round((filled / total) * 100) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+/* ---- Collect Data ---- */
+function collectFormData() {
+  const data = {};
+
+  for (const section of TEMPLATE.sections) {
+    const sd = {};
+
+    for (const field of section.fields) {
+      if (field.type === 'checkboxGroup') {
+        const checked = [];
+        for (const opt of field.options) {
+          const optId = opt.id || opt;
+          const cb = document.getElementById(section.id + '__' + field.id + '_' + optId);
+          if (cb && cb.checked) {
+            checked.push(optId);
+            // Detail input
+            if (opt.hasDetail) {
+              const det = document.getElementById(section.id + '__' + field.id + '_' + optId + '_detail');
+              if (det && det.value.trim()) sd[field.id + '_' + optId + '_detail'] = det.value.trim();
+            }
+          }
+        }
+        sd[field.id] = checked;
+
+      } else if (field.type === 'fieldGroup') {
+        for (const sub of field.fields) {
+          const el = document.getElementById(section.id + '__' + sub.id);
+          if (el && el.value.trim()) sd[sub.id] = el.value.trim();
+        }
+
+      } else if (field.type === 'repeatingGroup') {
+        const container = document.getElementById('rg_' + section.id + '__' + field.id);
+        if (container) {
+          const rows = [];
+          for (const rowEl of container.children) {
+            const rowData = {};
+            rowEl.querySelectorAll('[data-col]').forEach(inp => {
+              if (inp.value.trim()) rowData[inp.dataset.col] = inp.value.trim();
+            });
+            if (Object.keys(rowData).length > 0) rows.push(rowData);
+          }
+          sd[field.id] = rows;
+        }
+
+      } else {
+        const el = document.getElementById(section.id + '__' + field.id);
+        if (el && el.value.trim()) sd[field.id] = el.value.trim();
+      }
+    }
+
+    data[section.id] = sd;
+  }
+
+  return data;
+}
+
+/* ---- Save ---- */
+async function saveForm() {
+  const data = collectFormData();
+  try {
+    const resp = await fetch('/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data, template: TEMPLATE })
+    });
+    const result = await resp.json();
+    if (result.ok) {
+      showToast('Saved: ' + result.filename, 'success');
+      loadSavedList();
+    } else {
+      showToast('Save failed: ' + result.error, 'error');
+    }
+  } catch (e) {
+    showToast('Save failed: ' + e.message, 'error');
+  }
+}
+
+/* ---- Load ---- */
+async function loadSavedList() {
+  try {
+    const resp = await fetch('/saved');
+    const files = await resp.json();
+    const sel = document.getElementById('loadSelect');
+    sel.innerHTML = '<option value="">Load saved...</option>';
+    for (const f of files) {
+      sel.innerHTML += `<option value="${esc(f.name)}">${esc(f.name.replace('.json',''))}</option>`;
+    }
+    sel.onchange = async () => {
+      if (!sel.value) return;
+      try {
+        const resp = await fetch('/load/' + encodeURIComponent(sel.value));
+        const data = await resp.json();
+        populateForm(data);
+        showToast('Loaded: ' + sel.value.replace('.json',''), 'success');
+      } catch(e) {
+        showToast('Load failed: ' + e.message, 'error');
+      }
+      sel.value = '';
+    };
+  } catch(e) { /* ignore */ }
+}
+
+function populateForm(data) {
+  // Clear first
+  document.querySelectorAll('.field input, .field textarea').forEach(el => {
+    if (el.type === 'checkbox') el.checked = false;
+    else el.value = '';
+  });
+  document.querySelectorAll('.field select').forEach(el => el.selectedIndex = 0);
+  document.querySelectorAll('.repeating-group').forEach(el => el.innerHTML = '');
+
+  for (const section of TEMPLATE.sections) {
+    const sd = data[section.id];
+    if (!sd) continue;
+
+    for (const field of section.fields) {
+      if (field.type === 'checkboxGroup') {
+        const checked = sd[field.id] || [];
+        for (const opt of field.options) {
+          const optId = opt.id || opt;
+          const cb = document.getElementById(section.id + '__' + field.id + '_' + optId);
+          if (cb) cb.checked = checked.includes(optId);
+          if (opt.hasDetail) {
+            const det = document.getElementById(section.id + '__' + field.id + '_' + optId + '_detail');
+            if (det) det.value = sd[field.id + '_' + optId + '_detail'] || '';
+          }
+        }
+
+      } else if (field.type === 'fieldGroup') {
+        for (const sub of field.fields) {
+          const el = document.getElementById(section.id + '__' + sub.id);
+          if (el) el.value = sd[sub.id] || '';
+        }
+
+      } else if (field.type === 'repeatingGroup') {
+        const rows = sd[field.id] || [];
+        const fid = section.id + '__' + field.id;
+        // Ensure _fieldDefs is set
+        const container = document.getElementById('rg_' + fid);
+        if (container) container._fieldDefs = field.fields;
+        for (const row of rows) {
+          addRepeatingRow(fid, section.id, field.id, row);
+        }
+
+      } else {
+        const el = document.getElementById(section.id + '__' + field.id);
+        if (el) el.value = sd[field.id] || '';
+      }
+    }
+  }
+
+  applyVisibilityRules();
+  updateProgress();
+}
+
+/* ---- Clear ---- */
+function clearForm() {
+  if (!confirm('Clear all form data?')) return;
+  document.querySelectorAll('.field input, .field textarea').forEach(el => {
+    if (el.type === 'checkbox') el.checked = false;
+    else el.value = '';
+  });
+  document.querySelectorAll('.field select').forEach(el => el.selectedIndex = 0);
+  document.querySelectorAll('.repeating-group').forEach(el => el.innerHTML = '');
+  applyVisibilityRules();
+  updateProgress();
+}
+
+/* ---- Utils ---- */
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (type || '');
+  clearTimeout(t._tid);
+  t._tid = setTimeout(() => t.className = 'toast', 3000);
+}
+
+init();
+</script>
+</body>
+</html>

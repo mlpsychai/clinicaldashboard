@@ -1,0 +1,446 @@
+/* ============================================
+   DESIGN SYSTEM CONFIG
+   Supervisee Clinical Progression Tracker
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&display=swap');
+
+:root {
+
+    /* --- FONTS --- */
+    --font-heading:             'Permanent Marker', cursive;
+    --font-body:                'Patrick Hand', cursive;
+    --text-transform:           uppercase;
+
+    /* --- FONT SIZES --- */
+    --size-h1:                  60px;
+    --size-h2:                  40px;
+    --size-h3:                  28px;
+    --size-body:                22px;
+    --size-secondary:           20px;
+    --size-stat-number:         48px;
+
+    /* --- TEXT COLORS --- */
+    --color-h1:                 #3E2216;   /* Dark Chocolate */
+    --color-h2:                 #D93B38;   /* Darker Red */
+    --color-h3:                 #D93B38;   /* Darker Red */
+    --color-body:               #3E2216;   /* Dark Chocolate */
+    --color-secondary:          #C28A52;   /* Sepia */
+    --color-hero-text:          #FFF8DC;   /* Cornsilk */
+
+    /* --- STATUS COLORS --- */
+    --color-progressing:        #2D6A9F;   /* Steel Blue */
+    --color-declining:          #D93B38;   /* Darker Red */
+    --color-hold:               #C28A52;   /* Sepia */
+
+    /* --- BACKGROUNDS --- */
+    --bg-page:                  #FFF8DC;   /* Cornsilk */
+    --bg-hero:                  #D93B38;   /* Darker Red */
+
+    /* --- PROGRESS BARS (Cool Clay) --- */
+    --bar-track:                #FBD9DE;   /* Sugared Almond Pink */
+    --bar-height:               14px;
+    --bar-radius:               7px;
+    --bar-fill-1:               #382C28;   /* Charcoal (E79) */
+    --bar-fill-2:               #4A3830;   /* Dark Brown (E47) */
+    --bar-fill-3:               #635048;   /* Walnut (E59) */
+    --bar-fill-4:               #7E6B62;   /* Driftwood (E55) */
+    --bar-fill-5:               #9B8578;   /* Clay (E44) */
+    --bar-fill-6:               #C4B0A0;   /* Sand White (E42) */
+    --bar-fill-7:               #E4D8CE;   /* Brick White (E40) */
+
+    /* --- MILESTONE DOTS (Cool Clay) --- */
+    --dot-size:                 14px;
+    --dot-1:                    #C28A52;   /* Sepia */
+
+    /* --- DIVIDERS --- */
+    --divider-color:            #C28A52;   /* Sepia */
+    --divider-style:            dashed;
+
+    /* --- LAYOUT --- */
+    --max-width:                960px;
+    --section-padding:          48px;
+
+    /* --- COOL CLAY PALETTE (E79 → E40) --- */
+    --clay-charcoal:            #382C28;   /* E79 */
+    --clay-dark-brown:          #4A3830;   /* E47 */
+    --clay-walnut:              #635048;   /* E59 */
+    --clay-driftwood:           #7E6B62;   /* E55 */
+    --clay-clay:                #9B8578;   /* E44 */
+    --clay-sand-white:          #C4B0A0;   /* E42 */
+    --clay-brick-white:         #E4D8CE;   /* E40 */
+}
+
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-page);
+    color: var(--color-body);
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    line-height: 1.6;
+    text-transform: var(--text-transform);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--size-h1);
+    color: var(--color-h1);
+    line-height: 1.1;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--size-h2);
+    color: var(--color-h2);
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-family: var(--font-heading);
+    font-size: var(--size-h3);
+    color: var(--color-h3);
+    margin-bottom: 16px;
+}
+
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: var(--section-padding) 0;
+}
+
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    background: var(--bg-hero);
+    padding: 64px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(239, 78, 74, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(110, 58, 32, 0.2) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--color-hero-text);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    color: var(--color-hero-text);
+    font-size: var(--size-h2);
+    font-family: var(--font-body);
+    letter-spacing: 1px;
+}
+
+
+/* ============================================
+   DEMOGRAPHICS
+   ============================================ */
+
+.demographics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 48px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.demo-label {
+    font-size: 30px;
+    color: var(--color-secondary);
+    letter-spacing: 1.5px;
+}
+
+.demo-value {
+    font-size: var(--size-body);
+    color: var(--color-body);
+}
+
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+
+.divider {
+    border: none;
+    border-top: 3px var(--divider-style) var(--divider-color);
+    margin: 0;
+}
+
+
+/* ============================================
+   FREE TEXT
+   ============================================ */
+
+.free-text {
+    font-size: var(--size-body);
+    line-height: 1.8;
+    max-width: 780px;
+}
+
+
+/* ============================================
+   BULLET NARRATIVE
+   ============================================ */
+
+.bullet-narrative {
+    list-style: none;
+    padding: 0;
+}
+
+.bullet-narrative li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.bullet-narrative li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background: var(--dot-1);
+}
+
+
+/* ============================================
+   PROGRESS BAR COMPONENT
+   ============================================ */
+
+.progress-group {
+    margin-bottom: 24px;
+}
+
+.progress-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.progress-label {
+    font-size: var(--size-body);
+    color: var(--color-body);
+    letter-spacing: 1px;
+}
+
+.progress-value {
+    font-size: var(--size-secondary);
+    color: var(--color-secondary);
+    font-family: var(--font-heading);
+}
+
+.progress-track {
+    width: 100%;
+    height: var(--bar-height);
+    background: var(--bar-track);
+    border-radius: var(--bar-radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: var(--bar-radius);
+    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 100%
+    );
+}
+
+/* Color rotation — Cool Clay 7-color cycle */
+.progress-list > .progress-group:nth-child(7n+1) .progress-fill { background: var(--bar-fill-1); }
+.progress-list > .progress-group:nth-child(7n+2) .progress-fill { background: var(--bar-fill-2); }
+.progress-list > .progress-group:nth-child(7n+3) .progress-fill { background: var(--bar-fill-3); }
+.progress-list > .progress-group:nth-child(7n+4) .progress-fill { background: var(--bar-fill-4); }
+.progress-list > .progress-group:nth-child(7n+5) .progress-fill { background: var(--bar-fill-5); }
+.progress-list > .progress-group:nth-child(7n+6) .progress-fill { background: var(--bar-fill-6); }
+.progress-list > .progress-group:nth-child(7n+7) .progress-fill { background: var(--bar-fill-7); }
+
+
+/* ============================================
+   STATUS INDICATORS
+   ============================================ */
+
+.status-key {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.status-key-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--size-secondary);
+    color: var(--color-secondary);
+}
+
+.status-arrow {
+    font-family: var(--font-heading);
+    font-size: var(--size-body);
+    font-style: normal;
+    text-transform: none;
+}
+
+.status-progressing { color: var(--color-progressing); }
+.status-declining   { color: var(--color-declining); }
+.status-hold        { color: var(--color-hold); }
+
+
+/* ============================================
+   STAGE LEGEND
+   ============================================ */
+
+.stage-legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.stage-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--size-secondary);
+    color: var(--color-secondary);
+}
+
+.stage-dot {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+/* ============================================
+   IMAGE PLACEHOLDERS
+   ============================================ */
+
+.image-placeholder {
+    aspect-ratio: 4 / 3;
+    border: 3px dashed var(--divider-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    font-size: var(--size-secondary);
+    letter-spacing: 1px;
+}
+
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-in:nth-child(1) { animation-delay: 0.05s; }
+.animate-in:nth-child(2) { animation-delay: 0.1s; }
+.animate-in:nth-child(3) { animation-delay: 0.15s; }
+.animate-in:nth-child(4) { animation-delay: 0.2s; }
+.animate-in:nth-child(5) { animation-delay: 0.25s; }
+.animate-in:nth-child(6) { animation-delay: 0.3s; }
+.animate-in:nth-child(7) { animation-delay: 0.35s; }
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 700px) {
+    :root {
+        --size-h1: 36px;
+        --size-h2: 28px;
+        --size-h3: 22px;
+        --size-body: 18px;
+    }
+
+    .demographics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stage-legend {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

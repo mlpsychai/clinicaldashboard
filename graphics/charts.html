@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Visuals Showcase</title>
+    <link rel="stylesheet" href="configv2.css">
+    <style>
+        /* ============================================
+           RADAR / SPIDER CHART
+           ============================================ */
+        .radar-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .radar-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 14px;
+            fill: #3E2216;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           DONUT CHART
+           ============================================ */
+        .donut-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .donut-item {
+            text-align: center;
+        }
+        .donut-item svg {
+            transform: rotate(-90deg);
+        }
+        .donut-label {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 20px;
+            color: #D93B38;
+            margin-top: 8px;
+        }
+        .donut-pct {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 28px;
+            fill: #3E2216;
+            dominant-baseline: central;
+            text-anchor: middle;
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
+
+        /* ============================================
+           GAUGE / METER
+           ============================================ */
+        .gauge-row {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .gauge-item {
+            text-align: center;
+        }
+        .gauge-label {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 20px;
+            color: #D93B38;
+            margin-top: 8px;
+        }
+        .gauge-value {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 32px;
+            fill: #3E2216;
+            text-anchor: middle;
+        }
+
+        /* ============================================
+           HEATMAP / MATRIX
+           ============================================ */
+        .heatmap-wrap {
+            overflow-x: auto;
+        }
+        .heatmap {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        .heatmap th {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 16px;
+            color: #D93B38;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        .heatmap td {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            color: #FFF8DC;
+            border: 2px solid #FFF8DC;
+            border-radius: 6px;
+        }
+        .heatmap .row-label {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            color: #3E2216;
+            text-align: right;
+            padding-right: 12px;
+            background: none;
+            border: none;
+        }
+
+        /* ============================================
+           PYRAMID
+           ============================================ */
+        .pyramid-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .pyramid-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            fill: #FFF8DC;
+            text-anchor: middle;
+            dominant-baseline: central;
+            text-transform: uppercase;
+        }
+        .pyramid-wrap .pyramid-side-label {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 14px;
+            fill: #C28A52;
+        }
+
+        /* ============================================
+           FLOWCHART
+           ============================================ */
+        .flowchart-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .flowchart-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 15px;
+            fill: #FFF8DC;
+            text-anchor: middle;
+            dominant-baseline: central;
+            text-transform: uppercase;
+        }
+        .flowchart-wrap .flow-arrow {
+            stroke: #C28A52;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+        }
+
+        /* ============================================
+           CONCENTRIC RINGS
+           ============================================ */
+        .rings-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .rings-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            text-anchor: middle;
+            dominant-baseline: central;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           VENN DIAGRAM
+           ============================================ */
+        .venn-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .venn-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            text-anchor: middle;
+            dominant-baseline: central;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        /* ============================================
+           BEFORE / AFTER
+           ============================================ */
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+        .ba-panel {
+            padding: 24px;
+            border-radius: 12px;
+        }
+        .ba-before {
+            background: rgba(217, 59, 56, 0.08);
+            border: 2px solid rgba(217, 59, 56, 0.2);
+        }
+        .ba-after {
+            background: rgba(99, 80, 72, 0.08);
+            border: 2px solid rgba(99, 80, 72, 0.2);
+        }
+        .ba-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+        }
+        .ba-arrow svg {
+            width: 48px;
+            height: 48px;
+        }
+        .ba-title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 24px;
+            color: #D93B38;
+            margin-bottom: 12px;
+        }
+
+        /* ============================================
+           SPECTRUM BAR
+           ============================================ */
+        .spectrum-wrap {
+            padding: 16px 0;
+        }
+        .spectrum-bar {
+            height: 32px;
+            border-radius: 16px;
+            position: relative;
+            margin: 16px 0;
+        }
+        .spectrum-marker {
+            position: absolute;
+            top: -8px;
+            width: 4px;
+            height: 48px;
+            background: #3E2216;
+            border-radius: 2px;
+            transform: translateX(-50%);
+        }
+        .spectrum-marker::after {
+            content: attr(data-label);
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 16px;
+            color: #3E2216;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        .spectrum-ends {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            color: #C28A52;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           BUBBLE CLUSTER
+           ============================================ */
+        .bubble-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .bubble-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            fill: #FFF8DC;
+            text-anchor: middle;
+            dominant-baseline: central;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        /* ============================================
+           SCALE / LIKERT
+           ============================================ */
+        .scale-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 12px;
+        }
+        .scale-label {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 20px;
+            color: #3E2216;
+            width: 200px;
+            text-align: right;
+            text-transform: uppercase;
+        }
+        .scale-dots {
+            display: flex;
+            gap: 8px;
+        }
+        .scale-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid #C28A52;
+            background: transparent;
+        }
+        .scale-dot.filled {
+            background: #C28A52;
+        }
+        .scale-anchor {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 14px;
+            color: #9B8578;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           WHEEL / PIE SEGMENTS
+           ============================================ */
+        .wheel-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .wheel-wrap svg text {
+            font-family: 'Patrick Hand', cursive;
+            text-anchor: middle;
+            dominant-baseline: central;
+            text-transform: uppercase;
+            font-size: 13px;
+            fill: #FFF8DC;
+        }
+        .wheel-wrap .wheel-center-text {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 16px;
+            fill: #3E2216;
+        }
+
+        /* ============================================
+           STEPPED PROGRESS / MILESTONE
+           ============================================ */
+        .milestone-track {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 40px 0 20px;
+        }
+        .milestone-track::before {
+            content: '';
+            position: absolute;
+            top: 52px;
+            left: 40px;
+            right: 40px;
+            height: 4px;
+            background: #E4D8CE;
+            z-index: 0;
+        }
+        .milestone-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 1;
+        }
+        .milestone-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #E4D8CE;
+            border: 3px solid #FFF8DC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 14px;
+            color: #FFF8DC;
+        }
+        .milestone-dot.reached {
+            background: #7E6B62;
+        }
+        .milestone-dot.current {
+            background: #D93B38;
+            box-shadow: 0 0 0 4px rgba(217, 59, 56, 0.25);
+        }
+        .milestone-name {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 16px;
+            color: #3E2216;
+            text-transform: uppercase;
+            text-align: center;
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Custom Visuals Showcase</h1>
+            <p class="hero-subtitle">Graphic Representations</p>
+        </div>
+    </header>
+
+    <div class="spacer"></div>
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== RADAR CHART ====== -->
+    <section>
+        <div class="container">
+            <h2>Radar / Spider Chart</h2>
+            <span>Awakened Counselor Dimensions</span>
+            <div class="radar-wrap">
+                <svg width="460" height="460" viewBox="-230 -230 460 460">
+                    <!-- Grid rings -->
+                    <polygon points="0,-180 171,-55.6 105.8,145.6 -105.8,145.6 -171,-55.6" fill="none" stroke="#E4D8CE" stroke-width="1"/>
+                    <polygon points="0,-144 136.8,-44.5 84.6,116.5 -84.6,116.5 -136.8,-44.5" fill="none" stroke="#E4D8CE" stroke-width="1"/>
+                    <polygon points="0,-108 102.6,-33.3 63.4,87.4 -63.4,87.4 -102.6,-33.3" fill="none" stroke="#E4D8CE" stroke-width="1"/>
+                    <polygon points="0,-72 68.4,-22.2 42.3,58.3 -42.3,58.3 -68.4,-22.2" fill="none" stroke="#E4D8CE" stroke-width="1"/>
+                    <polygon points="0,-36 34.2,-11.1 21.1,29.1 -21.1,29.1 -34.2,-11.1" fill="none" stroke="#E4D8CE" stroke-width="1"/>
+                    <!-- Axes -->
+                    <line x1="0" y1="0" x2="0" y2="-180" stroke="#C4B0A0" stroke-width="1"/>
+                    <line x1="0" y1="0" x2="171" y2="-55.6" stroke="#C4B0A0" stroke-width="1"/>
+                    <line x1="0" y1="0" x2="105.8" y2="145.6" stroke="#C4B0A0" stroke-width="1"/>
+                    <line x1="0" y1="0" x2="-105.8" y2="145.6" stroke="#C4B0A0" stroke-width="1"/>
+                    <line x1="0" y1="0" x2="-171" y2="-55.6" stroke="#C4B0A0" stroke-width="1"/>
+                    <!-- Data polygon (7 qualities mapped to 5 axes for demo — Non-Judgment 72%, Patience 65%, Trust 70%, Non-Striving 48%, Letting Go 55%) -->
+                    <polygon
+                        points="0,-129.6 111.15,-36.1 58.2,80.1 -58.2,100.8 -82.1,-26.7"
+                        fill="rgba(194,138,82,0.25)"
+                        stroke="#C28A52"
+                        stroke-width="2.5"/>
+                    <!-- Data dots -->
+                    <circle cx="0" cy="-129.6" r="5" fill="#C28A52"/>
+                    <circle cx="111.15" cy="-36.1" r="5" fill="#C28A52"/>
+                    <circle cx="58.2" cy="80.1" r="5" fill="#C28A52"/>
+                    <circle cx="-58.2" cy="100.8" r="5" fill="#C28A52"/>
+                    <circle cx="-82.1" cy="-26.7" r="5" fill="#C28A52"/>
+                    <!-- Labels -->
+                    <text x="0" y="-195" text-anchor="middle">Non-Judgment (72%)</text>
+                    <text x="190" y="-50" text-anchor="start">Patience (65%)</text>
+                    <text x="120" y="170" text-anchor="start">Trust (70%)</text>
+                    <text x="-120" y="170" text-anchor="end">Non-Striving (48%)</text>
+                    <text x="-190" y="-50" text-anchor="end">Letting Go (55%)</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== DONUT CHARTS ====== -->
+    <section>
+        <div class="container">
+            <h2>Donut Charts</h2>
+            <div class="donut-wrap">
+                <!-- Donut 1 -->
+                <div class="donut-item">
+                    <svg width="160" height="160" viewBox="0 0 160 160">
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#E4D8CE" stroke-width="18"/>
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#7E6B62" stroke-width="18"
+                            stroke-dasharray="271.4" stroke-dashoffset="75.6" stroke-linecap="round"/>
+                        <text class="donut-pct" x="80" y="80">72%</text>
+                    </svg>
+                    <div class="donut-label">Non-Judgment</div>
+                </div>
+                <!-- Donut 2 -->
+                <div class="donut-item">
+                    <svg width="160" height="160" viewBox="0 0 160 160">
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#E4D8CE" stroke-width="18"/>
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#9B8578" stroke-width="18"
+                            stroke-dasharray="244.3" stroke-dashoffset="75.6" stroke-linecap="round"/>
+                        <text class="donut-pct" x="80" y="80">65%</text>
+                    </svg>
+                    <div class="donut-label">Patience</div>
+                </div>
+                <!-- Donut 3 -->
+                <div class="donut-item">
+                    <svg width="160" height="160" viewBox="0 0 160 160">
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#E4D8CE" stroke-width="18"/>
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#4A3830" stroke-width="18"
+                            stroke-dasharray="180.9" stroke-dashoffset="75.6" stroke-linecap="round"/>
+                        <text class="donut-pct" x="80" y="80">48%</text>
+                    </svg>
+                    <div class="donut-label">Non-Striving</div>
+                </div>
+                <!-- Donut 4 -->
+                <div class="donut-item">
+                    <svg width="160" height="160" viewBox="0 0 160 160">
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#E4D8CE" stroke-width="18"/>
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#635048" stroke-width="18"
+                            stroke-dasharray="169.6" stroke-dashoffset="75.6" stroke-linecap="round"/>
+                        <text class="donut-pct" x="80" y="80">45%</text>
+                    </svg>
+                    <div class="donut-label">Integration</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== GAUGE METERS ====== -->
+    <section>
+        <div class="container">
+            <h2>Gauge Meters</h2>
+            <div class="gauge-row">
+                <!-- Gauge 1 -->
+                <div class="gauge-item">
+                    <svg width="180" height="110" viewBox="0 0 180 110">
+                        <path d="M 15 100 A 75 75 0 0 1 165 100" fill="none" stroke="#E4D8CE" stroke-width="14" stroke-linecap="round"/>
+                        <path d="M 15 100 A 75 75 0 0 1 140 38" fill="none" stroke="#7E6B62" stroke-width="14" stroke-linecap="round"/>
+                        <text class="gauge-value" x="90" y="95">78%</text>
+                    </svg>
+                    <div class="gauge-label">Awareness</div>
+                </div>
+                <!-- Gauge 2 -->
+                <div class="gauge-item">
+                    <svg width="180" height="110" viewBox="0 0 180 110">
+                        <path d="M 15 100 A 75 75 0 0 1 165 100" fill="none" stroke="#E4D8CE" stroke-width="14" stroke-linecap="round"/>
+                        <path d="M 15 100 A 75 75 0 0 1 107 27" fill="none" stroke="#9B8578" stroke-width="14" stroke-linecap="round"/>
+                        <text class="gauge-value" x="90" y="95">62%</text>
+                    </svg>
+                    <div class="gauge-label">Techniques</div>
+                </div>
+                <!-- Gauge 3 -->
+                <div class="gauge-item">
+                    <svg width="180" height="110" viewBox="0 0 180 110">
+                        <path d="M 15 100 A 75 75 0 0 1 165 100" fill="none" stroke="#E4D8CE" stroke-width="14" stroke-linecap="round"/>
+                        <path d="M 15 100 A 75 75 0 0 1 120 30" fill="none" stroke="#635048" stroke-width="14" stroke-linecap="round"/>
+                        <text class="gauge-value" x="90" y="95">70%</text>
+                    </svg>
+                    <div class="gauge-label">Self Practice</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== HEATMAP ====== -->
+    <section>
+        <div class="container">
+            <h2>Heatmap / Matrix</h2>
+            <span>Session Engagement Over Time</span>
+            <div class="half-spacer"></div>
+            <div class="heatmap-wrap">
+                <table class="heatmap">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Wk 1</th>
+                            <th>Wk 2</th>
+                            <th>Wk 3</th>
+                            <th>Wk 4</th>
+                            <th>Wk 5</th>
+                            <th>Wk 6</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-label">Awareness</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#9B8578">4</td>
+                            <td style="background:#9B8578">4</td>
+                            <td style="background:#7E6B62">5</td>
+                            <td style="background:#635048">6</td>
+                            <td style="background:#4A3830">7</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Grounding</td>
+                            <td style="background:#E4D8CE">2</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#9B8578">4</td>
+                            <td style="background:#9B8578">4</td>
+                            <td style="background:#7E6B62">5</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Presence</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#7E6B62">5</td>
+                            <td style="background:#7E6B62">5</td>
+                            <td style="background:#635048">6</td>
+                            <td style="background:#635048">6</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Non-Striving</td>
+                            <td style="background:#E4D8CE">1</td>
+                            <td style="background:#E4D8CE">2</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#C4B0A0">3</td>
+                            <td style="background:#9B8578">4</td>
+                            <td style="background:#9B8578">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== PYRAMID ====== -->
+    <section>
+        <div class="container">
+            <h2>Pyramid</h2>
+            <span>Mindful Development Hierarchy</span>
+            <div class="pyramid-wrap">
+                <svg width="400" height="340" viewBox="0 0 400 340">
+                    <!-- Level 4 (top) -->
+                    <polygon points="200,10 250,85 150,85" fill="#382C28"/>
+                    <text x="200" y="58" font-size="12">Integration</text>
+                    <!-- Level 3 -->
+                    <polygon points="150,90 250,90 290,165 110,165" fill="#635048"/>
+                    <text x="200" y="135" font-size="14">Self Practice</text>
+                    <!-- Level 2 -->
+                    <polygon points="110,170 290,170 330,245 70,245" fill="#9B8578"/>
+                    <text x="200" y="215" font-size="15">Techniques</text>
+                    <!-- Level 1 (base) -->
+                    <polygon points="70,250 330,250 370,325 30,325" fill="#C4B0A0"/>
+                    <text x="200" y="295" font-size="16">Awareness</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== FLOWCHART ====== -->
+    <section>
+        <div class="container">
+            <h2>Flowchart / Process</h2>
+            <span>Anchoring Response Cycle</span>
+            <div class="flowchart-wrap">
+                <svg width="700" height="200" viewBox="0 0 700 200">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#C28A52"/>
+                        </marker>
+                    </defs>
+                    <!-- Nodes -->
+                    <rect x="10" y="60" width="120" height="60" rx="10" fill="#382C28"/>
+                    <text x="70" y="93" font-size="14">Trigger</text>
+                    <!-- Arrow 1 -->
+                    <line x1="130" y1="90" x2="170" y2="90" class="flow-arrow"/>
+                    <!-- Node 2 -->
+                    <rect x="170" y="60" width="120" height="60" rx="10" fill="#635048"/>
+                    <text x="230" y="93" font-size="13">Awareness</text>
+                    <!-- Arrow 2 -->
+                    <line x1="290" y1="90" x2="330" y2="90" class="flow-arrow"/>
+                    <!-- Node 3 -->
+                    <rect x="330" y="60" width="120" height="60" rx="10" fill="#7E6B62"/>
+                    <text x="390" y="93" font-size="14">Pause</text>
+                    <!-- Arrow 3 -->
+                    <line x1="450" y1="90" x2="490" y2="90" class="flow-arrow"/>
+                    <!-- Node 4 -->
+                    <rect x="490" y="60" width="120" height="60" rx="10" fill="#9B8578"/>
+                    <text x="550" y="93" font-size="14">Anchor</text>
+                    <!-- Arrow 4 -->
+                    <line x1="610" y1="90" x2="640" y2="90" class="flow-arrow"/>
+                    <!-- Node 5 -->
+                    <rect x="640" y="55" width="55" height="70" rx="35" fill="#D93B38"/>
+                    <text x="667" y="88" font-size="13" fill="#FFF8DC">Respond</text>
+                    <!-- Feedback loop -->
+                    <path d="M 667 125 Q 667 170, 390 170 Q 70 170, 70 125" class="flow-arrow" stroke-dasharray="6,4"/>
+                    <text x="370" y="165" font-family="Patrick Hand, cursive" font-size="13" fill="#C28A52" text-anchor="middle" text-transform="uppercase">Feedback Loop</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== CONCENTRIC RINGS ====== -->
+    <section>
+        <div class="container">
+            <h2>Concentric Rings</h2>
+            <span>Layers of Self-Awareness</span>
+            <div class="rings-wrap">
+                <svg width="400" height="400" viewBox="0 0 400 400">
+                    <circle cx="200" cy="200" r="180" fill="rgba(228,216,206,0.4)" stroke="#E4D8CE" stroke-width="2"/>
+                    <text x="200" y="40" font-size="14" fill="#9B8578">External Behavior</text>
+                    <circle cx="200" cy="200" r="135" fill="rgba(196,176,160,0.4)" stroke="#C4B0A0" stroke-width="2"/>
+                    <text x="200" y="85" font-size="14" fill="#7E6B62">Thought Patterns</text>
+                    <circle cx="200" cy="200" r="90" fill="rgba(155,133,120,0.5)" stroke="#9B8578" stroke-width="2"/>
+                    <text x="200" y="130" font-size="14" fill="#635048">Emotional Layer</text>
+                    <circle cx="200" cy="200" r="45" fill="rgba(126,107,98,0.7)" stroke="#7E6B62" stroke-width="2"/>
+                    <text x="200" y="200" font-size="15" fill="#FFF8DC">Core Self</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== VENN DIAGRAM ====== -->
+    <section>
+        <div class="container">
+            <h2>Venn Diagram</h2>
+            <div class="venn-wrap">
+                <svg width="500" height="360" viewBox="0 0 500 360">
+                    <circle cx="175" cy="170" r="120" fill="rgba(56,44,40,0.2)" stroke="#382C28" stroke-width="2"/>
+                    <circle cx="325" cy="170" r="120" fill="rgba(155,133,120,0.25)" stroke="#9B8578" stroke-width="2"/>
+                    <circle cx="250" cy="280" r="120" fill="rgba(194,138,82,0.2)" stroke="#C28A52" stroke-width="2"/>
+                    <!-- Labels -->
+                    <text x="120" y="140" font-size="16" fill="#382C28">Mindfulness</text>
+                    <text x="335" y="140" font-size="16" fill="#635048">Technique</text>
+                    <text x="250" y="320" font-size="16" fill="#C28A52">Empathy</text>
+                    <!-- Center -->
+                    <text x="250" y="210" font-size="14" fill="#D93B38" font-family="Permanent Marker, cursive">Growth</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== BEFORE / AFTER ====== -->
+    <section>
+        <div class="container">
+            <h2>Before / After Comparison</h2>
+            <div class="before-after">
+                <div class="ba-panel ba-before">
+                    <div class="ba-title">Before</div>
+                    <ul class="bullet-narrative">
+                        <li>Losing broader perspective</li>
+                        <li>Defaulting to defender mode</li>
+                        <li>Rescuing the client</li>
+                    </ul>
+                </div>
+                <div class="ba-arrow">
+                    <svg viewBox="0 0 48 48">
+                        <path d="M 8 24 L 36 24 M 28 16 L 36 24 L 28 32" stroke="#C28A52" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="ba-panel ba-after">
+                    <div class="ba-title">After</div>
+                    <ul class="bullet-narrative">
+                        <li>Maintaining perspective</li>
+                        <li>Anchored presence</li>
+                        <li>Allowing client to do the work</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== SPECTRUM BAR ====== -->
+    <section>
+        <div class="container">
+            <h2>Spectrum Bar</h2>
+            <div class="spectrum-wrap">
+                <div class="spectrum-ends">
+                    <span>Reactive</span>
+                    <span>Responsive</span>
+                </div>
+                <div class="spectrum-bar" style="background: linear-gradient(90deg, #D93B38, #C28A52, #635048, #382C28);">
+                    <div class="spectrum-marker" style="left: 62%;" data-label="Current"></div>
+                </div>
+            </div>
+            <div class="half-spacer"></div>
+            <div class="spectrum-wrap">
+                <div class="spectrum-ends">
+                    <span>Striving</span>
+                    <span>Non-Striving</span>
+                </div>
+                <div class="spectrum-bar" style="background: linear-gradient(90deg, #382C28, #7E6B62, #C4B0A0, #E4D8CE);">
+                    <div class="spectrum-marker" style="left: 48%;" data-label="Current"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== BUBBLE CLUSTER ====== -->
+    <section>
+        <div class="container">
+            <h2>Bubble Cluster</h2>
+            <span>Relative Emphasis Areas</span>
+            <div class="bubble-wrap">
+                <svg width="500" height="380" viewBox="0 0 500 380">
+                    <circle cx="200" cy="160" r="80" fill="rgba(56,44,40,0.75)"/>
+                    <text x="200" y="155" fill="#FFF8DC" font-size="15">Non-Judgment</text>
+                    <text x="200" y="175" fill="#E4D8CE" font-size="12">72%</text>
+
+                    <circle cx="340" cy="130" r="65" fill="rgba(99,80,72,0.75)"/>
+                    <text x="340" y="125" fill="#FFF8DC" font-size="14">Trust</text>
+                    <text x="340" y="145" fill="#E4D8CE" font-size="12">70%</text>
+
+                    <circle cx="130" cy="290" r="60" fill="rgba(126,107,98,0.75)"/>
+                    <text x="130" y="285" fill="#FFF8DC" font-size="14">Patience</text>
+                    <text x="130" y="305" fill="#E4D8CE" font-size="12">65%</text>
+
+                    <circle cx="390" cy="270" r="55" fill="rgba(155,133,120,0.75)"/>
+                    <text x="390" y="265" fill="#FFF8DC" font-size="14">Acceptance</text>
+                    <text x="390" y="285" fill="#E4D8CE" font-size="12">63%</text>
+
+                    <circle cx="270" cy="300" r="48" fill="rgba(196,176,160,0.85)"/>
+                    <text x="270" y="295" fill="#3E2216" font-size="13">Letting Go</text>
+                    <text x="270" y="315" fill="#635048" font-size="12">55%</text>
+
+                    <circle cx="430" cy="180" r="42" fill="rgba(217,59,56,0.7)"/>
+                    <text x="430" y="175" fill="#FFF8DC" font-size="12">Non-Striving</text>
+                    <text x="430" y="195" fill="#FFF8DC" font-size="12">48%</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== LIKERT SCALE ====== -->
+    <section>
+        <div class="container">
+            <h2>Likert / Dot Scale</h2>
+            <div class="scale-row">
+                <span class="scale-label">Non-Judgment</span>
+                <span class="scale-anchor">Low</span>
+                <div class="scale-dots">
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot"></div>
+                </div>
+                <span class="scale-anchor">High</span>
+            </div>
+            <div class="scale-row">
+                <span class="scale-label">Patience</span>
+                <span class="scale-anchor">Low</span>
+                <div class="scale-dots">
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot"></div>
+                    <div class="scale-dot"></div>
+                </div>
+                <span class="scale-anchor">High</span>
+            </div>
+            <div class="scale-row">
+                <span class="scale-label">Non-Striving</span>
+                <span class="scale-anchor">Low</span>
+                <div class="scale-dots">
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot"></div>
+                    <div class="scale-dot"></div>
+                    <div class="scale-dot"></div>
+                </div>
+                <span class="scale-anchor">High</span>
+            </div>
+            <div class="scale-row">
+                <span class="scale-label">Letting Go</span>
+                <span class="scale-anchor">Low</span>
+                <div class="scale-dots">
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot filled"></div>
+                    <div class="scale-dot"></div>
+                    <div class="scale-dot"></div>
+                </div>
+                <span class="scale-anchor">High</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== SEGMENTED WHEEL ====== -->
+    <section>
+        <div class="container">
+            <h2>Segmented Wheel</h2>
+            <div class="wheel-wrap">
+                <svg width="380" height="380" viewBox="0 0 380 380">
+                    <!-- 7 segments for Awakened Counselor -->
+                    <path d="M190,190 L190,20 A170,170 0 0,1 323,68 Z" fill="#382C28"/>
+                    <text x="240" y="65" font-size="12" transform="rotate(13,240,65)">Non-Judgment</text>
+                    <path d="M190,190 L323,68 A170,170 0 0,1 358,200 Z" fill="#4A3830"/>
+                    <text x="310" y="145" font-size="12" transform="rotate(52,310,145)">Patience</text>
+                    <path d="M190,190 L358,200 A170,170 0 0,1 280,335 Z" fill="#635048"/>
+                    <text x="310" y="270" font-size="12" transform="rotate(100,310,270)">Beginner's Mind</text>
+                    <path d="M190,190 L280,335 A170,170 0 0,1 140,350 Z" fill="#7E6B62"/>
+                    <text x="210" y="330" font-size="12">Trust</text>
+                    <path d="M190,190 L140,350 A170,170 0 0,1 30,250 Z" fill="#9B8578"/>
+                    <text x="85" y="305" font-size="12" transform="rotate(-55,85,305)">Non-Striving</text>
+                    <path d="M190,190 L30,250 A170,170 0 0,1 40,110 Z" fill="#C4B0A0"/>
+                    <text x="55" y="185" font-size="12" fill="#3E2216" transform="rotate(-78,55,185)">Acceptance</text>
+                    <path d="M190,190 L40,110 A170,170 0 0,1 190,20 Z" fill="#E4D8CE"/>
+                    <text x="120" y="72" font-size="12" fill="#3E2216" transform="rotate(-35,120,72)">Letting Go</text>
+                    <!-- Center circle -->
+                    <circle cx="190" cy="190" r="40" fill="#FFF8DC" stroke="#C28A52" stroke-width="2"/>
+                    <text class="wheel-center-text" x="190" y="190" font-size="12">Awakened</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- ====== MILESTONE TRACKER ====== -->
+    <section>
+        <div class="container">
+            <h2>Milestone Tracker</h2>
+            <div class="milestone-track">
+                <div class="milestone-step">
+                    <div class="milestone-dot reached">1</div>
+                    <span class="milestone-name">Awareness</span>
+                </div>
+                <div class="milestone-step">
+                    <div class="milestone-dot reached">2</div>
+                    <span class="milestone-name">Techniques</span>
+                </div>
+                <div class="milestone-step">
+                    <div class="milestone-dot current">3</div>
+                    <span class="milestone-name">Self Practice</span>
+                </div>
+                <div class="milestone-step">
+                    <div class="milestone-dot">4</div>
+                    <span class="milestone-name">Integration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+</body>
+</html>
