@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Case Dashboard — CT</title>
+    <link rel="stylesheet" href="configv2.css?v=2">
+    <style>
+        /* Client dashboard overrides */
+        .presenting-concern {
+            background: rgba(217, 59, 56, 0.08);
+            border-left: 4px solid var(--bg-hero);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        .strengths-box {
+            background: rgba(194, 138, 82, 0.1);
+            border-left: 4px solid var(--color-secondary);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+            line-height: 1.7;
+        }
+        .observation-card {
+            background: rgba(194, 138, 82, 0.06);
+            border: 1px solid rgba(194, 138, 82, 0.2);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 12px 0;
+        }
+        .observation-card h3 {
+            font-family: var(--font-heading);
+            font-size: var(--size-h3);
+            color: var(--color-h3);
+            margin-bottom: 8px;
+        }
+        .observation-card p {
+            line-height: 1.7;
+        }
+        .observation-card .quote {
+            color: var(--bg-hero);
+            font-weight: bold;
+        }
+        .key-statement {
+            display: inline-block;
+            background: rgba(217, 59, 56, 0.1);
+            border: 1px solid rgba(217, 59, 56, 0.25);
+            border-radius: 6px;
+            padding: 4px 12px;
+            margin: 4px 4px 4px 0;
+            font-size: var(--size-secondary);
+        }
+        .spectrum-row {
+            margin: 14px 0;
+        }
+        .spectrum-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        .spectrum-name {
+            font-family: var(--font-heading);
+            font-size: 20px;
+        }
+        .spectrum-pct {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: var(--color-secondary);
+        }
+        .spectrum-evidence {
+            font-size: 18px;
+            color: var(--clay-driftwood);
+            margin-top: 2px;
+        }
+        .ethics-box {
+            background: rgba(217, 59, 56, 0.06);
+            border: 2px solid rgba(217, 59, 56, 0.2);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+        .ethics-box li {
+            color: var(--color-body);
+        }
+        .approach-card {
+            display: inline-block;
+            background: rgba(194, 138, 82, 0.1);
+            border: 2px solid var(--color-secondary);
+            border-radius: 10px;
+            padding: 14px 24px;
+            margin: 6px 8px 6px 0;
+            font-family: var(--font-heading);
+            font-size: 22px;
+        }
+        .approach-primary {
+            background: rgba(217, 59, 56, 0.08);
+            border-color: var(--bg-hero);
+            color: var(--bg-hero);
+        }
+        .question-list li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin: 16px 0;
+        }
+        .video-card {
+            background: rgba(194, 138, 82, 0.06);
+            border: 1px solid rgba(194, 138, 82, 0.2);
+            border-radius: 10px;
+            padding: 20px 24px;
+        }
+        .video-card h3 {
+            font-family: var(--font-heading);
+            font-size: var(--size-h3);
+            color: var(--color-h3);
+            margin-bottom: 12px;
+        }
+        .video-card video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            background: #000;
+        }
+        .video-card .video-meta {
+            font-size: 18px;
+            color: var(--clay-driftwood);
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <h1>Client Case Dashboard</h1>
+        </div>
+    </header>
+
+    <!-- S1: CLIENT PROFILE -->
+    <section id="client-profile">
+        <div class="container">
+            <h2>Client Profile</h2>
+            <div class="demographics-grid">
+                <div class="demo-item">
+                    <span class="demo-label">Client</span>
+                    <span class="demo-value">CT</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Age</span>
+                    <span class="demo-value no-transform">6</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Gender</span>
+                    <span class="demo-value">Male</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Handedness</span>
+                    <span class="demo-value">Left</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Referral</span>
+                    <span class="demo-value no-transform">Paper Flower Psychiatry</span>
+                </div>
+            </div>
+
+            <div class="half-spacer"></div>
+            <span class="demo-label">Presenting Concern</span>
+            <div class="presenting-concern">
+                CT seems very anxious. He's talking about different ways to die. He says that no one wants him around. He seems afraid to try hard things (i.e., starts a sport and loves it until it gets hard). Says kids are laughing at him. I think he is missing his grandpa (he called him poppa) who died in 2024.
+            </div>
+
+            <span class="demo-label">Strengths</span>
+            <div class="strengths-box">
+                CT is fun, social, energetic and whip smart. He is very capable in many ways and is very kind hearted.
+            </div>
+
+            <span class="demo-label">Diagnosis / Explanations Given</span>
+            <div class="strengths-box">
+                Bre thinks he is dealing with loss of grandfather and also possibly starting to wonder about his dad.
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- S2: FAMILY CONSTELLATION -->
+    <section id="family">
+        <div class="container">
+            <h2>Family Constellation</h2>
+            <div class="demographics-grid">
+                <div class="demo-item">
+                    <span class="demo-label">Mom</span>
+                    <span class="demo-value no-transform">Samantha, 58</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Education</span>
+                    <span class="demo-value">PhD</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Occupation</span>
+                    <span class="demo-value no-transform">Sr. Instructor of English</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Sibling</span>
+                    <span class="demo-value no-transform">Sammy, 2</span>
+                </div>
+            </div>
+
+            <div class="half-spacer"></div>
+            <ul class="bullet-narrative">
+                <li>Donated frozen embryo child. Open relationship with bio parents — will tell him when he starts asking more.</li>
+                <li><strong>Grandfather (Poppa):</strong> Died of Parkinson's in 2024. Very close relationship — singing, rhyming on walks, competitive play with CT. "He was all here when we needed him."</li>
+                <li><strong>Mom's Sister:</strong> Died in 2016 (mom disclosed unprompted).</li>
+                <li><strong>Grandmother:</strong> Visits CT and mom each afternoon. Uses vicodin and alcohol every evening to "release pain." Children witness interactions between mom and grandmother.</li>
+                <li><strong>Mom's Self-Report:</strong> Going through menopause — "was super grumpy for January." Started HRT. Describes herself as having perfectionism, anxiety, somatization.</li>
+                <li><strong>Parenting:</strong> Dr. Becky Kennedy approach (Good Inside). Uses adult language. Allows all expressions of emotion. Reparenting from her own mother's fear-based style.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- S3: DEVELOPMENTAL + BEHAVIORAL SNAPSHOT -->
+    <section id="developmental">
+        <div class="container">
+            <h2>Developmental Snapshot</h2>
+            <span class="demo-label">Milestones (all on-track)</span>
+            <div class="half-spacer"></div>
+            <div class="demographics-grid">
+                <div class="demo-item">
+                    <span class="demo-label">First Words</span>
+                    <span class="demo-value no-transform">12 mo</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Sentences</span>
+                    <span class="demo-value no-transform">18 mo</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Walking</span>
+                    <span class="demo-value no-transform">14 mo</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">Reading</span>
+                    <span class="demo-value no-transform">Age 5</span>
+                </div>
+            </div>
+
+            <div class="half-spacer"></div>
+            <span class="demo-label">Early Behaviors</span>
+            <ul class="bullet-narrative">
+                <li>Adaptable, Plays Alone, Easy to Manage, Sensitive, Playful, Happy</li>
+            </ul>
+
+            <span class="demo-label">Current Behaviors</span>
+            <ul class="bullet-narrative">
+                <li><strong>Presenting:</strong> Anxiety, Moodiness, Lying, Crying Episodes</li>
+                <li><strong>Self-Esteem:</strong> "A little. He's comparing himself to all of the other kids."</li>
+                <li><strong>Discipline:</strong> Trying to be authoritative. "Lately, he seems a little defiant, or just moody. It feels like something he's learned at school."</li>
+            </ul>
+
+            <span class="demo-label">School</span>
+            <ul class="bullet-narrative">
+                <li>Elementary — top of class. Completed 95% of required work for the entire year.</li>
+                <li><strong>Strengths:</strong> Math, Reading, Geography</li>
+                <li><strong>Struggles:</strong> Words Their Way, Poor Handwriting, Making Friends</li>
+                <li><strong>Peer Concern:</strong> Two closest friends have psychological issues — "keep telling him different ways to die, among other things."</li>
+                <li><strong>Activities:</strong> Pickleball. Mountain biking (gave up when it got harder). Rock climbing.</li>
+            </ul>
+
+            <span class="demo-label">Social</span>
+            <ul class="bullet-narrative">
+                <li>Tends to like older kids or much younger kids. Few friends. Is a leader. Often teased. Bragging/boastful. Shares well.</li>
+            </ul>
+
+            <span class="demo-label">Free Time</span>
+            <ul class="bullet-narrative">
+                <li>Reading, Lego, swinging, baking, drawing, board games. TV: 1 hr/day (PBS, age-appropriate). No video games.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <h1>Clinical Observations — Session 1</h1>
+        </div>
+    </header>
+
+    <!-- S4: PLAY SESSION OBSERVATIONS -->
+    <section id="play-session">
+        <div class="container">
+            <h2>Play Session Observations</h2>
+
+            <div class="observation-card">
+                <h3>1. Transactional Play</h3>
+                <p>Showed me his stuff: drawings first, then Lego creations, then other creations. Normal exaggeration during showing. Showed creations ad nauseam (~20 min) without connecting with clinician.</p>
+                <p><strong>Pattern:</strong> Performance modeled as prerequisite to connection? Began transactionally — place of comfort for him.</p>
+                <p class="quote">"I felt like an audience member."</p>
+                <p>Noted: wants more play. Noted: <span class="quote">"I need to get a pen"</span> — thought he was going to start taking notes.</p>
+            </div>
+
+            <div class="observation-card">
+                <h3>2. Grief Disclosure</h3>
+                <p>Door-knobbed with g-pa disclosure near the end of the session.</p>
+            </div>
+
+            <div class="observation-card">
+                <h3>3. Transference</h3>
+                <p><strong>Pattern:</strong> If I impress, I'll get attention.</p>
+                <p>Responded to clinician stating "I need to go to class" with <span class="quote">"me too, I have work to do"</span> — felt confused. Wondered if mom has said this to him before.</p>
+                <ul class="bullet-narrative">
+                    <li>Possible defensive mimicry</li>
+                    <li>Possible suppression of emotional needs/longing — being strong for mom</li>
+                </ul>
+            </div>
+
+            <div class="observation-card">
+                <h3>4. Precocious Presentation</h3>
+                <p>Mom uses adult language with him. Speaks well for his age. Broad interests and capacity.</p>
+                <ul class="bullet-narrative">
+                    <li>Presents as literalist — evidenced by "I am" repeatedly</li>
+                    <li>Desires to be the expert</li>
+                    <li>Seems guarded, yet has an apparent longing for friendship</li>
+                    <li>Spends a lot of time alone?</li>
+                </ul>
+            </div>
+
+            <div class="observation-card">
+                <h3>5. Imaginary Friend</h3>
+                <p>Disclosed invisible friend: <strong>Soren Lorenson</strong></p>
+            </div>
+
+            <div class="observation-card">
+                <h3>6. Peer Concerns</h3>
+                <p>Associates with peers who (according to mom) are "disturbed" — characterized as sharing about death and gore.</p>
+            </div>
+
+            <div class="observation-card">
+                <h3>7. Key Statements</h3>
+                <div>
+                    <span class="key-statement">"Blind You" — laser pointer</span>
+                    <span class="key-statement">"Too weak, my spine hurts"</span>
+                    <span class="key-statement">"Hurts me"</span>
+                    <span class="key-statement">"Kill myself" — via mom</span>
+                </div>
+                <div class="half-spacer"></div>
+                <p>Noted: Appears interested by things that don't seem as they are.</p>
+                <p>Noted: Highly self-interested — developmentally normal.</p>
+                <p>Noted: Delayed exiting session 3-4 times. Had to be forceful.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- S5: MOM INTERVIEW -->
+    <section id="mom-interview">
+        <div class="container">
+            <h2>Mom Interview Findings</h2>
+            <ul class="bullet-narrative">
+                <li><strong>Tantrum Sequence:</strong> Ice cream after playground incident → tantrum. Mom seemed to shut down during the incident instead of handling directly. Uses water to "reset" CT post-tantrum. "Works every time."</li>
+                <li><strong>Sister's Death:</strong> Disclosed death of sister in 2016 (unprompted). Followed by re-centering (projecting?) focus onto CT and his issue with death. "Kill myself."</li>
+                <li><strong>G-pa Relationship:</strong> Very close — singing and rhyming on walks, competitive play. Mom could not describe what made them close aside from proximity: "He was all here when we needed him."</li>
+                <li><strong>Mom Did Not Disclose:</strong> Play with CT.</li>
+                <li><strong>Mom's Description of CT's Life as a 6-Year-Old (in order):</strong> Montessori school. Has two friends who scare CT and talk about death and video games and other scary things.</li>
+            </ul>
+
+            <div class="half-spacer"></div>
+            <span class="demo-label">Reparenting</span>
+            <ul class="bullet-narrative">
+                <li>Her mother had a father with mental health issues and terrible parenting.</li>
+                <li>Her mom had a fear-based parenting style.</li>
+                <li>Mom was "mentally ill": perfectionism, anxiety, somatization.</li>
+                <li>Using Dr. Becky Kennedy's approach to parenting (inferred: Good Inside).</li>
+            </ul>
+
+            <span class="demo-label">Grandmother in the Home</span>
+            <ul class="bullet-narrative">
+                <li>Uses vicodin and alcohol every evening to "release pain."</li>
+                <li>Visits CT and mom each afternoon while "non-drunk."</li>
+                <li>CT and his brother witness interactions between mom and grandmother.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <h1>Session Video</h1>
+        </div>
+    </header>
+
+    <!-- VIDEO CLIPS -->
+    <section id="session-video">
+        <div class="container">
+            <h2>Session Clips</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <h3>Clip 1 — 9:50 to 11:00</h3>
+                    <video controls preload="metadata">
+                        <source src="input/clip1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-meta">Duration: 1 min 10 sec</div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Clip 2 — 36:30 to 37:30</h3>
+                    <video controls preload="metadata">
+                        <source src="input/clip2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-meta">Duration: 1 min 0 sec</div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Clip 3 — 38:38 to 44:15</h3>
+                    <video controls preload="metadata">
+                        <source src="input/clip3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-meta">Duration: 5 min 37 sec</div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Clip 4 — 58:45 to 59:29</h3>
+                    <video controls preload="metadata">
+                        <source src="input/clip4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-meta">Duration: 44 sec</div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Clip 5 — 1:22:30 to 1:23:40</h3>
+                    <video controls preload="metadata">
+                        <source src="input/clip5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-meta">Duration: 1 min 10 sec</div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Clip 6 — 1:24:00 to 1:25:06</h3>
+                    <video controls preload="metadata">
+                        <source src="input/clip6.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-meta">Duration: 1 min 6 sec</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <h1>Dimensional Assessment</h1>
+        </div>
+    </header>
+
+    <!-- S6: HiTOP SPECTRA -->
+    <section id="spectra">
+        <div class="container">
+            <h2>HiTOP Spectra Scoring</h2>
+            <span class="demo-label">Derived from intake, play session, and mom interview</span>
+            <div class="half-spacer"></div>
+
+            <div class="progress-list">
+                <div class="spectrum-row">
+                    <div class="spectrum-label-row">
+                        <span class="spectrum-name">Internalizing</span>
+                        <span class="spectrum-pct">68%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 68%; background: var(--clay-charcoal);"></div></div>
+                    <div class="spectrum-evidence">Anxiety (primary), "kill myself", grief (g-pa 2024), crying episodes, self-esteem, comparing to peers</div>
+                </div>
+
+                <div class="spectrum-row">
+                    <div class="spectrum-label-row">
+                        <span class="spectrum-name">Detachment</span>
+                        <span class="spectrum-pct">42%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 42%; background: var(--clay-dark-brown);"></div></div>
+                    <div class="spectrum-evidence">Guarded in session, 20 min showing without connecting, invisible friend, few friends, longing yet avoidant</div>
+                </div>
+
+                <div class="spectrum-row">
+                    <div class="spectrum-label-row">
+                        <span class="spectrum-name">Somatoform</span>
+                        <span class="spectrum-pct">28%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 28%; background: var(--clay-walnut);"></div></div>
+                    <div class="spectrum-evidence">"Too weak, my spine hurts", mom models somatization (perfectionism, anxiety, somatization)</div>
+                </div>
+
+                <div class="spectrum-row">
+                    <div class="spectrum-label-row">
+                        <span class="spectrum-name">Thought Disorder</span>
+                        <span class="spectrum-pct">19%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 19%; background: var(--clay-driftwood);"></div></div>
+                    <div class="spectrum-evidence">"Blind You" (unclear meaning), literalist presentation, invisible friend (developmentally normative)</div>
+                </div>
+
+                <div class="spectrum-row">
+                    <div class="spectrum-label-row">
+                        <span class="spectrum-name">Antagonistic Ext.</span>
+                        <span class="spectrum-pct">14%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 14%; background: var(--clay-clay);"></div></div>
+                    <div class="spectrum-evidence">Some lying, mild defiance — developmental range</div>
+                </div>
+
+                <div class="spectrum-row">
+                    <div class="spectrum-label-row">
+                        <span class="spectrum-name">Disinhibited Ext.</span>
+                        <span class="spectrum-pct">13%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 13%; background: var(--clay-sand-white);"></div></div>
+                    <div class="spectrum-evidence">Delayed exiting session 3-4x, tantrum behavior, boundary testing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <h1>Clinical Formulation</h1>
+        </div>
+    </header>
+
+    <!-- S7: APPROACH CONSIDERATIONS -->
+    <section id="approach">
+        <div class="container">
+            <h2>Approach Considerations</h2>
+            <div>
+                <span class="approach-card approach-primary">Theraplay</span>
+                <span class="approach-card">Grief Counseling</span>
+                <span class="approach-card">Grief Summer Camp with Family</span>
+            </div>
+
+            <div class="half-spacer"></div>
+            <span class="demo-label">Mom Considerations</span>
+            <ul class="bullet-narrative">
+                <li>Mom shuts down when confronted by negative emotions ("he used to be always smiling — like his young brother does now").</li>
+                <li>Does mom have control of her emotions without total suppression? Models binary: in shower = fixed; before shower = broken/unmanageable?</li>
+                <li>Self-described authoritarian parenting style — walked this back during interview. Unrelenting standards?</li>
+            </ul>
+
+            <span class="demo-label">Household Tension</span>
+            <ul class="bullet-narrative">
+                <li>Grandmother has "mental health issues" — allowed into household despite mom's knowledge of heavy self-medication.</li>
+                <li>Mom assumes sobriety during afternoon visits.</li>
+                <li>Children exposed to mom-grandmother interactions — assuming high tension, high confrontation.</li>
+            </ul>
+
+            <span class="demo-label">Intergenerational Trauma</span>
+            <ul class="bullet-narrative">
+                <li>G-ma's father → mental health issues, terrible parenting</li>
+                <li>G-ma → fear-based parenting → vicodin + alcohol</li>
+                <li>Mom → "mentally ill" (perfectionism, anxiety, somatization) → reparenting attempt</li>
+                <li>CT → grief, attachment-seeking, emotional suppression modeling, death preoccupation</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- S8: COUNTERTRANSFERENCE & ETHICS -->
+    <section id="countertransference">
+        <div class="container">
+            <h2>Countertransference &amp; Ethics</h2>
+            <div class="ethics-box">
+                <ul class="bullet-narrative">
+                    <li><strong>CPS Consideration:</strong> Early in mom interview — "Am I going to have to call CPS?" Ethical issue with g-ma self-medicating possibly around children.</li>
+                    <li><strong>Process Note:</strong> About 10 blank pages between entries when writing up notes between mom and kiddo.</li>
+                    <li><strong>Bonding:</strong> "This kiddo has already bonded hard with me. Boundaries?"</li>
+                    <li><strong>Mom's Emotion:</strong> Mom has not shared her emotions about g-pa's death nor her sister's loss with her children. One-way road for emotion disclosure. Developmental appropriateness?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- S9: OPEN QUESTIONS -->
+    <section id="open-questions">
+        <div class="container">
+            <h2>Open Questions &amp; Follow-Ups</h2>
+            <ul class="bullet-narrative question-list">
+                <li>School interview for second perspective?</li>
+                <li>6-year-old developmental period hallmarks?</li>
+                <li>Family constellation assessment? Mom had an "I'll do it myself" vibe.</li>
+                <li>Lots of this could be related to mom's suppression of emotion.</li>
+                <li><strong>Mom Schemas (inferred):</strong> Unrelenting standards, emotional suppression, neglect/abuse within mom's childhood.</li>
+                <li>"Blind to you" — unsure what this means.</li>
+                <li>Religion as factor in intergenerational trauma?</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
